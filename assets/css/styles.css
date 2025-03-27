@@ -11946,7 +11946,6 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  font-size: 16px;
   font-weight: 900;
   padding: 8px 16px;
   color: var(--Purple__700);
@@ -11975,7 +11974,6 @@ textarea.form-control-lg {
 }
 
 .btn-secondary {
-  font-size: 16px;
   font-weight: 900;
   padding: 8px 16px;
 }
@@ -11997,6 +11995,23 @@ textarea.form-control-lg {
 .btn-secondary:disabled {
   background-color: var(--Gray__100);
   border: 1px solid var(--Gray__400);
+}
+
+.link {
+  color: var(--Blue__700);
+  font-size: inherit;
+  font-weight: 600;
+  text-decoration: wavy underline;
+  text-underline-offset: 5px;
+}
+.link:hover {
+  color: var(--Purple__700);
+}
+.link:focus {
+  color: var(--Purple__400);
+}
+.link:active {
+  color: var(--Pink__300);
 }
 
 .playwrite-hu {
@@ -12073,17 +12088,44 @@ textarea.form-control-lg {
 
 .hero-home {
   background-color: #fff;
-  height: 80vh;
+  background-image: url(../images/Hero-home.svg);
+  background-size: cover;
+  padding-top: 100px;
+  height: 90vh;
 }
 
 .s-productos {
   background-color: var(--Pink__100);
-  height: 380px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.s-productos .s-title {
+  color: var(--Purple__600);
 }
 
-.s-productos {
+.product-highlight {
+  width: 230px;
+  height: 230px;
+  border-radius: 900px;
+  padding: 30px;
+}
+.product-highlight.c-1 {
   background-color: var(--Purple__50);
-  height: 80vh;
+}
+.product-highlight.c-2 {
+  background-color: var(--Yellow__50);
+}
+.product-highlight.c-3 {
+  background-color: var(--Blue__50);
+}
+.product-highlight.c-4 {
+  background-color: var(--Pink__50);
+}
+
+.s-newsletter {
+  background-color: var(--Purple__50);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .s-shop {

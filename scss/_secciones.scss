@@ -4,22 +4,42 @@
 
 .hero-home{
     background-color: #fff;
-    height: 80vh;
+    background-image: url(../images/Hero-home.svg);
+    background-size: cover;
+    padding-top: 100px;
+    height: 90vh;
 }
 
 // Seccion Tipo de Productos 
 .s-productos{
     background-color: var(--Pink__100);
-    height: 380px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .s-title{ color: var(--Purple__600);}
+}
+
+.product-highlight{
+    width: 230px;
+    height: 230px;
+    border-radius: 900px;
+    padding: 30px;
+
+    &.c-1{ background-color: var(--Purple__50);}
+    &.c-2{ background-color: var(--Yellow__50);}
+    &.c-3{ background-color: var(--Blue__50);}
+    &.c-4{ background-color: var(--Pink__50);}
+
 }
 
 // Seccion Newsletter 
-.s-productos{
+.s-newsletter{
     background-color: var(--Purple__50);
-    height: 80vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
-// Seccion Newsletter 
+// Seccion Shop 
 .s-shop{
     background-color: var(--Yellow__50);
     height: 80vh;
