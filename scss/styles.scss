@@ -1,0 +1,122 @@
+
+// Importando Estilos Generales
+
+@use 'custom' as *;
+@use 'animations';
+@use 'buttons';
+@use 'typography';
+@use 'colors' ;
+@use 'secciones' ;
+
+// Estilos de Secciones
+
+.My-Nav{
+
+    padding: 20px;
+
+    .nav{
+        display: flex;
+        gap: 20px;
+        align-content: center ;
+    }
+
+    .nav-link {
+
+        --bs-nav-link-color : purple;
+        --bs-nav-link-font-weight: 10px;
+        --bs-nav-link-font-size: 1.2rem;
+
+        display: block;
+        padding: 8px 16px;
+        font-size: var(--bs-nav-link-font-size);
+        font-weight: var(--bs-nav-link-font-weight);
+        color: var(--bs-nav-link-color);
+        text-decoration: none;
+        background-color: var(--Purple__50);
+        border-radius: 40px;
+
+        &:hover{
+            background-color: var(--Pink__50);
+            outline-style: solid;
+            animation: animateOutline 4s ease infinite;
+
+            @keyframes animateOutline {
+                0% {
+                  outline-width: 1px;
+                  outline-offset: 0;
+                  outline-color: var(--Pink__50);
+                }
+              
+                10% {
+                  outline-color: var(--Pink__100);
+                }
+              
+                /* The animation finishes at 50% */
+                50% {
+                  outline-width: 1px;
+                  outline-offset: 2px;
+                  outline-color: var(--Pink__300);
+                }
+              
+                100% {
+                  outline-width: 2px;
+                  outline-offset: 3px;
+                  outline-color: var(--Pink__500);
+                }
+              }
+
+        }
+
+        &.active{
+            background-color: var(--Purple__100);
+            
+        }
+   }
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background-color: var(--Purple__50);
+};
+
+
+// Estilos Card
+
+.card {
+    
+
+    --bs-card-bg: rgb(255, 255, 255);
+   
+    position: relative;
+    display: flex
+;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: var(--bs-body-color);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: .5px solid var(--Purple__50);
+    border-radius: 8px;
+
+    .card-title{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .card-text{
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+
+    img{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px ;
+    }
+}
+
+
+

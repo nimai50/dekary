@@ -1,0 +1,90 @@
+// BOTONES
+
+.btn{
+    font-size: 16px;
+    font-weight: 900;
+    padding: 8px 16px;
+
+}
+
+.btn-primary{
+    font-size: 16px;
+    font-weight: 900;
+    padding: 8px 16px;
+    color: var(--Purple__700);
+    background-color: var(--Yellow__400);
+    border: 1px solid var(--Yellow__400);
+
+    &:hover{
+        background-color: var(--Yellow__100);
+        border: 1px solid var(--Yellow__600);
+    }
+
+    &:focus{
+        background-color: var(--Yellow__50);
+        border: 1px solid var(--Yellow__600);
+    }
+
+    &:active{
+        background-color: var(--Yellow__50)!important;
+        border: 1px solid var(--Yellow__50)!important;
+    }
+
+    &:disabled{
+        background-color: var(--Gray__100);
+        border: 1px solid var(--Gray__400);
+    }
+
+}
+
+.btn-rounded{ 
+    border-radius: 20px;
+}
+
+
+
+
+.btn-secondary{
+    font-size: 16px;
+    font-weight: 900;
+    padding: 8px 16px;
+    // color: var(--Purple__800);
+    // background-color: var(--Purple__100);
+    // border: 1px solid var(--Purple__50);
+
+    &:hover{
+        background-color: var(--Purple__200);
+        border: 1px solid var(--Purple__300);
+        color: var(--Purple__800);
+    }
+
+    &:focus{
+        background-color: var(--Gray__50);
+        border: 1px solid var(--Purple__200);
+        color: var(--Purple__700);
+    }
+
+    &:active{
+        background-color: var(--Gray__50);
+        border: 1px solid var(--Purple__50);
+        color: var(--Purple__700);
+    }
+
+    &:disabled{
+        background-color: var(--Gray__100);
+        border: 1px solid var(--Gray__400);
+    }
+}
+
+
+// .nav-link {
+//     display: block;
+//     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+//     font-size: var(--bs-nav-link-font-size);
+//     font-weight: var(--bs-nav-link-font-weight);
+//     color: var(--bs-nav-link-color);
+//     text-decoration: none;
+//     background: none;
+//     border: 0;
+//     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+// }

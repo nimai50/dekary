@@ -1,0 +1,23 @@
+{
+    "name": "PapeKary",
+    "version": "1.0.0",
+    "description": "La paleria de Kary",
+    "main": "index.js",
+    "scripts": {
+        "compile:sass": "sass --watch scss:assets/css"
+    },
+    "keywords": [
+        "Papeleria",
+        "Oficina"
+    ],
+    "author": "Liz Martinez",
+    "license": "ISC",
+    "devDependencies": {
+        "sass": "^1.82.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.7.2",
+        "animate.css": "^4.1.1",
+        "bootstrap": "^5.3.3"
+    }
+}

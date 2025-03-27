@@ -1,0 +1,35 @@
+@use 'primitives' as *;
+
+// SOBRE ESCRIBE BOOTSTRAP
+$primary :  rgb(252, 239, 56) ; 
+$secondary: rgb(124, 58, 197);
+$success:   rgb(137, 193, 62);
+$info:      rgb(46, 203, 214);
+$warning:   rgb(255, 129, 26);
+
+
+// PADDINGS
+
+.pt-8{padding-top: 8px}
+.pt-16{padding-top: 16px}
+.pt-24{padding-top: 24px}
+.pt-32{padding-top: 32px}
+.pt-48{padding-top: 48px}
+.pt-80{padding-top: 80px}
+
+.pb-8{padding-bottom: 8px}
+.pb-16{padding-bottom: 16px}
+.pb-24{padding-bottom: 24px}
+.pb-32{padding-bottom: 32px}
+.pb-48{padding-bottom: 48px}
+.pb-80{padding-bottom: 80px}
+
+
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// ---- SEMANTIC COLORS ------
+
+// PILLS AND BADGES
+
