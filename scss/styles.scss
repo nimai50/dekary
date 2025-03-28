@@ -83,40 +83,9 @@ body {
 };
 
 
-// Estilos Card
 
-.card {
-    
 
-    --bs-card-bg: rgb(255, 255, 255);
-   
-    position: relative;
-    display: flex
-;
-    flex-direction: column;
-    min-width: 0;
-    height: var(--bs-card-height);
-    color: var(--bs-body-color);
-    word-wrap: break-word;
-    background-color: var(--bs-card-bg);
-    background-clip: border-box;
-    border: .5px solid var(--Purple__50);
-    border-radius: 8px;
 
-    .card-title{
-        font-size: 1rem;
-        font-weight: 700;
-    }
-    .card-text{
-        font-size: 0.875rem;
-        font-weight: 400;
-    }
-
-    img{
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px ;
-    }
-}
 
 
 

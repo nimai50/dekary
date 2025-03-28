@@ -1,6 +1,6 @@
 
 
-// HOME 
+// Hero 
 
 .hero-home{
     background-color: #fff;
@@ -10,13 +10,22 @@
     height: 90vh;
 }
 
+.hero-tienda{
+    background-color: #fff;
+    background-image: url(../images/Hero-shop.svg);
+    background-size: cover;
+    padding-top: 100px;
+    height: 40vh;
+}
+
+.s-title{ color: var(--Purple__600);}
+
 // Seccion Tipo de Productos 
 .s-productos{
     background-color: var(--Pink__100);
     padding-top: 100px;
     padding-bottom: 100px;
 
-    .s-title{ color: var(--Purple__600);}
 }
 
 .product-highlight{
@@ -24,6 +33,7 @@
     height: 230px;
     border-radius: 900px;
     padding: 30px;
+    margin-bottom: 20px;
 
     &.c-1{ background-color: var(--Purple__50);}
     &.c-2{ background-color: var(--Yellow__50);}
@@ -42,24 +52,98 @@
 // Seccion Shop 
 .s-shop{
     background-color: var(--Yellow__50);
-    height: 80vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.dots1 {
+    position: absolute;
+    background-image: url(../images/dots1.svg);
+    height: 50%;
+    width: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 10px;
+}
+
+.dots2 {
+    position: absolute;
+    background-image: url(../images/dots2.svg);
+    height: 50%;
+    width: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 10px;
+    bottom: 10px;
+}
+
+.card {
+    --bs-card-bg: rgb(255, 255, 255);
+   
+    position: relative;
+    display: flex
+;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: var(--bs-body-color);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: .5px solid var(--Purple__50);
+    border-radius: 8px;
+    margin: 10px;
+
+    .card-title{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .card-text{
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+
+    img{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px ;
+    }
 }
 
 // Seccion Blog 
 .s-blog{
     background-color: #fff;
-    height: 80vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.divider-flip {
+    transform: rotate(180deg);
 }
 
 
 // Seccion Contact 
 .s-contact{
     background-color:  var(--Blue__50);
-    height: 80vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.box-white{
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 // FOOTER
 .s-footer{
     background-color:  var(--Purple__600);
+    color: #fff;
     height: 50vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .social-icon{
+        font-size: 2rem;
+    } 
 }
