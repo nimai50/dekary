@@ -59,6 +59,18 @@ dekary/
 
 ## 🔧 Solución de Problemas
 
+### Error: "sass no se reconoce como un comando"
+**Problema:** SASS no está disponible globalmente en el sistema.
+**Solución:** Los scripts usan `npx sass` para ejecutar SASS desde las dependencias locales.
+
+### Error: "Missing script: dev"
+**Problema:** El script "dev" no estaba definido en `package.json`.
+**Solución:** Se agregó el script "dev" que ejecuta `npx sass --watch scss:assets/css`.
+
+### Error: "Can't find stylesheet to import"
+**Problema:** Rutas de importación incorrectas en archivos SASS.
+**Solución:** Se corrigieron las rutas para usar `../node_modules/` en lugar de `../../node_modules/`.
+
 ## 📝 Dependencias
 
 ### Dependencias de Desarrollo
@@ -76,11 +88,13 @@ Los archivos SASS están organizados en módulos:
 - `_animations.scss` - Animaciones personalizadas
 - `_buttons.scss` - Estilos de botones
 - `_colors.scss` - Variables de colores
-- `_custom.scss` - Estilos personalizados
+- `_custom.scss` - Estilos personalizados y Bootstrap
 - `_mixins.scss` - Mixins reutilizables
 - `_primitives.scss` - Componentes básicos
 - `_secciones.scss` - Estilos de secciones
 - `_typography.scss` - Tipografía
+- `fontawesome.scss` - Importación de FontAwesome
+- `styles.scss` - Archivo principal que importa todos los módulos
 
 ### Compilación
 El archivo principal `styles.scss` importa todos los módulos y se compila a `assets/css/styles.css`.
@@ -105,6 +119,15 @@ Para desplegar el sitio:
 1. Compilar SASS: `npm run dev`
 2. Subir todos los archivos al servidor web
 3. Asegurarse de que las rutas de los archivos CSS y JS sean correctas
+
+## ✅ Estado Actual del Proyecto
+
+**Última actualización:** Diciembre 2024
+- ✅ SASS compilando correctamente
+- ✅ FontAwesome funcionando
+- ✅ Bootstrap integrado
+- ✅ Archivos CSS generados automáticamente
+- ✅ Scripts de desarrollo funcionando
 
 ## 👥 Autor
 
