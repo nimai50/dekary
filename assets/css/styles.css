@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import 'animate.css';
 :root {
   --Pink__50:#fde7f5;
   --Pink__100:#fab7e1;
@@ -12088,10 +12089,10 @@ textarea.form-control-lg {
 
 .hero-home {
   background-color: #fff;
-  background-image: url(../images/Hero-home.svg);
-  background-size: cover;
   padding-top: 50px;
   height: 90vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero-tienda {
@@ -12100,6 +12101,95 @@ textarea.form-control-lg {
   background-size: cover;
   padding-top: 100px;
   height: 40vh;
+}
+
+.hero-text {
+  z-index: 9999;
+  position: relative;
+}
+
+.hero-logo {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.sol {
+  position: absolute;
+  width: 270px;
+  top: 35%;
+  left: 20%;
+}
+
+.sol-animation {
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.flor-azul {
+  position: absolute;
+  width: 420px;
+  top: -170px;
+  left: 35%;
+  animation: bounceIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 6s;
+  animation-timing-function: infinite;
+}
+
+.flor-amarilla {
+  position: absolute;
+  width: 530px;
+  top: -170px;
+  left: -10%;
+  animation: bounceIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 8s;
+  animation-timing-function: infinite;
+}
+
+.flor-aqua {
+  position: absolute;
+  width: 510px;
+  bottom: -240px;
+  left: -5%;
+  animation: bounceIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 6s;
+  animation-timing-function: infinite;
+}
+
+.flor-morada {
+  position: absolute;
+  width: 550px;
+  bottom: -220px;
+  right: -5%;
+  animation: bounceIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 8s;
+  animation-timing-function: infinite;
+}
+
+.flor-naranja {
+  position: absolute;
+  width: 400px;
+  bottom: -230px;
+  right: 35%;
+  animation: bounceIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 6s;
+  animation-timing-function: infinite;
+}
+
+.flor-rosa {
+  position: absolute;
+  width: 530px;
+  top: -190px;
+  right: -12%;
+  animation: bounceIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 8s;
+  animation-timing-function: infinite;
 }
 
 .s-title {
