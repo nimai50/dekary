@@ -12103,6 +12103,14 @@ textarea.form-control-lg {
   height: 40vh;
 }
 
+.hero-blog {
+  background-color: #fff;
+  background-image: url(../images/Hero-blog.svg);
+  background-size: cover;
+  padding-top: 100px;
+  height: 40vh;
+}
+
 .hero-text {
   z-index: 100;
   position: relative;
@@ -12315,6 +12323,13 @@ textarea.form-control-lg {
 }
 .s-footer .social-icon {
   font-size: 2rem;
+}
+
+.s-blog {
+  background-color: var(--Blue__50);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
 }
 
 .My-Nav {
