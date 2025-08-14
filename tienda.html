@@ -18,6 +18,8 @@
   <title>La pape de Kary</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/contact-forms.css">
+    <!-- Animate  -->
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +54,7 @@
         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Contactanos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="http://blog.dekary.com">Blog</a>
       </li>
 
     </ul>
@@ -79,22 +81,22 @@
 
           <div class="col-12 ">
             <div class="form-container ">
-              <form>
+              <form id="contactTiendaForm" action="#" method="POST">
                 <div class="mb-2">
                   <label for="InputName" class="form-label">Nombre</label>
-                  <input type="email" class="form-control" id="InputName" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="nameHelp" required>
                 </div>
                 <div class="mb-2">
                   <label for="InputLastName" class="form-label">Apellido</label>
-                  <input type="email" class="form-control" id="InputLastName" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="InputLastName" name="apellido" aria-describedby="lastNameHelp" required>
                 </div>
                 <div class="mb-2">
                   <label for="InputEmail" class="form-label">Correo Electronico</label>
-                  <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="InputEmail" name="email" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-2">
                   <label for="InputMsg" class="form-label">Mensaje</label>
-                  <textarea class="form-control" id="InputMsg" placeholder="Escribe tu mensaje" rows="3"></textarea>
+                  <textarea class="form-control" id="InputMsg" name="mensaje" placeholder="Escribe tu mensaje" rows="3" required></textarea>
 
                 </div>
 
@@ -129,7 +131,7 @@
       <g fill="#ffff">
         <rect fill="#FEE7AF" width="100%" height="100%" />
         <path
-          d="M0 0v60c9 0 18-3 25-10 13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s37 13 50 0c14-14 37-14 50 0 7 7 16 10 25 10V0H0Z">
+          d="M0 0v60c9 0 18-3 25-10 13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s37 13 50 0c14-14 37-14 50 0 7 7 16 10 25 10V0H0Z">
         </path>
       </g>
     </svg>
@@ -286,6 +288,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  
+  <!-- Contact Forms JS -->
+  <script src="assets/js/contact-forms-only.js"></script>
 </body>
 
 </html>

@@ -19,6 +19,7 @@
   <title>La pape de Kary</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/contact-forms.css">
     <!-- Animate  -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- Animate  -->
@@ -58,7 +59,7 @@
         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Contactanos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="http://blog.dekary.com">Blog</a>
       </li>
 
     </ul>
@@ -85,22 +86,22 @@
 
           <div class="col-12 ">
             <div class="form-container ">
-              <form>
+              <form id="contactModalForm" action="#" method="POST">
                 <div class="mb-2">
                   <label for="InputName" class="form-label">Nombre</label>
-                  <input type="email" class="form-control" id="InputName" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="nameHelp" required>
                 </div>
                 <div class="mb-2">
                   <label for="InputLastName" class="form-label">Apellido</label>
-                  <input type="email" class="form-control" id="InputLastName" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="InputLastName" name="apellido" aria-describedby="lastNameHelp" required>
                 </div>
                 <div class="mb-2">
                   <label for="InputEmail" class="form-label">Correo Electronico</label>
-                  <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="InputEmail" name="email" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-2">
                   <label for="InputMsg" class="form-label">Mensaje</label>
-                  <textarea class="form-control" id="InputMsg" placeholder="Escribe tu mensaje" rows="3"></textarea>
+                  <textarea class="form-control" id="InputMsg" name="mensaje" placeholder="Escribe tu mensaje" rows="3" required></textarea>
 
                 </div>
 
@@ -122,7 +123,7 @@
   <section class="hero-home">
     <div class="hero-text container d-flex flex-column justify-content-center col-md-5 col-12 text-center">
       <div class="p-4">
-        <img class="hero-logo" style="" src="assets/images/logo.svg" alt=""> <br>
+        <img class="hero-logo" src="assets/images/logo.svg" alt=""> <br>
         <img style=" width: 170px; margin-bottom: 30px;" src="assets/images/Hola.svg" alt=""> <br>
         <span class="bodyXLarge">Encuentra todo lo que necesitas para la escuela, la oficina y el arte en un solo lugar. </span><br>
         <button class="btn btn-secondary btn-rounded btn-lg mt-4">Explorar Nuestos Productos</button>
@@ -190,7 +191,7 @@
       <g fill="#FAB7E1">
         <rect fill="#F2EBF9" width="100%" height="100%" />
         <path
-          d="M0 0v60c9 0 18-3 25-10 13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s37 13 50 0c14-14 37-14 50 0 7 7 16 10 25 10V0H0Z">
+          d="M0 0v60c9 0 18-3 25-10 13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s37 13 50 0c14-14 37-14 50 0 7 7 16 10 25 10V0H0Z">
         </path>
       </g>
     </svg>
@@ -219,7 +220,7 @@
           -webkit-transform: scale(1);
           transform-origin: 0 0;
           -webkit-transform-origin: 0 0;
-          height: ;
+          height: auto;
         }
 
         .sr-only {
@@ -986,7 +987,7 @@
       <g fill="#F2EBF9">
         <rect fill="#FFFDE5" width="100%" height="100%" />
         <path
-          d="M0 0v60c9 0 18-3 25-10 13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s37 13 50 0c14-14 37-14 50 0 7 7 16 10 25 10V0H0Z">
+          d="M0 0v60c9 0 18-3 25-10 13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s36 14 50 0c13-14 36-14 50 0s37 13 50 0c14-14 37-14 50 0 7 7 16 10 25 10V0H0Z">
         </path>
       </g>
     </svg>
@@ -1108,7 +1109,7 @@
             creatividad. ¡Descubre nuevas ideas y deja volar tu imaginación!</p>
           <p class="bodyLarge">Descubre tendencias, aprende nuevas técnicas y encuentra inspiración para hacer de cada
             trazo, cada nota y cada proyecto algo único. ¡Explora nuestros artículos y deja volar tu creatividad!</p>
-          <div><button class="btn btn-secondary btn-rounded btn-lg mt-4">Ir al Blog</button></div>
+                          <div><a href="http://blog.dekary.com" class="btn btn-secondary btn-rounded btn-lg mt-4">Ir al Blog</a></div>
         </div>
         <div class="blog-photo col-md-6 col-12 p-4">
           <img class="w-100" src="./assets/images/blog image.png" alt="">
@@ -1134,22 +1135,22 @@
       <div class=" d-flex g-2 flex-wrap justify-content-around">
         <div class="col-md-6 col-12 p-4 order-2 order-md-1">
           <div class="form-container box-white">
-            <form>
+            <form id="contactSectionForm" action="#" method="POST">
               <div class="mb-3">
                 <label for="InputName" class="form-label">Nombre</label>
-                <input type="email" class="form-control" id="InputName" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="nameHelp" required>
               </div>
               <div class="mb-3">
                 <label for="InputLastName" class="form-label">Apellido</label>
-                <input type="email" class="form-control" id="InputLastName" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="InputLastName" name="apellido" aria-describedby="lastNameHelp" required>
               </div>
               <div class="mb-3">
                 <label for="InputEmail" class="form-label">Correo Electronico</label>
-                <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="InputEmail" name="email" aria-describedby="emailHelp" required>
               </div>
               <div class="mb-3">
                 <label for="InputMsg" class="form-label">Mensaje</label>
-                <textarea class="form-control" id="InputMsg" placeholder="Escribe tu mensaje" rows="3"></textarea>
+                <textarea class="form-control" id="InputMsg" name="mensaje" placeholder="Escribe tu mensaje" rows="3" required></textarea>
 
               </div>
 
@@ -1222,6 +1223,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  
+  <!-- Contact Forms JS -->
+  <script src="assets/js/contact-forms-only.js"></script>
 </body>
 
 </html>
