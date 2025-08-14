@@ -1,144 +1,115 @@
-# Dekary - La Papelería de Kary
+# La Pape de Kary - Sitio Web
 
-Un sitio web moderno para una papelería, construido con HTML, CSS (SASS), Bootstrap y FontAwesome.
+Sitio web oficial de La Pape de Kary, especialistas en suministros de oficina y papelería.
 
-## 🚀 Características
+## 🚀 **Características**
 
-- Diseño responsive y moderno
-- Compilación automática de SASS
-- Iconos de FontAwesome
-- Componentes de Bootstrap
-- Animaciones CSS personalizadas
+- **Diseño responsive** optimizado para todos los dispositivos
+- **Paleta de colores personalizada** con tonos púrpura, rosa y azul
+- **Tipografía Quicksand** para mejor legibilidad
+- **Página 404 personalizada** con ilustración temática de impresora
+- **Animaciones CSS** suaves y profesionales
+- **Optimizado para SEO** con metadatos apropiados
 
-## 📁 Estructura del Proyecto
+## 📁 **Estructura del Proyecto**
 
 ```
 dekary/
-├── assets/
-│   ├── css/          # Archivos CSS compilados
-│   ├── images/       # Imágenes del proyecto
-│   ├── js/           # Archivos JavaScript
-│   └── webfonts/     # Fuentes de FontAwesome
-├── scss/             # Archivos SASS fuente
-├── index.html        # Página principal
-├── tienda.html       # Página de tienda
-├── proximamente.html  # Página próximamente
-└── componentes.html  # Página de componentes
+├── index.html              # Página principal
+├── 404.html               # Página de error personalizada
+├── tienda.html            # Página de tienda
+├── proximamente.html      # Página de próximamente
+├── componentes.html       # Componentes de diseño
+├── assets/                # Recursos estáticos
+│   ├── css/              # Estilos CSS
+│   ├── images/           # Imágenes y logos
+│   ├── js/               # Scripts JavaScript
+│   └── webfonts/         # Fuentes web
+├── scss/                  # Archivos SCSS fuente
+└── README.md              # Este archivo
 ```
 
-## 🛠️ Instalación y Configuración
+## 🎨 **Página 404 Personalizada**
 
-### Prerrequisitos
-- Node.js (versión 14 o superior)
-- npm
+### **Características:**
+- **Ilustración SVG** de impresora con tóner bajo
+- **Hoja de papel** con error "404" impreso
+- **Diseño coherente** con la identidad visual del sitio
+- **Mensaje amigable** que mantiene la temática de papelería
+- **Botón de navegación** para volver al inicio
 
-### Pasos de instalación
+### **Elementos Visuales:**
+- Impresora moderna con LEDs animados
+- Hoja de papel realista con proporciones A4
+- Texto "404" y líneas simulando fallas de tóner
+- Borde superior con degradado multicolor (amarillo → rosa → azul)
+- Logo de La Pape de Kary prominente
 
-1. **Clonar el repositorio**
+## 🛠️ **Tecnologías Utilizadas**
+
+- **HTML5** semántico
+- **CSS3** con variables personalizadas
+- **SCSS** para organización de estilos
+- **SVG** para ilustraciones vectoriales
+- **Google Fonts** (Quicksand)
+- **Bootstrap** para componentes base
+- **GitHub Pages** para hosting
+
+## 🚀 **Despliegue**
+
+El sitio está configurado para desplegarse automáticamente en GitHub Pages:
+
+1. **Push a la rama main** activa el despliegue automático
+2. **La página 404** se muestra automáticamente para URLs inexistentes
+3. **Actualizaciones** se reflejan en 5-10 minutos
+
+## 🎯 **URLs del Sitio**
+
+- **Principal**: `https://[usuario].github.io/dekary/`
+- **404**: Se muestra automáticamente para páginas no encontradas
+- **Tienda**: `https://[usuario].github.io/dekary/tienda.html`
+
+## 📱 **Responsive Design**
+
+- **Mobile First** approach
+- **Breakpoints** optimizados para tablets y desktop
+- **Grid system** flexible y adaptable
+- **Imágenes** optimizadas para diferentes resoluciones
+
+## 🔧 **Desarrollo Local**
+
+Para trabajar en el proyecto localmente:
+
+1. **Clona el repositorio**:
    ```bash
-   git clone [URL-del-repositorio]
+   git clone https://github.com/[usuario]/dekary.git
    cd dekary
    ```
 
-2. **Instalar dependencias**
-   ```bash
-   npm install
-   ```
+2. **Abre en tu editor** preferido (VS Code, Sublime, etc.)
 
-3. **Compilar SASS**
-   ```bash
-   npm run dev
-   # o
-   npm run compile:sass
-   ```
+3. **Visualiza** abriendo `index.html` en tu navegador
 
-## 🎯 Scripts Disponibles
+## 📝 **Contribuciones**
 
-- `npm run dev` - Compila SASS en modo watch
-- `npm run compile:sass` - Compila SASS en modo watch
+Para contribuir al proyecto:
 
-## 🔧 Solución de Problemas
+1. **Fork** el repositorio
+2. **Crea una rama** para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. **Commit** tus cambios (`git commit -am 'Agregar nueva funcionalidad'`)
+4. **Push** a la rama (`git push origin feature/nueva-funcionalidad`)
+5. **Crea un Pull Request**
 
-### Error: "sass no se reconoce como un comando"
-**Problema:** SASS no está disponible globalmente en el sistema.
-**Solución:** Los scripts usan `npx sass` para ejecutar SASS desde las dependencias locales.
+## 📄 **Licencia**
 
-### Error: "Missing script: dev"
-**Problema:** El script "dev" no estaba definido en `package.json`.
-**Solución:** Se agregó el script "dev" que ejecuta `npx sass --watch scss:assets/css`.
+Este proyecto está bajo la licencia [especificar licencia].
 
-### Error: "Can't find stylesheet to import"
-**Problema:** Rutas de importación incorrectas en archivos SASS.
-**Solución:** Se corrigieron las rutas para usar `../node_modules/` en lugar de `../../node_modules/`.
+## 📞 **Contacto**
 
-## 📝 Dependencias
-
-### Dependencias de Desarrollo
-- `sass`: ^1.82.0 - Compilador de SASS
-
-### Dependencias Principales
-- `@fortawesome/fontawesome-free`: ^6.7.2 - Iconos
-- `animate.css`: ^4.1.1 - Animaciones CSS
-- `bootstrap`: ^5.3.3 - Framework CSS
-
-## 🎨 Desarrollo
-
-### Estructura SASS
-Los archivos SASS están organizados en módulos:
-- `_animations.scss` - Animaciones personalizadas
-- `_buttons.scss` - Estilos de botones
-- `_colors.scss` - Variables de colores
-- `_custom.scss` - Estilos personalizados y Bootstrap
-- `_mixins.scss` - Mixins reutilizables
-- `_primitives.scss` - Componentes básicos
-- `_secciones.scss` - Estilos de secciones
-- `_typography.scss` - Tipografía
-- `fontawesome.scss` - Importación de FontAwesome
-- `styles.scss` - Archivo principal que importa todos los módulos
-
-### Compilación
-El archivo principal `styles.scss` importa todos los módulos y se compila a `assets/css/styles.css`.
-
-## 🌐 Páginas Disponibles
-
-- **index.html** - Página principal
-- **tienda.html** - Página de tienda
-- **proximamente.html** - Página próximamente
-- **componentes.html** - Página de componentes
-
-## 📱 Responsive Design
-
-El sitio está optimizado para diferentes tamaños de pantalla:
-- Desktop
-- Tablet
-- Mobile
-
-## 🚀 Despliegue
-
-Para desplegar el sitio:
-1. Compilar SASS: `npm run dev`
-2. Subir todos los archivos al servidor web
-3. Asegurarse de que las rutas de los archivos CSS y JS sean correctas
-
-## ✅ Estado Actual del Proyecto
-
-**Última actualización:** Diciembre 2024
-- ✅ SASS compilando correctamente
-- ✅ FontAwesome funcionando
-- ✅ Bootstrap integrado
-- ✅ Archivos CSS generados automáticamente
-- ✅ Scripts de desarrollo funcionando
-
-## 👥 Autor
-
-**Liz Martinez** - Diseñadora del proyecto
-**Hugo Arrazola Dotor** - IA Engineer del proyecto
-
-
-## 📄 Licencia
-
-ISC License
+- **Sitio Web**: [URL del sitio]
+- **Email**: [email de contacto]
+- **GitHub**: [usuario de GitHub]
 
 ---
 
-**Nota:** Asegúrate de tener SASS compilándose en modo watch (`npm run dev`) mientras desarrollas para ver los cambios en tiempo real.
+**La Pape de Kary** - Suministros de oficina y papelería de calidad ✨
