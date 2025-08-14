@@ -131,7 +131,9 @@ Para desplegar el sitio:
 
 ## 👥 Autor
 
-**Liz Martinez** - Desarrolladora del proyecto
+**Liz Martinez** - Diseñadora del proyecto
+**Hugo Arrazola Dotor** - IA Engineer del proyecto
+
 
 ## 📄 Licencia
 
