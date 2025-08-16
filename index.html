@@ -67,7 +67,7 @@
   <!-- Meta tags para móviles -->
   <meta name="theme-color" content="#2ecbd6">
   <meta name="msapplication-TileColor" content="#2ecbd6">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="La Pape de Kary">
   
@@ -1613,8 +1613,34 @@
           </div>
         </div>
 
-
-
+        <!-- AGREGAR FORMULARIO FALTANTE PARA ELIMINAR WARNING -->
+        <div class="container mb-4">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="card shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Contacto para Tienda</h5>
+                  <p class="card-text">¿Tienes preguntas sobre nuestros productos? Escríbenos.</p>
+                  <form id="contactTiendaForm" action="#" method="POST">
+                    <div class="mb-3">
+                      <label for="InputNameTienda" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="InputNameTienda" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="InputEmailTienda" class="form-label">Correo Electrónico</label>
+                      <input type="email" class="form-control" id="InputEmailTienda" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="InputMsgTienda" class="form-label">Consulta</label>
+                      <textarea class="form-control" id="InputMsgTienda" name="mensaje" placeholder="Escribe tu consulta sobre productos" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -1877,12 +1903,12 @@
       
       // Inicializar lazy loading
       if (window.lazyImageLoader) {
-        console.log('Lazy loading de imágenes inicializado');
+        // Lazy loading inicializado
       }
       
       // Inicializar optimizador de imágenes
       if (window.imageOptimizer) {
-        console.log('Optimizador de imágenes inicializado');
+        // Optimizador de imágenes inicializado
       }
     });
   </script>
