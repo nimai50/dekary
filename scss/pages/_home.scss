@@ -13,7 +13,7 @@
 .hero-home {
   background-color: #fff;
   padding-top: 50px;
-  height: 90vh;
+  height: 100vh; /* CORREGIDO: Altura completa para evitar scrollbar */
   overflow: hidden;
   position: relative;
   display: flex;
@@ -29,6 +29,7 @@
   text-align: center;
   max-width: 800px;
   padding: 0 20px;
+  margin: 0 auto; /* CORREGIDO: Centrar el contenido */
 }
 
 .hero-logo {
@@ -41,8 +42,8 @@
   position: absolute;
   width: 270px;
   top: 35%;
-  left: 20%;
-  z-index: 1;
+  right: 20%; /* CORREGIDO: Sol a la derecha como en producción */
+  z-index: 10; /* CORREGIDO: Z-index más alto para estar por encima de las flores */
 }
 
 .sol-animation {
@@ -57,7 +58,7 @@
 .flor-azul {
   position: absolute;
   width: 420px;
-  top: -170px;
+  top: -100px; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
   left: 35%;
   animation: bounceIn;
   animation-duration: 6s;
@@ -68,8 +69,8 @@
 .flor-amarilla {
   position: absolute;
   width: 530px;
-  top: -170px;
-  left: -10%;
+  top: -100px; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
+  left: -5%; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
   animation: bounceIn;
   animation-duration: 8s;
   animation-timing-function: infinite;
@@ -79,7 +80,7 @@
 .flor-aqua {
   position: absolute;
   width: 510px;
-  bottom: -240px;
+  bottom: -150px; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
   left: -5%;
   animation: bounceIn;
   animation-duration: 6s;
@@ -90,7 +91,7 @@
 .flor-morada {
   position: absolute;
   width: 550px;
-  bottom: -220px;
+  bottom: -150px; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
   right: -5%;
   animation: bounceIn;
   animation-duration: 8s;
@@ -100,8 +101,8 @@
 
 .flor-naranja {
   position: absolute;
-  width: 400px;
-  top: 50%;
+  width: 300px; /* CORREGIDO: Reducir tamaño para coincidir con producción */
+  top: 70%; /* CORREGIDO: Bajar la flor naranja para que no esté tan arriba */
   right: -5%;
   animation: bounceIn;
   animation-duration: 7s;

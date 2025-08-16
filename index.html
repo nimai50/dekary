@@ -164,7 +164,7 @@
     .hero-home {
       background-color: #fff;
       padding-top: 50px;
-      height: 90vh;
+      height: 100vh; /* CORREGIDO: Altura completa para evitar scrollbar */
       overflow: hidden;
       position: relative;
       display: flex;
@@ -180,6 +180,7 @@
       text-align: center;
       max-width: 800px;
       padding: 0 20px;
+      margin: 0 auto; /* CORREGIDO: Centrar el contenido */
     }
     
     .hero-logo {
@@ -256,7 +257,7 @@
       position: absolute;
       width: 270px;
       top: 35%;
-      left: 20%;
+      right: 20%; /* CORREGIDO: Sol a la derecha como en producción */
       z-index: 1;
       pointer-events: none; /* Evitar interferencias */
     }
@@ -273,7 +274,7 @@
     .flor-azul {
       position: absolute;
       width: 420px;
-      top: -170px;
+      top: -100px; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
       left: 35%;
       animation: bounceIn;
       animation-duration: 6s;
@@ -285,8 +286,8 @@
     .flor-amarilla {
       position: absolute;
       width: 530px;
-      top: -170px;
-      left: -10%;
+      top: -100px; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
+      left: -5%; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
       animation: bounceIn;
       animation-duration: 8s;
       animation-timing-function: infinite;
@@ -297,7 +298,7 @@
     .flor-aqua {
       position: absolute;
       width: 510px;
-      bottom: -240px;
+      bottom: -150px; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
       left: -5%;
       animation: bounceIn;
       animation-duration: 6s;
@@ -309,7 +310,7 @@
     .flor-morada {
       position: absolute;
       width: 550px;
-      bottom: -220px;
+      bottom: -150px; /* CORREGIDO: Ajustar posición para evitar desbordamiento */
       right: -5%;
       animation: bounceIn;
       animation-duration: 8s;
@@ -512,8 +513,8 @@
   </style>
   
   <!-- ===== CSS NO CRÍTICO CARGADO DE FORMA ASÍNCRONA ===== -->
-  <link rel="preload" href="assets/css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/home.css"></noscript>
+  <link rel="preload" href="assets/css/purged/home-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/purged/home-purged.css"></noscript>
   
   <link rel="preload" href="assets/css/shared-base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="assets/css/shared-base.css"></noscript>
@@ -635,12 +636,12 @@
   <!-- Hero -->
 
   <main class="hero-home" role="main">
-    <div class="hero-text container d-flex flex-column justify-content-center col-md-5 col-12 text-center">
+    <div class="hero-text container d-flex flex-column justify-content-center col-md-8 col-12 text-center">
       <div class="p-4">
         <img class="hero-logo" src="assets/images/logo.svg" alt="La Pape de Kary - Logo de papelería en Cancún"> <br>
         <img style=" width: 170px; margin-bottom: 30px;" src="assets/images/Hola.svg" alt="Saludo La Pape de Kary"> <br>
         <h1 class="bodyXLarge">Encuentra todo lo que necesitas para la escuela, la oficina y el arte en un solo lugar.</h1><br>
-        <button class="btn btn-secondary btn-rounded btn-lg mt-4" aria-label="Explorar productos de papelería">Explorar Nuestos Productos</button>
+        <button class="btn btn-secondary btn-rounded btn-lg mt-3" aria-label="Explorar productos de papelería">Explorar Nuestos Productos</button>
       </div>
     </div>
     <!-- sol -->
@@ -1811,7 +1812,7 @@
     // Función para cargar CSS cuando la página esté lista
     function loadNonCriticalCSS() {
       // Cargar CSS específico de la página
-      loadCSS('assets/css/home.css');
+      loadCSS('assets/css/purged/home-purged.css');
       
       // Cargar CSS compartido
       loadCSS('assets/css/shared-base.css');
@@ -1836,6 +1837,36 @@
     window.addEventListener('load', function() {
       // Aquí se pueden cargar estilos adicionales si es necesario
       console.log('CSS crítico implementado y CSS no crítico cargado de forma asíncrona');
+    });
+  </script>
+  
+  <!-- ===== SCRIPTS DE OPTIMIZACIÓN AVANZADA ===== -->
+  <script src="assets/js/sw-register.js"></script>
+  <script src="assets/js/lazy-loading.js"></script>
+  <script src="assets/js/image-optimizer.js"></script>
+  
+  <script>
+    // Inicializar optimizaciones avanzadas
+    document.addEventListener('DOMContentLoaded', () => {
+      // Solicitar permisos de notificación
+      if ('Notification' in window) {
+        Notification.requestPermission();
+      }
+      
+      // Verificar estado del Service Worker
+      if (window.DekarySW) {
+        window.DekarySW.checkSWStatus();
+      }
+      
+      // Inicializar lazy loading
+      if (window.lazyImageLoader) {
+        console.log('Lazy loading de imágenes inicializado');
+      }
+      
+      // Inicializar optimizador de imágenes
+      if (window.imageOptimizer) {
+        console.log('Optimizador de imágenes inicializado');
+      }
     });
   </script>
 </body>

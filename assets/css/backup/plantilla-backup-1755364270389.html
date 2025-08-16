@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml'
+  b:templateVersion='1.3.3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale'
+  xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b'
+  xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+  <meta content='width=device-width, initial-scale=1' name='viewport' />
+  <title>
+    <data:view.title.escaped />
+  </title>
+
+  <!-- ===== META TAGS COMPLETOS PARA SEO ===== -->
+  
+  <!-- Meta tags básicos -->
+  <meta charset='UTF-8'/>
+  <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'/>
+  <meta name='author' content='La Pape de Kary'/>
+  <meta name='copyright' content='La Pape de Kary'/>
+  
+  <!-- Meta description dinámica -->
+  <b:if cond='data:blog.metaDescription'>
+    <meta name='description' expr:content='data:blog.metaDescription'/>
+  </b:if>
+  <b:if cond='data:blog.metaDescription == &quot;&quot;'>
+    <meta name='description' content='La Pape de Kary, tu papelería de confianza en Cancún. Útiles escolares, forrado y etiquetas personalizadas. Ubicados entre Domino&apos;s pizza de Av. La luna y el Six la luna.'/>
+  </b:if>
+  
+  <!-- Canonical URL -->
+  <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+  
+  <!-- Open Graph tags para WhatsApp, Facebook, etc. -->
+  <meta property='og:title' expr:content='data:view.title.escaped'/>
+  <meta property='og:description' content='La Pape de Kary, tu papelería de confianza en Cancún. Útiles escolares, forrado y etiquetas personalizadas.'/>
+  <meta property='og:image' content='https://dekary.com/assets/images/logo.svg'/>
+  <meta property='og:image:width' content='1200'/>
+  <meta property='og:image:height' content='630'/>
+  <meta property='og:image:alt' content='La Pape de Kary - Logo de papelería en Cancún'/>
+  <meta property='og:url' expr:content='data:blog.canonicalUrl'/>
+  <meta property='og:type' content='website'/>
+  <meta property='og:site_name' content='La Pape de Kary'/>
+  <meta property='og:locale' content='es_MX'/>
+  <meta property='og:locale:alternate' content='en_US'/>
+  
+  <!-- Twitter Card tags -->
+  <meta name='twitter:card' content='summary_large_image'/>
+  <meta name='twitter:title' expr:content='data:view.title.escaped'/>
+  <meta name='twitter:description' content='La Pape de Kary, tu papelería de confianza en Cancún. Útiles escolares, forrado y etiquetas personalizadas.'/>
+  <meta name='twitter:image' content='https://dekary.com/assets/images/logo.svg'/>
+  <meta name='twitter:image:alt' content='La Pape de Kary - Logo de papelería en Cancún'/>
+  <meta name='twitter:site' content='@dekary'/>
+  <meta name='twitter:creator' content='@dekary'/>
+  
+  <!-- Favicon y iconos -->
+  <link rel='icon' type='image/svg+xml' href='https://dekary.com/assets/images/logo.svg'/>
+  <link rel='icon' type='image/png' sizes='32x32' href='https://dekary.com/assets/images/favicon-32x32.png'/>
+  <link rel='icon' type='image/png' sizes='16x16' href='https://dekary.com/assets/images/favicon-16x16.png'/>
+  <link rel='apple-touch-icon' sizes='180x180' href='https://dekary.com/assets/images/apple-touch-icon.png'/>
+  <link rel='manifest' href='https://dekary.com/site.webmanifest'/>
+  
+  <!-- Preconnect para rendimiento -->
+  <link rel='preconnect' href='https://fonts.googleapis.com'/>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='anonymous'/>
+  
+  <!-- DNS Prefetch para recursos externos -->
+  <link rel='dns-prefetch' href='https://www.google-analytics.com'/>
+  <link rel='dns-prefetch' href='https://www.googletagmanager.com'/>
+  
+  <!-- Meta tags para móviles -->
+  <meta name='theme-color' content='#2ecbd6'/>
+  <meta name='msapplication-TileColor' content='#2ecbd6'/>
+  <meta name='apple-mobile-web-app-capable' content='yes'/>
+  <meta name='apple-mobile-web-app-status-bar-style' content='default'/>
+  <meta name='apple-mobile-web-app-title' content='La Pape de Kary'/>
+  
+  <!-- Meta tags para SEO local -->
+  <meta name='geo.region' content='MX-QROO'/>
+  <meta name='geo.placename' content='Cancún, Quintana Roo'/>
+  <meta name='geo.position' content='21.1743;-86.8466'/>
+  <meta name='ICBM' content='21.1743, -86.8466'/>
+  
+  <!-- Meta tags para idioma -->
+  <meta http-equiv='content-language' content='es'/>
+  <link rel='alternate' hreflang='es' href='https://blog.dekary.com/'/>
+  <link rel='alternate' hreflang='x-default' href='https://blog.dekary.com/'/>
+  
+  <!-- Sitemap y robots -->
+  <link rel='sitemap' type='application/xml' title='Sitemap' href='https://blog.dekary.com/sitemap.xml'/>
+  
+  <!-- Meta tags para seguridad -->
+  <meta http-equiv='X-Content-Type-Options' content='nosniff'/>
+  <meta http-equiv='X-Frame-Options' content='SAMEORIGIN'/>
+  <meta http-equiv='X-XSS-Protection' content='1; mode=block'/>
+  <meta name='referrer' content='strict-origin-when-cross-origin'/>
+  
+  <!-- Meta tags para Google -->
+  <meta name='google-site-verification' content=''/>
+  <meta name='google' content='notranslate'/>
+  
+  <!-- ===== CSS DEL BLOG DEKARY - SISTEMA SCSS ===== -->
+  
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Playwrite+HU:ital,wght@0,100..900;1,100..900&amp;display=swap' rel='stylesheet'/>
+  
+  <!-- FontAwesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'/>
+  
+  <!-- CSS del blog compilado desde SCSS -->
+  <link rel='stylesheet' href='https://dekary.com/assets/css/blog.css'/>
+  
+  <!-- ===== CSS CRÍTICO INLINE PARA BLOGGER ===== -->
+  <style>
+    /* CSS crítico mínimo para evitar FOUC */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #eafafb;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .My-Nav {
+      background: #f2ebf9;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .dekary-logo {
+      width: 250px;
+      height: auto;
+      display: block;
+      margin: 0 auto 30px auto;
+      max-width: 100%;
+    }
+    
+    .blog-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== NAVEGACIÓN PRINCIPAL ===== -->
+  <nav class='My-Nav'>
+    <div class='container'>
+      <img src='https://dekary.com/assets/images/logo.svg' alt='La Pape de Kary' class='dekary-logo'/>
+      <ul class='nav'>
+        <li><a href='https://dekary.com/' class='nav-link'>Inicio</a></li>
+        <li><a href='https://dekary.com/tienda.html' class='nav-link'>Tienda</a></li>
+        <li><a href='https://dekary.com/componentes.html' class='nav-link'>Componentes</a></li>
+        <li><a href='https://blog.dekary.com/' class='nav-link active'>Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION DEL BLOG ===== -->
+  <section class='blog-hero'>
+    <div class='blog-hero-content'>
+      <h1>Blog de La Pape de Kary</h1>
+      <p>Descubre consejos, novedades y todo sobre papelería en Cancún</p>
+    </div>
+  </section>
+
+  <!-- ===== LAYOUT PRINCIPAL DEL BLOG ===== -->
+  <div class='blog-layout'>
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <main class='blog-main'>
+      <!-- ===== BREADCRUMBS ===== -->
+      <nav class='breadcrumb'>
+        <a href='https://dekary.com/'>Inicio</a>
+        <span class='breadcrumb-separator'>/</span>
+        <a href='https://blog.dekary.com/'>Blog</a>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+          <span class='breadcrumb-separator'>/</span>
+          <span>Post</span>
+        </b:if>
+      </nav>
+
+      <!-- ===== POSTS DEL BLOG ===== -->
+      <div class='blog-posts'>
+        <b:section class='main' id='main' showaddelement='false'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+              <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+              <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+              <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+              <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+              <b:widget-setting name='showAuthor'>true</b:widget-setting>
+              <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+              <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+              <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+              <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+              <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+              <b:widget-setting name='showLabels'>true</b:widget-setting>
+              <b:widget-setting name='showLocation'>false</b:widget-setting>
+              <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+              <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+              <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+              <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+              <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+              <b:widget-setting name='showReactions'>false</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main' var='top'>
+              <b:loop values='data:posts' var='post'>
+                <article class='post'>
+                  <!-- ===== TÍTULO DEL POST ===== -->
+                  <h2 class='post-title'>
+                    <a expr:href='data:post.url'><data:post.title/></a>
+                  </h2>
+                  
+                  <!-- ===== META INFORMACIÓN ===== -->
+                  <div class='post-meta'>
+                    <span class='post-author'>
+                      <i class='fas fa-user'></i>
+                      <data:post.author.name/>
+                    </span>
+                    <span class='post-date'>
+                      <i class='fas fa-calendar'></i>
+                      <data:post.date/>
+                    </span>
+                    <b:if cond='data:post.labels'>
+                      <span class='post-category'>
+                        <i class='fas fa-tag'></i>
+                        <b:loop values='data:post.labels' var='label'>
+                          <a expr:href='data:label.url'><data:label.name/></a>
+                        </b:loop>
+                      </span>
+                    </b:if>
+                  </div>
+                  
+                  <!-- ===== IMAGEN DESTACADA ===== -->
+                  <b:if cond='data:post.firstImageUrl'>
+                    <img expr:src='data:post.firstImageUrl' expr:alt='data:post.title' class='post-featured-image'/>
+                  </b:if>
+                  
+                  <!-- ===== EXTRACTO DEL POST ===== -->
+                  <div class='post-excerpt'>
+                    <data:post.snippets.short/>
+                  </div>
+                  
+                  <!-- ===== CONTENIDO COMPLETO ===== -->
+                  <div class='post-content'>
+                    <data:post.body/>
+                  </div>
+                  
+                  <!-- ===== TAGS ===== -->
+                  <b:if cond='data:post.labels'>
+                    <div class='post-tags'>
+                      <b:loop values='data:post.labels' var='label'>
+                        <a expr:href='data:label.url' class='post-tag'><data:label.name/></a>
+                      </b:loop>
+                    </div>
+                  </b:if>
+                  
+                  <!-- ===== BOTONES DE ACCIÓN ===== -->
+                  <div class='post-actions'>
+                    <a expr:href='data:post.url' class='post-action-btn primary'>
+                      <i class='fas fa-readme'></i>
+                      Leer más
+                    </a>
+                    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                      <a href='#comments' class='post-action-btn'>
+                        <i class='fas fa-comments'></i>
+                        Comentarios
+                      </a>
+                    </b:if>
+                  </div>
+                  
+                  <!-- ===== COMPARTIR ===== -->
+                  <div class='post-share'>
+                    <a href='https://www.facebook.com/sharer/sharer.php?u=' expr:data-url='data:post.url' class='share-btn facebook' target='_blank' rel='noopener'>
+                      <i class='fab fa-facebook-f'></i>
+                    </a>
+                    <a href='https://twitter.com/intent/tweet?url=' expr:data-url='data:post.url' expr:data-text='data:post.title' class='share-btn twitter' target='_blank' rel='noopener'>
+                      <i class='fab fa-twitter'></i>
+                    </a>
+                    <a href='https://wa.me/?text=' expr:data-text='data:post.title + &quot; &quot; + data:post.url' class='share-btn whatsapp' target='_blank' rel='noopener'>
+                      <i class='fab fa-whatsapp'></i>
+                    </a>
+                  </div>
+                </article>
+              </b:loop>
+              
+              <!-- ===== PAGINACIÓN ===== -->
+              <b:if cond='data:blog.pageType == &quot;archive&quot;'>
+                <div class='pagination'>
+                  <b:if cond='data:blog.pageType == &quot;archive&quot;'>
+                    <b:if cond='data:blog.homepageUrl != data:blog.url'>
+                      <a expr:href='data:blog.homepageUrl' class='pagination-item'>← Inicio</a>
+                    </b:if>
+                  </b:if>
+                  
+                  <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                    <b:if cond='data:blog.previousUrl'>
+                      <a expr:href='data:blog.previousUrl' class='pagination-item'>← Anterior</a>
+                    </b:if>
+                    <b:if cond='data:blog.nextUrl'>
+                      <a expr:href='data:blog.nextUrl' class='pagination-item'>Siguiente →</a>
+                    </b:if>
+                  </b:if>
+                </div>
+              </b:if>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </div>
+    </main>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class='blog-sidebar'>
+      <!-- ===== BÚSQUEDA ===== -->
+      <div class='sidebar-widget search-widget'>
+        <h3 class='widget-title'>Buscar</h3>
+        <form action='/search' method='get'>
+          <input type='text' name='q' placeholder='Buscar en el blog...' class='search-input'/>
+          <button type='submit' class='search-btn'>
+            <i class='fas fa-search'></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- ===== CATEGORÍAS ===== -->
+      <div class='sidebar-widget categories-widget'>
+        <h3 class='widget-title'>Categorías</h3>
+        <ul>
+          <li><a href='/search/label/Papeler%C3%ADa'>Papelería <span class='category-count'>15</span></a></li>
+          <li><a href='/search/label/Escolares'>Escolares <span class='category-count'>12</span></a></li>
+          <li><a href='/search/label/Oficina'>Oficina <span class='category-count'>8</span></a></li>
+          <li><a href='/search/label/Consejos'>Consejos <span class='category-count'>20</span></a></li>
+        </ul>
+      </div>
+
+      <!-- ===== POSTS RECIENTES ===== -->
+      <div class='sidebar-widget recent-posts-widget'>
+        <h3 class='widget-title'>Posts Recientes</h3>
+        <ul>
+          <li>
+            <a href='/2024/01/utiles-escolares-2024.html' class='recent-post-item'>
+              <img src='https://dekary.com/assets/images/blog-image.png' alt='Útiles Escolares 2024' class='recent-post-image'/>
+              <div class='recent-post-content'>
+                <div class='recent-post-title'>Útiles Escolares 2024</div>
+                <div class='recent-post-date'>15 Enero 2024</div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href='/2024/01/mejores-marcadores.html' class='recent-post-item'>
+              <img src='https://dekary.com/assets/images/blog-image.png' alt='Mejores Marcadores' class='recent-post-image'/>
+              <div class='recent-post-content'>
+                <div class='recent-post-title'>Mejores Marcadores</div>
+                <div class='recent-post-date'>10 Enero 2024</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ===== SUSCRIPCIÓN ===== -->
+      <div class='sidebar-widget subscribe-widget'>
+        <h3 class='widget-title'>Suscríbete</h3>
+        <p>Recibe las últimas novedades y ofertas especiales</p>
+        <form class='subscribe-form'>
+          <input type='email' placeholder='Tu correo electrónico' required/>
+          <button type='submit'>Suscribirme</button>
+        </form>
+      </div>
+
+      <!-- ===== REDES SOCIALES ===== -->
+      <div class='sidebar-widget social-widget'>
+        <h3 class='widget-title'>Síguenos</h3>
+        <div class='social-links'>
+          <a href='https://www.facebook.com/profile.php?id=61567936372730' class='social-link facebook' target='_blank' rel='noopener'>
+            <i class='fab fa-facebook-f'></i>
+          </a>
+          <a href='https://wa.me/5219987137236' class='social-link whatsapp' target='_blank' rel='noopener'>
+            <i class='fab fa-whatsapp'></i>
+          </a>
+          <a href='https://www.instagram.com/dekary' class='social-link instagram' target='_blank' rel='noopener'>
+            <i class='fab fa-instagram'></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class='blog-footer'>
+    <div class='blog-footer-content'>
+      <h3>La Pape de Kary</h3>
+      <p>Tu papelería de confianza en Cancún, México</p>
+      
+      <div class='blog-footer-links'>
+        <a href='https://dekary.com/'>Inicio</a>
+        <a href='https://dekary.com/tienda.html'>Tienda</a>
+        <a href='https://dekary.com/componentes.html'>Componentes</a>
+        <a href='https://blog.dekary.com/'>Blog</a>
+        <a href='https://dekary.com/contacto.html'>Contacto</a>
+      </div>
+      
+      <div class='blog-footer-social'>
+        <a href='https://www.facebook.com/profile.php?id=61567936372730' class='facebook' target='_blank' rel='noopener'>
+          <i class='fab fa-facebook-f'></i>
+        </a>
+        <a href='https://wa.me/5219987137236' class='whatsapp' target='_blank' rel='noopener'>
+          <i class='fab fa-whatsapp'></i>
+        </a>
+        <a href='https://www.instagram.com/dekary' class='instagram' target='_blank' rel='noopener'>
+          <i class='fab fa-instagram'></i>
+        </a>
+      </div>
+      
+      <div class='blog-footer-copyright'>
+        © 2024 La Pape de Kary. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT PARA CARGAR CSS NO CRÍTICO ===== -->
+  <script>
+    // Función para cargar CSS no crítico de forma asíncrona
+    function loadCSS(href) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      document.head.appendChild(link);
+    }
+    
+    // Cargar CSS del blog cuando la página esté lista
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        loadCSS('https://dekary.com/assets/css/blog.css');
+      });
+    } else {
+      loadCSS('https://dekary.com/assets/css/blog.css');
+    }
+  </script>
+</body>
+</html>

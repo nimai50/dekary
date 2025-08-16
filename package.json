@@ -17,8 +17,17 @@
         "build:all": "npm run build:css && npm run build:shared && npm run build:blog && npm run postcss:all",
         "extract:critical": "node scripts/extract-critical.js",
         "build:critical": "npm run build:all && npm run extract:critical",
+        "purge:css": "npx purgecss --css assets/css/home.css --content index.html --output assets/css/purged/home-purged.css && npx purgecss --css assets/css/tienda.css --content tienda.html --output assets/css/purged/tienda-purged.css && npx purgecss --css assets/css/componentes.css --content componentes.html --output assets/css/purged/componentes-purged.css && npx purgecss --css assets/css/404.css --content 404.html --output assets/css/purged/404-purged.css && npx purgecss --css assets/css/blog.css --content ../blog-dekary-com/plantilla-nueva.html ../blog-dekary-com/post1.html ../blog-dekary-com/post2.html ../blog-dekary-com/post3.html --output assets/css/purged/blog-purged.css",
+        "build:purged": "npm run build:all && npm run purge:css",
+        "optimize:images": "node scripts/optimize-images.js",
+        "build:production": "npm run build:purged && npm run optimize:images",
         "watch:all": "npm run build:all && npm run dev",
-        "watch:blog": "npx sass --watch scss/blog:assets/css"
+        "watch:blog": "npx sass --watch scss/blog:assets/css",
+        "lighthouse": "lighthouse --output html --output-path ./lighthouse-report.html",
+        "performance:test": "npm run build:production && npm run lighthouse",
+        "update:blog": "node scripts/update-blog-css.js",
+        "build:blog:complete": "npm run build:blog && npm run update:blog",
+        "test:performance": "node scripts/performance-test.js"
     },
     "keywords": [
         "Papeleria",
@@ -27,13 +36,15 @@
     "author": "Liz Martinez",
     "license": "ISC",
     "devDependencies": {
-        "sass": "^1.82.0",
-        "postcss": "^8.4.38",
-        "postcss-cli": "^12.0.0",
-        "critical": "^9.0.1",
-        "cssnano": "^7.0.2",
         "autoprefixer": "^10.4.20",
-        "postcss-import": "^16.1.0"
+        "critical": "^7.2.1",
+        "cssnano": "^7.0.2",
+        "postcss": "^8.4.38",
+        "postcss-cli": "^11.0.1",
+        "postcss-import": "^16.1.0",
+        "purgecss": "^7.0.2",
+        "sass": "^1.82.0",
+        "sharp": "^0.34.3"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.7.2",

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-08-16T17:11:10.399Z",
+  "blogFiles": [
+    "plantilla-externa.html",
+    "plantilla-nueva.html",
+    "plantilla-optimizada.html",
+    "plantilla.html",
+    "post1.html",
+    "post2.html",
+    "post3.html"
+  ],
+  "cssOptimization": {
+    "originalSize": "24.92 KB",
+    "purgedSize": "16.78 KB",
+    "savings": "8.14 KB",
+    "savingsPercent": "32.66%"
+  },
+  "recommendations": [
+    "Usar plantilla-optimizada.html para desarrollo y pruebas",
+    "Usar plantilla-externa.html para producción",
+    "Mantener backup de la plantilla original",
+    "Verificar que el CSS purgado mantenga toda la funcionalidad",
+    "Considerar implementar lazy loading para imágenes del blog"
+  ]
+}
