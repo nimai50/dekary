@@ -84,7 +84,7 @@
   
   <!-- Meta tags para seguridad -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <!-- X-Frame-Options removido - Solo debe enviarse desde el servidor HTTP -->
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   
@@ -601,7 +601,7 @@
 
           <div class="col-12 ">
             <div class="form-container ">
-              <form id="contactModalForm" action="#" method="POST">
+              <form id="contactTiendaForm" action="#" method="POST">
                 <div class="mb-2">
                   <label for="InputName" class="form-label">Nombre</label>
                   <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="nameHelp" required>
