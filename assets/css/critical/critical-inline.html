@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementación CSS Crítico - Dekary</title>
+  
+  <!-- ===== CSS CRÍTICO INLINE ===== -->
+  <!-- Este CSS se carga inmediatamente para el above-the-fold -->
+  <style>
+    /* CSS crítico extraído automáticamente */
+    /* Solo estilos necesarios para el renderizado inicial */
+    
+    /* Variables de colores críticas */
+    :root {
+      --Pink__50: #fde7f5;
+      --Pink__100: #fab7e1;
+      --Pink__200: #f788ce;
+      --Pink__300: #f353b8;
+      --Pink__400: #f028a6;
+      --Pink__500: #ee119d;
+      --Purple__50: #f2ebf9;
+      --Purple__100: #d8c4ee;
+      --Purple__200: #bd9ce2;
+      --Purple__300: #a375d7;
+      --Purple__400: #894dcb;
+      --Purple__500: #7c3ac5;
+      --Purple__600: #632e9e;
+      --Blue__50: #eafafb;
+      --Blue__100: #bfeff2;
+      --Blue__500: #2ecbd6;
+    }
+    
+    /* Reset crítico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Quicksand", sans-serif;
+      background-color: var(--Purple__50);
+      line-height: 1.6;
+    }
+    
+    /* Hero crítico para home */
+    .hero-home {
+      background-color: #fff;
+      padding-top: 50px;
+      height: 90vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0;
+    }
+    
+    .hero-text {
+      z-index: 9999;
+      position: relative;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero-logo {
+      width: 250px;
+      margin-bottom: 10px;
+    }
+    
+    /* Navegación crítica */
+    .My-Nav {
+      padding: 20px;
+      background: var(--Purple__50);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      display: block;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 20px;
+      align-content: center;
+      justify-content: center;
+      list-style: none;
+    }
+    
+    .nav-link {
+      display: block;
+      padding: 8px 16px;
+      font-size: 1.2rem;
+      color: purple;
+      text-decoration: none;
+      background-color: var(--Purple__50);
+      border-radius: 40px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      background-color: var(--Pink__50);
+    }
+    
+    .nav-link.active {
+      background-color: var(--Purple__100);
+    }
+    
+    /* Responsive crítico */
+    @media (max-width: 768px) {
+      .hero-home {
+        height: 70vh;
+        padding-top: 30px;
+      }
+      
+      .hero-logo {
+        width: 200px;
+      }
+      
+      .nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+  
+  <!-- ===== CSS NO CRÍTICO CARGADO DE FORMA ASÍNCRONA ===== -->
+  <link rel="preload" href="home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="home.css"></noscript>
+  
+  <!-- CSS compartido cargado de forma asíncrona -->
+  <link rel="preload" href="../shared-base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../shared-base.css"></noscript>
+  
+  <link rel="preload" href="../shared-layout.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../shared-layout.css"></noscript>
+</head>
+<body>
+  <!-- Contenido de ejemplo -->
+  <nav class="My-Nav">
+    <ul class="nav">
+      <li><a href="#" class="nav-link active">Inicio</a></li>
+      <li><a href="#" class="nav-link">Tienda</a></li>
+      <li><a href="#" class="nav-link">Componentes</a></li>
+      <li><a href="#" class="nav-link">Blog</a></li>
+    </ul>
+  </nav>
+  
+  <section class="hero-home">
+    <div class="hero-text">
+      <img src="../images/logo.svg" alt="La Pape de Kary" class="hero-logo">
+      <h1>Bienvenido a La Pape de Kary</h1>
+      <p>Tu papelería de confianza en Cancún</p>
+    </div>
+  </section>
+  
+  <script>
+    // Script para cargar CSS no crítico de forma asíncrona
+    function loadCSS(href) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      document.head.appendChild(link);
+    }
+    
+    // Cargar CSS no crítico cuando la página esté lista
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        // Cargar CSS adicional aquí si es necesario
+        loadCSS('home.css');
+      });
+    } else {
+      loadCSS('home.css');
+    }
+  </script>
+</body>
+</html>

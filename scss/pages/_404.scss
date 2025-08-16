@@ -1,0 +1,147 @@
+// ===== CSS ESPECÍFICO PARA LA PÁGINA 404 =====
+
+// Importar estilos compartidos
+@import '../shared/base';
+@import '../shared/layout';
+
+// Importar solo los componentes necesarios para 404
+@import '../buttons';
+@import '../typography';
+
+// Hero section específico para 404
+.hero-404 {
+  background-color: #fff;
+  padding-top: 80px;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text {
+  z-index: 100;
+  position: relative;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.error-number {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--Pink__500);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.error-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--Purple__600);
+  margin-bottom: 1rem;
+}
+
+.error-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-action-btn {
+  padding: 1rem 2rem;
+  background: var(--Purple__500);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--Purple__500);
+}
+
+.error-action-btn:hover {
+  background: var(--Purple__600);
+  border-color: var(--Purple__600);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(124, 58, 197, 0.3);
+}
+
+.error-action-btn.secondary {
+  background: transparent;
+  color: var(--Purple__500);
+  border-color: var(--Purple__300);
+}
+
+.error-action-btn.secondary:hover {
+  background: var(--Purple__50);
+  color: var(--Purple__600);
+}
+
+// Elementos decorativos para 404
+.error-decoration {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.error-decoration.sol {
+  width: 200px;
+  top: 10%;
+  left: 10%;
+  animation: spin 30s linear infinite;
+}
+
+.error-decoration.flor {
+  width: 150px;
+  bottom: 10%;
+  right: 10%;
+  animation: bounceIn 4s ease infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// Responsive para 404
+@media (max-width: 768px) {
+  .hero-404 {
+    height: 50vh;
+    padding-top: 60px;
+  }
+  
+  .error-number {
+    font-size: 6rem;
+  }
+  
+  .error-title {
+    font-size: 2rem;
+  }
+  
+  .error-description {
+    font-size: 1rem;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error-action-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .error-decoration {
+    display: none; // Ocultar decoraciones en móvil para mejor rendimiento
+  }
+}

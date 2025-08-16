@@ -92,13 +92,452 @@
   <meta name="google" content="notranslate">
   
   <title>La Pape de Kary - Papelería en Cancún | Útiles Escolares y Oficina</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/css/contact-forms.css">
-    <!-- Animate  -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <!-- Animate  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  
+  <!-- ===== CSS CRÍTICO INLINE PARA CORREGIR ERRORES DE DISEÑO ===== -->
+  <style>
+    /* Variables de colores críticas */
+    :root {
+      --Pink__50: #fde7f5;
+      --Pink__100: #fab7e1;
+      --Pink__200: #f788ce;
+      --Pink__300: #f353b8;
+      --Pink__400: #f028a6;
+      --Pink__500: #ee119d;
+      --Pink__600: #d70f8d;
+      --Pink__700: #a70c6e;
+      --Pink__800: #77084e;
+      --Pink__900: #48052f;
+      --Pink__950: #30031f;
+      --Purple__50: #f2ebf9;
+      --Purple__100: #d8c4ee;
+      --Purple__200: #bd9ce2;
+      --Purple__300: #a375d7;
+      --Purple__400: #894dcb;
+      --Purple__500: #7c3ac5;
+      --Purple__600: #632e9e;
+      --Purple__700: #57288a;
+      --Purple__800: #3e1d63;
+      --Purple__900: #25113b;
+      --Purple__950: #190c27;
+      --Yellow__50: #fffde5;
+      --Yellow__100: #fff8b3;
+      --Yellow__200: #fff480;
+      --Yellow__300: #ffee41;
+      --Yellow__400: #ffea1a;
+      --Yellow__500: #ffe800;
+      --Yellow__600: #e6d100;
+      --Yellow__700: #b3a300;
+      --Yellow__800: #807400;
+      --Yellow__900: #4d4600;
+      --Yellow__950: #332e00;
+      --Blue__50: #eafafb;
+      --Blue__100: #bfeff2;
+      --Blue__200: #94e4ea;
+      --Blue__300: #6adae2;
+      --Blue__400: #3fcfd9;
+      --Blue__500: #2ecbd6;
+      --Blue__600: #26b6c0;
+      --Blue__700: #1d8d95;
+      --Blue__800: #15656b;
+      --Blue__900: #0d3d40;
+      --Blue__950: #08282b;
+    }
+    
+    /* Reset crítico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Quicksand", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      background-color: var(--Purple__50);
+      line-height: 1.6;
+      overflow-x: hidden; /* Prevenir scroll horizontal */
+    }
+    
+    /* Hero crítico para home */
+    .hero-home {
+      background-color: #fff;
+      padding-top: 50px;
+      height: 90vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0;
+    }
+    
+    .hero-text {
+      z-index: 9999;
+      position: relative;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero-logo {
+      width: 250px;
+      margin-bottom: 10px;
+    }
+    
+    /* Navegación crítica */
+    .My-Nav {
+      padding: 20px;
+      background: var(--Purple__50);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      width: 100%;
+      display: block;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 20px;
+      align-content: center;
+      justify-content: center;
+      list-style: none;
+    }
+    
+    .nav-link {
+      display: block;
+      padding: 8px 16px;
+      font-size: 1.2rem;
+      color: purple;
+      text-decoration: none;
+      background-color: var(--Purple__50);
+      border-radius: 40px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      background-color: var(--Pink__50);
+      outline-style: solid;
+      animation: animateOutline 4s ease infinite;
+    }
+    
+    .nav-link.active {
+      background-color: var(--Purple__100);
+    }
+    
+    @keyframes animateOutline {
+      0% {
+        outline-width: 1px;
+        outline-offset: 0;
+        outline-color: var(--Pink__50);
+      }
+      10% {
+        outline-color: var(--Pink__100);
+      }
+      50% {
+        outline-width: 1px;
+        outline-offset: 2px;
+        outline-color: var(--Pink__300);
+      }
+      100% {
+        outline-width: 2px;
+        outline-offset: 3px;
+        outline-color: var(--Pink__500);
+      }
+    }
+    
+    /* CORRECCIÓN CRÍTICA: Elementos decorativos con posicionamiento correcto */
+    .sol {
+      position: absolute;
+      width: 270px;
+      top: 35%;
+      left: 20%;
+      z-index: 1;
+      pointer-events: none; /* Evitar interferencias */
+    }
+    
+    .sol-animation {
+      animation: spin 30s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .flor-azul {
+      position: absolute;
+      width: 420px;
+      top: -170px;
+      left: 35%;
+      animation: bounceIn;
+      animation-duration: 6s;
+      animation-timing-function: infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .flor-amarilla {
+      position: absolute;
+      width: 530px;
+      top: -170px;
+      left: -10%;
+      animation: bounceIn;
+      animation-duration: 8s;
+      animation-timing-function: infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .flor-aqua {
+      position: absolute;
+      width: 510px;
+      bottom: -240px;
+      left: -5%;
+      animation: bounceIn;
+      animation-duration: 6s;
+      animation-timing-function: infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .flor-morada {
+      position: absolute;
+      width: 550px;
+      bottom: -220px;
+      right: -5%;
+      animation: bounceIn;
+      animation-duration: 8s;
+      animation-timing-function: infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .flor-naranja {
+      position: absolute;
+      width: 400px;
+      top: 50%;
+      right: -5%;
+      animation: bounceIn;
+      animation-duration: 7s;
+      animation-timing-function: infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .flor-rosa {
+      position: absolute;
+      width: 380px;
+      top: 20%;
+      right: 15%;
+      animation: bounceIn;
+      animation-duration: 5s;
+      animation-timing-function: infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    /* CORRECCIÓN CRÍTICA: Sección de suscripción con layout correcto */
+    .subscribe-section {
+      position: relative;
+      background: linear-gradient(135deg, var(--Purple__50) 0%, var(--Yellow__50) 100%);
+      padding: 4rem 0;
+      overflow: hidden; /* Contener elementos decorativos */
+    }
+    
+    .subscribe-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .subscribe-form {
+      background: #fff;
+      border-radius: 25px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 20;
+    }
+    
+    .subscribe-input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--Purple__100);
+      border-radius: 25px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      background: #fff;
+    }
+    
+    .subscribe-button {
+      background: var(--Yellow__500);
+      color: #000;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .subscribe-button:hover {
+      background: var(--Yellow__600);
+      transform: translateY(-2px);
+    }
+    
+    /* CORRECCIÓN CRÍTICA: Sección de categorías con layout correcto */
+    .categories-section {
+      position: relative;
+      background: var(--Pink__50);
+      padding: 4rem 0;
+      overflow: hidden;
+    }
+    
+    .categories-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .category-card {
+      background: #fff;
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 20;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .category-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--Purple__600);
+      margin-bottom: 0.5rem;
+    }
+    
+    .category-link {
+      color: var(--Blue__500);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+    
+    .category-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--Blue__500);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .category-link:hover::after {
+      transform: scaleX(1);
+    }
+    
+    /* CORRECCIÓN CRÍTICA: Transiciones onduladas */
+    .wave-transition {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: var(--Yellow__50);
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 50%);
+      z-index: 5;
+    }
+    
+    /* Responsive crítico */
+    @media (max-width: 768px) {
+      .hero-home {
+        height: 70vh;
+        padding-top: 30px;
+      }
+      
+      .hero-logo {
+        width: 200px;
+      }
+      
+      .sol, .flor-azul, .flor-amarilla, .flor-aqua, .flor-morada, .flor-naranja, .flor-rosa {
+        display: none; /* Ocultar elementos decorativos en móvil para mejor rendimiento */
+      }
+      
+      .nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .category-card {
+        width: 250px;
+        height: 250px;
+        margin: 0.5rem;
+      }
+      
+      .subscribe-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+  
+  <!-- ===== CSS NO CRÍTICO CARGADO DE FORMA ASÍNCRONA ===== -->
+  <link rel="preload" href="assets/css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/home.css"></noscript>
+  
+  <link rel="preload" href="assets/css/shared-base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/shared-base.css"></noscript>
+  
+  <link rel="preload" href="assets/css/shared-layout.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/shared-layout.css"></noscript>
+  
+  <!-- CSS existente cargado de forma asíncrona -->
+  <link rel="preload" href="assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/styles.css"></noscript>
+  
+  <link rel="preload" href="assets/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/fontawesome.css"></noscript>
+  
+  <link rel="preload" href="assets/css/contact-forms.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/contact-forms.css"></noscript>
+  
+  <!-- Animate.css cargado localmente para evitar CDN externo -->
+  <link rel="preload" href="assets/css/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/animate.css"></noscript>
+  
+  <!-- Correcciones de diseño críticas -->
+  <link rel="preload" href="assets/css/design-fixes.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/design-fixes.css"></noscript>
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1357,6 +1796,47 @@
       "availableLanguage": "Spanish"
     }
   }
+  </script>
+  
+  <!-- ===== SCRIPT PARA CARGAR CSS NO CRÍTICO DE FORMA ASÍNCRONA ===== -->
+  <script>
+    // Función para cargar CSS no crítico de forma asíncrona
+    function loadCSS(href) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      document.head.appendChild(link);
+    }
+    
+    // Función para cargar CSS cuando la página esté lista
+    function loadNonCriticalCSS() {
+      // Cargar CSS específico de la página
+      loadCSS('assets/css/home.css');
+      
+      // Cargar CSS compartido
+      loadCSS('assets/css/shared-base.css');
+      loadCSS('assets/css/shared-layout.css');
+      
+      // Cargar CSS adicional cuando sea necesario
+      setTimeout(() => {
+        loadCSS('assets/css/styles.css');
+        loadCSS('assets/css/fontawesome.css');
+        loadCSS('assets/css/contact-forms.css');
+      }, 100);
+    }
+    
+    // Cargar CSS no crítico cuando la página esté lista
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadNonCriticalCSS);
+    } else {
+      loadNonCriticalCSS();
+    }
+    
+    // Cargar CSS adicional después de que la página esté completamente cargada
+    window.addEventListener('load', function() {
+      // Aquí se pueden cargar estilos adicionales si es necesario
+      console.log('CSS crítico implementado y CSS no crítico cargado de forma asíncrona');
+    });
   </script>
 </body>
 

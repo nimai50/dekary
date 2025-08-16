@@ -1,0 +1,87 @@
+// ===== VARIABLES DEL BLOG DEKARY =====
+
+// Colores del blog (manteniendo consistencia con el sitio principal)
+:root {
+  --Pink__50: #fde7f5;
+  --Pink__100: #fab7e1;
+  --Pink__200: #f788ce;
+  --Pink__300: #f353b8;
+  --Pink__400: #f028a6;
+  --Pink__500: #ee119d;
+  --Pink__600: #d70f8d;
+  --Pink__700: #a70c6e;
+  --Pink__800: #77084e;
+  --Pink__900: #48052f;
+  --Pink__950: #30031f;
+  
+  --Purple__50: #f2ebf9;
+  --Purple__100: #d8c4ee;
+  --Purple__200: #bd9ce2;
+  --Purple__300: #a375d7;
+  --Purple__400: #894dcb;
+  --Purple__500: #7c3ac5;
+  --Purple__600: #632e9e;
+  --Purple__700: #57288a;
+  --Purple__800: #3e1d63;
+  --Purple__900: #25113b;
+  --Purple__950: #190c27;
+  
+  --Yellow__50: #fffde5;
+  --Yellow__100: #fff8b3;
+  --Yellow__200: #fff480;
+  --Yellow__300: #ffee41;
+  --Yellow__400: #ffea1a;
+  --Yellow__500: #ffe800;
+  --Yellow__600: #e6d100;
+  --Yellow__700: #b3a300;
+  --Yellow__800: #807400;
+  --Yellow__900: #4d4600;
+  --Yellow__950: #332e00;
+  
+  --Blue__50: #eafafb;
+  --Blue__100: #bfeff2;
+  --Blue__200: #94e4ea;
+  --Blue__300: #6adae2;
+  --Blue__400: #3fcfd9;
+  --Blue__500: #2ecbd6;
+  --Blue__600: #26b6c0;
+  --Blue__700: #1d8d95;
+  --Blue__800: #15656b;
+  --Blue__900: #0d3d40;
+  --Blue__950: #08282b;
+}
+
+// Variables SCSS para el blog
+$blog-primary: var(--Purple__500);
+$blog-secondary: var(--Pink__500);
+$blog-accent: var(--Blue__500);
+$blog-warning: var(--Yellow__500);
+
+$blog-bg-primary: var(--Blue__50);
+$blog-bg-secondary: var(--Purple__50);
+$blog-bg-accent: var(--Pink__50);
+
+$blog-text-primary: #333333;
+$blog-text-secondary: #666666;
+$blog-text-light: #999999;
+
+$blog-border-radius: 25px;
+$blog-shadow: 0 10px 30px rgba(0,0,0,0.1);
+$blog-shadow-hover: 0 20px 40px rgba(0,0,0,0.15);
+
+$blog-transition: all 0.3s ease;
+$blog-font-family: 'Quicksand', sans-serif;
+$blog-font-family-accent: 'Playwrite HU', cursive;
+
+// Breakpoints del blog
+$blog-breakpoint-mobile: 768px;
+$blog-breakpoint-tablet: 1024px;
+$blog-breakpoint-desktop: 1200px;
+
+// Espaciado del blog
+$blog-spacing-xs: 0.5rem;
+$blog-spacing-sm: 1rem;
+$blog-spacing-md: 1.5rem;
+$blog-spacing-lg: 2rem;
+$blog-spacing-xl: 3rem;
+$blog-spacing-xxl: 4rem;

@@ -1,0 +1,273 @@
+// ===== NAVEGACIÓN DEL BLOG DEKARY =====
+
+// Importar variables
+@import 'variables';
+
+// Navegación principal del blog
+.My-Nav {
+  padding: $blog-spacing-lg;
+  background: $blog-bg-secondary;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: $blog-shadow;
+  transition: $blog-transition;
+  width: 100%;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: $blog-spacing-lg;
+  align-content: center;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  display: block;
+  padding: $blog-spacing-sm $blog-spacing-lg;
+  font-size: 1.2rem;
+  color: $blog-primary;
+  text-decoration: none;
+  background-color: $blog-bg-secondary;
+  border-radius: 40px;
+  transition: $blog-transition;
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background-color: $blog-bg-accent;
+  outline-style: solid;
+  animation: animateOutline 4s ease infinite;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background-color: var(--Purple__100);
+  color: $blog-primary;
+  font-weight: 600;
+}
+
+// Animación de outline para navegación
+@keyframes animateOutline {
+  0% {
+    outline-width: 1px;
+    outline-offset: 0;
+    outline-color: var(--Pink__50);
+  }
+  10% {
+    outline-color: var(--Pink__100);
+  }
+  50% {
+    outline-width: 1px;
+    outline-offset: 2px;
+    outline-color: var(--Pink__300);
+  }
+  100% {
+    outline-width: 2px;
+    outline-offset: 3px;
+    outline-color: var(--Pink__500);
+  }
+}
+
+// Logo del blog
+.dekary-logo {
+  width: 250px;
+  height: auto;
+  margin-bottom: $blog-spacing-xl;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  transition: $blog-transition;
+}
+
+.dekary-logo:hover {
+  transform: scale(1.05);
+}
+
+// Navegación secundaria del blog
+.blog-nav {
+  background: $blog-bg-primary;
+  padding: $blog-spacing-md;
+  border-radius: $blog-border-radius;
+  margin-bottom: $blog-spacing-lg;
+  box-shadow: $blog-shadow;
+}
+
+.blog-nav ul {
+  list-style: none;
+  display: flex;
+  gap: $blog-spacing-md;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blog-nav a {
+  padding: $blog-spacing-sm $blog-spacing-md;
+  background: $blog-bg-secondary;
+  color: $blog-primary;
+  border-radius: 20px;
+  transition: $blog-transition;
+  font-weight: 500;
+}
+
+.blog-nav a:hover,
+.blog-nav a.active {
+  background: $blog-bg-accent;
+  color: $blog-secondary;
+  transform: translateY(-2px);
+}
+
+// Breadcrumbs del blog
+.breadcrumb {
+  background: $blog-bg-secondary;
+  padding: $blog-spacing-md;
+  border-radius: $blog-border-radius;
+  margin-bottom: $blog-spacing-lg;
+  font-size: 0.9rem;
+  color: $blog-text-secondary;
+}
+
+.breadcrumb a {
+  color: $blog-primary;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: $blog-secondary;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  margin: 0 $blog-spacing-sm;
+  color: $blog-text-light;
+}
+
+// Navegación de paginación
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: $blog-spacing-sm;
+  margin: $blog-spacing-xl 0;
+}
+
+.pagination-item {
+  padding: $blog-spacing-sm $blog-spacing-md;
+  background: $blog-bg-secondary;
+  color: $blog-primary;
+  border-radius: $blog-border-radius;
+  text-decoration: none;
+  transition: $blog-transition;
+  border: 2px solid transparent;
+}
+
+.pagination-item:hover,
+.pagination-item.active {
+  background: $blog-bg-accent;
+  color: $blog-secondary;
+  border-color: $blog-secondary;
+  transform: translateY(-2px);
+}
+
+.pagination-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+// Navegación de categorías
+.category-nav {
+  background: $blog-bg-secondary;
+  padding: $blog-spacing-lg;
+  border-radius: $blog-border-radius;
+  margin-bottom: $blog-spacing-xl;
+  box-shadow: $blog-shadow;
+}
+
+.category-nav h3 {
+  text-align: center;
+  margin-bottom: $blog-spacing-lg;
+  color: $blog-primary;
+}
+
+.category-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $blog-spacing-md;
+  justify-content: center;
+}
+
+.category-nav a {
+  padding: $blog-spacing-sm $blog-spacing-md;
+  background: $blog-bg-primary;
+  color: $blog-primary;
+  border-radius: 20px;
+  transition: $blog-transition;
+  border: 2px solid transparent;
+}
+
+.category-nav a:hover,
+.category-nav a.active {
+  background: $blog-bg-accent;
+  color: $blog-secondary;
+  border-color: $blog-secondary;
+  transform: translateY(-2px);
+}
+
+// Responsive para navegación del blog
+@media (max-width: $blog-breakpoint-mobile) {
+  .My-Nav {
+    padding: $blog-spacing-md;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: $blog-spacing-sm;
+    align-items: center;
+  }
+  
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: $blog-spacing-md;
+  }
+  
+  .dekary-logo {
+    width: 200px;
+  }
+  
+  .blog-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .blog-nav a {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .category-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .category-nav a {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .pagination {
+    flex-wrap: wrap;
+    gap: $blog-spacing-xs;
+  }
+  
+  .pagination-item {
+    padding: $blog-spacing-sm;
+    font-size: 0.9rem;
+  }
+}

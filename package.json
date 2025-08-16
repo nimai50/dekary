@@ -5,7 +5,20 @@
     "main": "index.js",
     "scripts": {
         "compile:sass": "npx sass --watch scss:assets/css",
-        "dev": "npx sass --watch scss:assets/css"
+        "dev": "npx sass --watch scss:assets/css",
+        "build:css": "npm run build:home && npm run build:tienda && npm run build:componentes && npm run build:404",
+        "build:home": "sass scss/pages/_home.scss:assets/css/home.css --style=compressed",
+        "build:tienda": "sass scss/pages/_tienda.scss:assets/css/tienda.css --style=compressed",
+        "build:componentes": "sass scss/pages/_componentes.scss:assets/css/componentes.css --style=compressed",
+        "build:404": "sass scss/pages/_404.scss:assets/css/404.css --style=compressed",
+        "build:shared": "sass scss/shared/_base.scss:assets/css/shared-base.css --style=compressed && sass scss/shared/_layout.scss:assets/css/shared-layout.css --style=compressed",
+        "build:blog": "sass scss/blog/main.scss:assets/css/blog.css --style=compressed",
+        "postcss:all": "postcss assets/css/*.css --dir assets/css/optimized",
+        "build:all": "npm run build:css && npm run build:shared && npm run build:blog && npm run postcss:all",
+        "extract:critical": "node scripts/extract-critical.js",
+        "build:critical": "npm run build:all && npm run extract:critical",
+        "watch:all": "npm run build:all && npm run dev",
+        "watch:blog": "npx sass --watch scss/blog:assets/css"
     },
     "keywords": [
         "Papeleria",
@@ -14,7 +27,13 @@
     "author": "Liz Martinez",
     "license": "ISC",
     "devDependencies": {
-        "sass": "^1.82.0"
+        "sass": "^1.82.0",
+        "postcss": "^8.4.38",
+        "postcss-cli": "^12.0.0",
+        "critical": "^9.0.1",
+        "cssnano": "^7.0.2",
+        "autoprefixer": "^10.4.20",
+        "postcss-import": "^16.1.0"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.7.2",

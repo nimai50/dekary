@@ -1,0 +1,211 @@
+// ===== CSS ESPECÍFICO PARA LA PÁGINA PRINCIPAL (HOME) =====
+
+// Importar estilos compartidos
+@import '../shared/base';
+@import '../shared/layout';
+
+// Importar solo los componentes necesarios para home
+@import '../buttons';
+@import '../animations';
+@import '../typography';
+
+// Hero section específico para home
+.hero-home {
+  background-color: #fff;
+  padding-top: 50px;
+  height: 90vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.hero-text {
+  z-index: 9999;
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-logo {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+// Elementos decorativos específicos de home
+.sol {
+  position: absolute;
+  width: 270px;
+  top: 35%;
+  left: 20%;
+  z-index: 1;
+}
+
+.sol-animation {
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.flor-azul {
+  position: absolute;
+  width: 420px;
+  top: -170px;
+  left: 35%;
+  animation: bounceIn;
+  animation-duration: 6s;
+  animation-timing-function: infinite;
+  z-index: 1;
+}
+
+.flor-amarilla {
+  position: absolute;
+  width: 530px;
+  top: -170px;
+  left: -10%;
+  animation: bounceIn;
+  animation-duration: 8s;
+  animation-timing-function: infinite;
+  z-index: 1;
+}
+
+.flor-aqua {
+  position: absolute;
+  width: 510px;
+  bottom: -240px;
+  left: -5%;
+  animation: bounceIn;
+  animation-duration: 6s;
+  animation-timing-function: infinite;
+  z-index: 1;
+}
+
+.flor-morada {
+  position: absolute;
+  width: 550px;
+  bottom: -220px;
+  right: -5%;
+  animation: bounceIn;
+  animation-duration: 8s;
+  animation-timing-function: infinite;
+  z-index: 1;
+}
+
+.flor-naranja {
+  position: absolute;
+  width: 400px;
+  top: 50%;
+  right: -5%;
+  animation: bounceIn;
+  animation-duration: 7s;
+  animation-timing-function: infinite;
+  z-index: 1;
+}
+
+.flor-rosa {
+  position: absolute;
+  width: 380px;
+  top: 20%;
+  right: 15%;
+  animation: bounceIn;
+  animation-duration: 5s;
+  animation-timing-function: infinite;
+  z-index: 1;
+}
+
+// Navegación específica de home
+.My-Nav {
+  padding: 20px;
+  background: var(--Purple__50);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-content: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-link {
+  --bs-nav-link-color: purple;
+  --bs-nav-link-font-weight: 10px;
+  --bs-nav-link-font-size: 1.2rem;
+  
+  display: block;
+  padding: 8px 16px;
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  background-color: var(--Purple__50);
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  background-color: var(--Pink__50);
+  outline-style: solid;
+  animation: animateOutline 4s ease infinite;
+}
+
+.nav-link.active {
+  background-color: var(--Purple__100);
+}
+
+@keyframes animateOutline {
+  0% {
+    outline-width: 1px;
+    outline-offset: 0;
+    outline-color: var(--Pink__50);
+  }
+  10% {
+    outline-color: var(--Pink__100);
+  }
+  50% {
+    outline-width: 1px;
+    outline-offset: 2px;
+    outline-color: var(--Pink__300);
+  }
+  100% {
+    outline-width: 2px;
+    outline-offset: 3px;
+    outline-color: var(--Pink__500);
+  }
+}
+
+// Responsive para home
+@media (max-width: 768px) {
+  .hero-home {
+    height: 70vh;
+    padding-top: 30px;
+  }
+  
+  .hero-logo {
+    width: 200px;
+  }
+  
+  .sol, .flor-azul, .flor-amarilla, .flor-aqua, .flor-morada, .flor-naranja, .flor-rosa {
+    display: none; // Ocultar elementos decorativos en móvil para mejor rendimiento
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

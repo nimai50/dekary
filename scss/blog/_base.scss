@@ -1,0 +1,158 @@
+// ===== ESTILOS BASE DEL BLOG DEKARY =====
+
+// Importar variables
+@import 'variables';
+
+// Reset y estilos base del blog
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $blog-font-family;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  background-color: $blog-bg-primary;
+  color: $blog-text-primary;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+// Tipografía base del blog
+h1, h2, h3, h4, h5, h6 {
+  font-family: $blog-font-family;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: $blog-spacing-md;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: $blog-primary;
+}
+
+h2 {
+  font-size: 2rem;
+  color: $blog-primary;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: $blog-secondary;
+}
+
+// Enlaces base del blog
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: $blog-transition;
+}
+
+a:hover {
+  color: $blog-secondary;
+}
+
+// Imágenes responsivas del blog
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $blog-border-radius;
+}
+
+// Contenedor base del blog
+.container {
+  width: 100%;
+  max-width: $blog-breakpoint-desktop;
+  margin: 0 auto;
+  padding: 0 $blog-spacing-lg;
+}
+
+// Utilidades de espaciado del blog
+.pt-xs { padding-top: $blog-spacing-xs; }
+.pt-sm { padding-top: $blog-spacing-sm; }
+.pt-md { padding-top: $blog-spacing-md; }
+.pt-lg { padding-top: $blog-spacing-lg; }
+.pt-xl { padding-top: $blog-spacing-xl; }
+.pt-xxl { padding-top: $blog-spacing-xxl; }
+
+.pb-xs { padding-bottom: $blog-spacing-xs; }
+.pb-sm { padding-bottom: $blog-spacing-sm; }
+.pb-md { padding-bottom: $blog-spacing-md; }
+.pb-lg { padding-bottom: $blog-spacing-lg; }
+.pb-xl { padding-bottom: $blog-spacing-xl; }
+.pb-xxl { padding-bottom: $blog-spacing-xxl; }
+
+.mt-xs { margin-top: $blog-spacing-xs; }
+.mt-sm { margin-top: $blog-spacing-sm; }
+.mt-md { margin-top: $blog-spacing-md; }
+.mt-lg { margin-top: $blog-spacing-lg; }
+.mt-xl { margin-top: $blog-spacing-xl; }
+.mt-xxl { margin-top: $blog-spacing-xxl; }
+
+.mb-xs { margin-bottom: $blog-spacing-xs; }
+.mb-sm { margin-bottom: $blog-spacing-sm; }
+.mb-md { margin-bottom: $blog-spacing-md; }
+.mb-lg { margin-bottom: $blog-spacing-lg; }
+.mb-xl { margin-bottom: $blog-spacing-xl; }
+.mb-xxl { margin-bottom: $blog-spacing-xxl; }
+
+// Utilidades de texto del blog
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: $blog-primary; }
+.text-secondary { color: $blog-secondary; }
+.text-accent { color: $blog-accent; }
+.text-light { color: $blog-text-light; }
+
+// Utilidades de display del blog
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+// Utilidades de flexbox del blog
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-start { justify-content: flex-start; }
+.align-center { align-items: center; }
+.align-start { align-items: flex-start; }
+.align-end { align-items: flex-end; }
+
+// Utilidades de grid del blog
+.grid {
+  display: grid;
+  gap: $blog-spacing-md;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+// Responsive utilities del blog
+@media (max-width: $blog-breakpoint-mobile) {
+  .container {
+    padding: 0 $blog-spacing-md;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .d-mobile-none { display: none; }
+  .d-mobile-block { display: block; }
+}

@@ -1,0 +1,143 @@
+// ===== CSS ESPECÍFICO PARA LA PÁGINA DE COMPONENTES =====
+
+// Importar estilos compartidos
+@import '../shared/base';
+@import '../shared/layout';
+
+// Importar solo los componentes necesarios para componentes
+@import '../buttons';
+@import '../typography';
+
+// Hero section específico para componentes
+.hero-componentes {
+  background-color: #fff;
+  padding-top: 80px;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text {
+  z-index: 100;
+  position: relative;
+}
+
+// Sección de componentes
+.components-section {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.component-card {
+  background: #fff;
+  border: 2px solid var(--Purple__100);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.component-card:hover {
+  border-color: var(--Purple__300);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.component-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--Purple__600);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--Pink__200);
+  padding-bottom: 0.5rem;
+}
+
+.component-description {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.component-demo {
+  background: var(--Purple__50);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--Purple__100);
+}
+
+.component-code {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+// Grid de componentes
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+// Navegación de componentes
+.component-nav {
+  background: var(--Purple__50);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 80px;
+  z-index: 100;
+}
+
+.component-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.component-nav a {
+  padding: 0.5rem 1rem;
+  background: var(--Purple__100);
+  color: var(--Purple__700);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.component-nav a:hover,
+.component-nav a.active {
+  background: var(--Pink__200);
+  color: var(--Pink__700);
+}
+
+// Responsive para componentes
+@media (max-width: 768px) {
+  .hero-componentes {
+    height: 40vh;
+    padding-top: 60px;
+  }
+  
+  .components-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .component-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .component-nav {
+    position: static;
+  }
+}

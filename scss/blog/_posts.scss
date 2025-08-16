@@ -1,0 +1,347 @@
+// ===== ESTILOS DE POSTS DEL BLOG DEKARY =====
+
+// Importar variables
+@import 'variables';
+
+// Contenedor principal de posts
+.blog-posts {
+  background: #ffffff;
+  border-radius: $blog-border-radius;
+  margin: $blog-spacing-lg 0;
+  box-shadow: $blog-shadow;
+  overflow: hidden;
+}
+
+// Post individual
+.post {
+  background: #ffffff;
+  border-radius: $blog-border-radius;
+  padding: $blog-spacing-xl;
+  margin-bottom: $blog-spacing-xl;
+  box-shadow: $blog-shadow;
+  transition: $blog-transition;
+  border: 1px solid transparent;
+}
+
+.post:hover {
+  box-shadow: $blog-shadow-hover;
+  transform: translateY(-5px);
+  border-color: $blog-bg-accent;
+}
+
+// Título del post
+.post-title {
+  font-family: $blog-font-family-accent;
+  font-size: 2rem;
+  color: $blog-primary;
+  margin-bottom: $blog-spacing-lg;
+  line-height: 1.3;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.post-title a {
+  color: $blog-primary;
+  text-decoration: none;
+  transition: $blog-transition;
+}
+
+.post-title a:hover {
+  color: $blog-secondary;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+// Meta información del post
+.post-meta {
+  display: flex;
+  gap: $blog-spacing-lg;
+  margin-bottom: $blog-spacing-lg;
+  font-size: 0.9rem;
+  color: $blog-text-secondary;
+  flex-wrap: wrap;
+}
+
+.post-author,
+.post-date,
+.post-category {
+  display: flex;
+  align-items: center;
+  gap: $blog-spacing-xs;
+}
+
+.post-author i,
+.post-date i,
+.post-category i {
+  color: $blog-accent;
+}
+
+// Contenido del post
+.post-content {
+  line-height: 1.8;
+  color: $blog-text-primary;
+  margin-bottom: $blog-spacing-lg;
+}
+
+.post-content p {
+  margin-bottom: $blog-spacing-md;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  color: $blog-primary;
+  margin: $blog-spacing-lg 0 $blog-spacing-md 0;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: $blog-spacing-md 0;
+  padding-left: $blog-spacing-lg;
+}
+
+.post-content li {
+  margin-bottom: $blog-spacing-sm;
+}
+
+.post-content blockquote {
+  background: $blog-bg-secondary;
+  border-left: 4px solid $blog-primary;
+  padding: $blog-spacing-md;
+  margin: $blog-spacing-lg 0;
+  border-radius: 0 $blog-border-radius $blog-border-radius 0;
+  font-style: italic;
+  color: $blog-text-secondary;
+}
+
+.post-content code {
+  background: $blog-bg-secondary;
+  padding: $blog-spacing-xs $blog-spacing-sm;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: $blog-primary;
+}
+
+.post-content pre {
+  background: $blog-bg-secondary;
+  padding: $blog-spacing-md;
+  border-radius: $blog-border-radius;
+  overflow-x: auto;
+  margin: $blog-spacing-lg 0;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+// Imagen destacada del post
+.post-featured-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: $blog-border-radius;
+  margin-bottom: $blog-spacing-lg;
+  transition: $blog-transition;
+}
+
+.post-featured-image:hover {
+  transform: scale(1.02);
+}
+
+// Extracto del post
+.post-excerpt {
+  font-size: 1.1rem;
+  color: $blog-text-secondary;
+  line-height: 1.6;
+  margin-bottom: $blog-spacing-lg;
+  font-style: italic;
+}
+
+// Botones de acción del post
+.post-actions {
+  display: flex;
+  gap: $blog-spacing-md;
+  margin-top: $blog-spacing-lg;
+  flex-wrap: wrap;
+}
+
+.post-action-btn {
+  padding: $blog-spacing-sm $blog-spacing-lg;
+  background: $blog-bg-secondary;
+  color: $blog-primary;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: $blog-transition;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: $blog-spacing-xs;
+}
+
+.post-action-btn:hover {
+  background: $blog-bg-accent;
+  color: $blog-secondary;
+  border-color: $blog-secondary;
+  transform: translateY(-2px);
+}
+
+.post-action-btn.primary {
+  background: $blog-primary;
+  color: white;
+}
+
+.post-action-btn.primary:hover {
+  background: $blog-secondary;
+  color: white;
+}
+
+// Tags del post
+.post-tags {
+  display: flex;
+  gap: $blog-spacing-sm;
+  margin-top: $blog-spacing-lg;
+  flex-wrap: wrap;
+}
+
+.post-tag {
+  padding: $blog-spacing-xs $blog-spacing-sm;
+  background: $blog-bg-accent;
+  color: $blog-secondary;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: $blog-transition;
+}
+
+.post-tag:hover {
+  background: $blog-secondary;
+  color: white;
+  transform: translateY(-2px);
+}
+
+// Compartir post
+.post-share {
+  display: flex;
+  gap: $blog-spacing-sm;
+  margin-top: $blog-spacing-lg;
+  padding-top: $blog-spacing-lg;
+  border-top: 1px solid $blog-bg-secondary;
+}
+
+.share-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: $blog-transition;
+  font-size: 1.2rem;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px) scale(1.1);
+}
+
+.share-btn.facebook { background: #1877F2; }
+.share-btn.twitter { background: #1DA1F2; }
+.share-btn.whatsapp { background: #25D366; }
+.share-btn.pinterest { background: #E60023; }
+
+// Post relacionado
+.related-post {
+  background: $blog-bg-secondary;
+  padding: $blog-spacing-lg;
+  border-radius: $blog-border-radius;
+  margin-top: $blog-spacing-lg;
+  border-left: 4px solid $blog-primary;
+}
+
+.related-post h4 {
+  color: $blog-primary;
+  margin-bottom: $blog-spacing-md;
+}
+
+.related-post p {
+  color: $blog-text-secondary;
+  margin-bottom: $blog-spacing-md;
+}
+
+.related-post a {
+  color: $blog-primary;
+  font-weight: 500;
+}
+
+.related-post a:hover {
+  color: $blog-secondary;
+}
+
+// Responsive para posts del blog
+@media (max-width: $blog-breakpoint-mobile) {
+  .post {
+    padding: $blog-spacing-lg;
+    margin-bottom: $blog-spacing-lg;
+  }
+  
+  .post-title {
+    font-size: 1.5rem;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    gap: $blog-spacing-sm;
+  }
+  
+  .post-featured-image {
+    height: 200px;
+  }
+  
+  .post-actions {
+    flex-direction: column;
+  }
+  
+  .post-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .post-tags {
+    justify-content: center;
+  }
+  
+  .post-share {
+    justify-content: center;
+  }
+  
+  .related-post {
+    padding: $blog-spacing-md;
+  }
+}
+
+// Estilos para posts destacados
+.post.featured {
+  border: 2px solid $blog-accent;
+  background: linear-gradient(135deg, #ffffff 0%, $blog-bg-primary 100%);
+}
+
+.post.featured .post-title {
+  color: $blog-accent;
+}
+
+// Estilos para posts en lista
+.post-list .post {
+  border-bottom: 1px solid $blog-bg-secondary;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.post-list .post:last-child {
+  border-bottom: none;
+}
+
+.post-list .post:hover {
+  background: $blog-bg-primary;
+}
