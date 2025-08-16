@@ -13,6 +13,9 @@
   <!-- Fuente Quicksand -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
   <style>
     :root{
       /* Colores principales de La Pape de Kary - Reducidos para mejor contraste */
@@ -225,6 +228,69 @@
       animation: fadeInUp 0.8s ease-out 0.8s both;
     }
     
+    /* Estilos para el modal de contacto */
+    .modal-content {
+      border-radius: 16px;
+      border: 2px solid var(--line);
+      box-shadow: 0 20px 40px rgba(124, 58, 197, 0.2);
+    }
+    
+    .modal-header {
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+      border-radius: 16px 16px 0 0;
+    }
+    
+    .modal-title {
+      color: var(--accent);
+      font-weight: 600;
+      font-family: "Quicksand", sans-serif;
+    }
+    
+    .form-label {
+      color: var(--fg);
+      font-weight: 600;
+      font-family: "Quicksand", sans-serif;
+    }
+    
+    .form-control {
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      font-family: "Quicksand", sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 0.2rem rgba(124, 58, 197, 0.25);
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: "Quicksand", sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    
+    .contact-text .s-title {
+      color: var(--accent);
+      font-weight: 600;
+      font-family: "Quicksand", sans-serif;
+    }
+    
+    .contact-text .body {
+      color: var(--muted);
+      font-family: "Quicksand", sans-serif;
+    }
+    
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -259,7 +325,7 @@
               Volver al inicio
             </a>
             <div class="small">
-              Código: 404 · Si crees que es un error, <a href="/contacto">contáctanos</a>.
+              Código: 404 · Si crees que es un error, <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Abrir formulario de contacto">contáctanos</a>.
             </div>
           </div>
         </div>
@@ -341,5 +407,52 @@
       </section>
     </div>
   </main>
+
+  <!-- MODAL CONTACTANOS -->
+  <div class="modal fade modal-lg" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="contactModalLabel">Contáctanos</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="col-12 contact-text">
+            <div class="h5 s-title pb-2">¿Tienes dudas o necesitas ayuda?</div>
+            <p class="body">Escríbenos, llámanos o visítanos. ¡Estamos aquí para ti!</p>
+          </div>
+          <div class="col-12">
+            <div class="form-container">
+              <form id="contactModalForm" action="#" method="POST">
+                <div class="mb-2">
+                  <label for="InputName" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="nameHelp" required>
+                </div>
+                <div class="mb-2">
+                  <label for="InputLastName" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="InputLastName" name="apellido" aria-describedby="lastNameHelp" required>
+                </div>
+                <div class="mb-2">
+                  <label for="InputEmail" class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" id="InputEmail" name="email" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-2">
+                  <label for="InputMsg" class="form-label">Mensaje</label>
+                  <textarea class="form-control" id="InputMsg" name="mensaje" placeholder="Escribe tu mensaje" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Contact Forms JS -->
+  <script src="assets/js/contact-forms-only.js"></script>
 </body>
 </html>

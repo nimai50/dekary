@@ -37,6 +37,7 @@ dekary/
 - **Diseño coherente** con la identidad visual del sitio
 - **Mensaje amigable** que mantiene la temática de papelería
 - **Botón de navegación** para volver al inicio
+- **Formulario de contacto funcional** integrado en la misma página
 
 ### **Elementos Visuales:**
 - Impresora moderna con LEDs animados
@@ -44,6 +45,14 @@ dekary/
 - Texto "404" y líneas simulando fallas de tóner
 - Borde superior con degradado multicolor (amarillo → rosa → azul)
 - Logo de La Pape de Kary prominente
+- Modal de contacto con formulario completo
+
+### **Funcionalidades de Contacto:**
+- **Modal integrado** que se abre desde la página 404
+- **Formulario completo** con campos: Nombre, Apellido, Email, Mensaje
+- **Validación HTML5** y envío funcional
+- **Diseño coherente** con la paleta de colores del sitio
+- **Sin redirección** - mantiene al usuario en la página 404
 
 ## 🛠️ **Tecnologías Utilizadas**
 

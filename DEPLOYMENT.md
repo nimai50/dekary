@@ -30,7 +30,7 @@ Esta guía te ayudará a desplegar tu sitio web en GitHub Pages y configurar la 
 ```
 dekary/
 ├── index.html              # ✅ Página principal
-├── 404.html               # ✅ Página de error (IMPORTANTE)
+├── 404.html               # ✅ Página de error con formulario de contacto
 ├── tienda.html            # ✅ Página de tienda
 ├── proximamente.html      # ✅ Página próximamente
 ├── componentes.html       # ✅ Componentes
@@ -38,6 +38,7 @@ dekary/
 │   ├── css/
 │   ├── images/
 │   ├── js/
+│   │   └── contact-forms-only.js  # ✅ JavaScript para formularios
 │   └── webfonts/
 ├── scss/                  # ✅ Archivos fuente
 ├── README.md              # ✅ Documentación
@@ -101,6 +102,11 @@ git push origin main
   - `https://[usuario].github.io/dekary/pagina-inexistente`
   - `https://[usuario].github.io/dekary/xyz123`
 - Deberías ver tu página 404 personalizada
+- **Prueba el formulario de contacto**:
+  - Haz clic en "contáctanos" en la parte inferior
+  - Verifica que se abra el modal con el formulario
+  - Prueba llenar los campos y enviar el formulario
+  - Confirma que el modal se cierre correctamente
 
 ### **3. Verificar Responsive Design**
 - Prueba en diferentes dispositivos
@@ -122,6 +128,19 @@ git push origin main
 2. Confirma que GitHub Pages esté habilitado
 3. Espera 10-15 minutos y prueba nuevamente
 4. Verifica el estado del despliegue en Actions
+
+### **Problema: El formulario de contacto no funciona**
+
+**Posibles causas:**
+- ❌ JavaScript de Bootstrap no se cargó correctamente
+- ❌ Archivo `contact-forms-only.js` no está disponible
+- ❌ Conflictos de CSS entre Bootstrap y estilos personalizados
+
+**Soluciones:**
+1. Verifica que `assets/js/contact-forms-only.js` exista
+2. Confirma que Bootstrap JS se esté cargando
+3. Revisa la consola del navegador para errores JavaScript
+4. Verifica que no haya conflictos de CSS
 
 ### **Problema: Cambios no se reflejan**
 

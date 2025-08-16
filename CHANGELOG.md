@@ -10,6 +10,8 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 - **Ilustración SVG** de impresora moderna con tóner bajo
 - **Hoja de papel realista** con error "404" impreso
 - **Líneas de tóner** simulando fallas de impresión
+- **Formulario de contacto funcional** integrado en la página 404
+- **Modal de contacto** que se abre sin redirección
 
 ### 🎨 **Mejoras de Diseño**
 - **Borde superior multicolor** con degradado (amarillo → rosa → azul)
@@ -24,6 +26,8 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 - **Diseño responsive** optimizado para todos los dispositivos
 - **Animaciones CSS** suaves para elementos de entrada
 - **Optimización SEO** con metadatos apropiados
+- **Integración Bootstrap** para funcionalidad del modal
+- **Formulario de contacto** con validación y envío funcional
 
 ### 📱 **Responsive Design**
 - **Mobile First** approach
@@ -62,6 +66,8 @@ Esta versión introduce una página de error 404 completamente personalizada que
 - Proporciona una experiencia de usuario mejorada
 - Incluye elementos temáticos relacionados con papelería
 - Se integra perfectamente con GitHub Pages
+- **Incluye formulario de contacto funcional** integrado en la misma página
+- **Permite a los usuarios reportar errores** sin salir de la página 404
 
 ### **v1.0.0 - Lanzamiento Inicial**
 Versión base del sitio web con todas las funcionalidades principales implementadas.
