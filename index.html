@@ -491,9 +491,25 @@
         width: 200px;
       }
       
-      .sol, .flor-azul, .flor-amarilla, .flor-aqua, .flor-morada, .flor-naranja, .flor-rosa {
-        display: none; /* Ocultar elementos decorativos en móvil para mejor rendimiento */
-      }
+             .sol, .flor-azul, .flor-amarilla, .flor-aqua, .flor-morada, .flor-naranja, .flor-rosa {
+         /* Ajustar tamaños para móvil en lugar de ocultar */
+         width: 60% !important;
+         max-width: 200px;
+       }
+       
+       .sol {
+         width: 150px !important;
+         top: 20% !important;
+         right: 10% !important;
+       }
+       
+       .flor-azul, .flor-amarilla, .flor-aqua, .flor-morada, .flor-naranja, .flor-rosa {
+         /* Posiciones ajustadas para móvil */
+         top: -50px !important;
+         bottom: -75px !important;
+         left: -2% !important;
+         right: -2% !important;
+       }
       
       .nav {
         flex-direction: column;
@@ -601,7 +617,7 @@
 
           <div class="col-12 ">
             <div class="form-container ">
-              <form id="contactTiendaForm" action="#" method="POST">
+              <form id="contactModalForm" action="#" method="POST">
                 <div class="mb-2">
                   <label for="InputName" class="form-label">Nombre</label>
                   <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="nameHelp" required>
