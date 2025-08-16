@@ -1,24 +1,22 @@
 // Optimización de Imágenes y Soporte WebP
 class ImageOptimizer {
   constructor() {
-    // TEMPORALMENTE DESHABILITADO: WebP está causando errores 404
-    this.webpSupported = false; // this.checkWebPSupport();
+    this.webpSupported = this.checkWebPSupport();
     this.init();
   }
 
   init() {
-    // Deshabilitar conversión automática a WebP temporalmente
-    console.log('🔄 Optimizador de imágenes inicializado (WebP deshabilitado temporalmente)');
+    console.log('🔄 Optimizador de imágenes inicializado');
     
-    // Comentar la conversión automática hasta que se resuelvan los errores 404
-    /*
     if (this.webpSupported) {
+      console.log('✅ WebP soportado - Convirtiendo imágenes automáticamente');
       this.convertImagesToWebP();
+    } else {
+      console.log('❌ WebP no soportado - Usando imágenes originales');
     }
-    */
   }
 
-  // Verificar soporte de WebP (deshabilitado)
+  // Verificar soporte de WebP
   checkWebPSupport() {
     try {
       const canvas = document.createElement('canvas');
@@ -30,119 +28,53 @@ class ImageOptimizer {
     }
   }
 
-  // Convertir imágenes a WebP (deshabilitado)
+  // Convertir imágenes a WebP
   convertImagesToWebP() {
-    const images = document.querySelectorAll('img');
+    const images = document.querySelectorAll('img[src*=".png"], img[src*=".jpg"], img[src*=".jpeg"]');
+    
     images.forEach(img => {
-      // Convertir a WebP si es soportado
-      if (this.webpSupported && img.src) {
-        // this.convertToWebP(img); // DESHABILITADO
-      }
-    });
-  }
-
-  // Convertir imagen a WebP (deshabilitado)
-  convertToWebP(img) {
-    try {
       const originalSrc = img.src;
-      const webpSrc = this.getWebPUrl(originalSrc);
+      const webpSrc = this.getWebPSrc(originalSrc);
       
       if (webpSrc && webpSrc !== originalSrc) {
-        const webpImg = new Image();
-        webpImg.onload = () => {
+        // Crear imagen WebP para verificar si existe
+        const testImg = new Image();
+        testImg.onload = () => {
           img.src = webpSrc;
-          img.classList.add('webp');
+          console.log(`🔄 Imagen convertida a WebP: ${originalSrc} → ${webpSrc}`);
         };
-        webpImg.onerror = () => {
-          // Si falla WebP, mantener imagen original
-          console.log('⚠️ WebP falló, usando imagen original');
+        testImg.onerror = () => {
+          console.log(`⚠️ WebP no disponible, usando original: ${originalSrc}`);
         };
-        webpImg.src = webpSrc;
-      }
-    } catch (e) {
-      console.error('❌ Error al convertir a WebP:', e);
-    }
-  }
-
-  // Obtener URL de WebP (deshabilitado)
-  getWebPUrl(originalUrl) {
-    try {
-      // Si ya es WebP, no hacer nada
-      if (originalUrl.includes('.webp')) {
-        return originalUrl;
-      }
-      
-      // Intentar encontrar versión WebP
-      const baseUrl = originalUrl.replace(/\.[^/.]+$/, '');
-      const webpUrl = `${baseUrl}.webp`;
-      
-      return webpUrl;
-    } catch (e) {
-      return originalUrl;
-    }
-  }
-
-  // Manejar errores de imagen
-  handleImageError(img) {
-    const fallbackSrc = img.dataset.fallback || '/assets/images/placeholder.png';
-    
-    if (img.src !== fallbackSrc) {
-      img.src = fallbackSrc;
-      img.classList.add('error-fallback');
-    }
-  }
-
-  // Configurar imágenes responsivas
-  setupResponsiveImages() {
-    const responsiveImages = document.querySelectorAll('img[data-srcset]');
-    
-    responsiveImages.forEach(img => {
-      if (img.dataset.sizes) {
-        img.sizes = img.dataset.sizes;
-      }
-      
-      if (img.dataset.srcset) {
-        img.srcset = img.dataset.srcset;
+        testImg.src = webpSrc;
       }
     });
   }
 
-  // Configurar carga progresiva
-  setupProgressiveLoading() {
-    const progressiveImages = document.querySelectorAll('img[data-progressive]');
+  // Obtener URL de WebP
+  getWebPSrc(originalSrc) {
+    if (originalSrc.includes('.webp')) return originalSrc;
     
-    progressiveImages.forEach(img => {
-      const lowResSrc = img.dataset.lowRes || img.src;
-      const highResSrc = img.dataset.highRes || img.src;
-      
-      // Cargar versión de baja resolución primero
-      if (lowResSrc && lowResSrc !== img.src) {
-        img.src = lowResSrc;
-        img.classList.add('progressive-low');
-        
-        // Cargar versión de alta resolución
-        const highResImg = new Image();
-        highResImg.onload = () => {
-          img.src = highResSrc;
-          img.classList.remove('progressive-low');
-          img.classList.add('progressive-high');
-        };
-        highResImg.src = highResSrc;
-      }
-    });
+    const baseUrl = originalSrc.substring(0, originalSrc.lastIndexOf('.'));
+    const extension = originalSrc.substring(originalSrc.lastIndexOf('.'));
+    
+    if (['.png', '.jpg', '.jpeg'].includes(extension.toLowerCase())) {
+      return `${baseUrl}.webp`;
+    }
+    
+    return originalSrc;
   }
 
-  // Comprimir imagen en el cliente (para subidas)
-  async compressImage(file, quality = 0.8, maxWidth = 1920) {
+  // Comprimir imagen en el cliente
+  compressImage(file, quality = 0.8, maxWidth = 1920) {
     return new Promise((resolve) => {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       const img = new Image();
       
       img.onload = () => {
-        // Calcular dimensiones
+        // Calcular nuevas dimensiones
         let { width, height } = img;
-        
         if (width > maxWidth) {
           height = (height * maxWidth) / width;
           width = maxWidth;
@@ -151,10 +83,10 @@ class ImageOptimizer {
         canvas.width = width;
         canvas.height = height;
         
-        // Dibujar imagen redimensionada
+        // Dibujar imagen comprimida
         ctx.drawImage(img, 0, 0, width, height);
         
-        // Comprimir
+        // Convertir a blob
         canvas.toBlob(resolve, 'image/jpeg', quality);
       };
       
@@ -163,47 +95,70 @@ class ImageOptimizer {
   }
 
   // Generar thumbnail
-  async generateThumbnail(file, size = 150) {
+  generateThumbnail(file, size = 150) {
     return new Promise((resolve) => {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       const img = new Image();
       
-      canvas.width = size;
-      canvas.height = size;
-      
       img.onload = () => {
-        // Calcular dimensiones para mantener proporción
-        const ratio = Math.min(size / img.width, size / img.height);
-        const newWidth = img.width * ratio;
-        const newHeight = img.height * ratio;
+        canvas.width = size;
+        canvas.height = size;
         
-        // Centrar imagen
-        const x = (size - newWidth) / 2;
-        const y = (size - newHeight) / 2;
+        // Mantener aspect ratio
+        const scale = Math.min(size / img.width, size / img.height);
+        const x = (size - img.width * scale) / 2;
+        const y = (size - img.height * scale) / 2;
         
-        ctx.drawImage(img, x, y, newWidth, newHeight);
+        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+        
         canvas.toBlob(resolve, 'image/jpeg', 0.8);
       };
       
       img.src = URL.createObjectURL(file);
     });
   }
+
+  // Optimizar imagen antes de subir
+  async optimizeForUpload(file, options = {}) {
+    const {
+      quality = 0.8,
+      maxWidth = 1920,
+      generateThumbnail = true,
+      thumbnailSize = 150
+    } = options;
+
+    try {
+      // Comprimir imagen principal
+      const compressed = await this.compressImage(file, quality, maxWidth);
+      
+      // Generar thumbnail si se solicita
+      let thumbnail = null;
+      if (generateThumbnail) {
+        thumbnail = await this.generateThumbnail(file, thumbnailSize);
+      }
+      
+      return {
+        original: file,
+        compressed,
+        thumbnail,
+        originalSize: file.size,
+        compressedSize: compressed.size,
+        savings: ((file.size - compressed.size) / file.size * 100).toFixed(1)
+      };
+    } catch (error) {
+      console.error('❌ Error optimizando imagen:', error);
+      return { original: file, error: error.message };
+    }
+  }
 }
 
 // Inicializar optimizador
-window.imageOptimizer = new ImageOptimizer();
+document.addEventListener('DOMContentLoaded', () => {
+  window.imageOptimizer = new ImageOptimizer();
+});
 
-// Función global para comprimir imágenes
-window.compressImage = async (file, quality, maxWidth) => {
-  if (window.imageOptimizer) {
-    return await window.imageOptimizer.compressImage(file, quality, maxWidth);
-  }
-};
-
-// Función global para generar thumbnails
-window.generateThumbnail = async (file, size) => {
-  if (window.imageOptimizer) {
-    return await window.imageOptimizer.generateThumbnail(file, size);
-  }
-};
+// Exportar para uso global
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = ImageOptimizer;
+}

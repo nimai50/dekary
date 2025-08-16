@@ -1,8 +1,11 @@
 {
-  "originalSize": "30.95 MB",
-  "optimizedSize": "15.47 MB",
-  "webpSize": "0 Bytes",
-  "savings": "15.48 MB",
-  "savingsPercent": "50.02",
-  "timestamp": "2025-08-16T19:46:35.648Z"
+  "timestamp": "2025-08-16T21:55:24.883Z",
+  "totalImages": 34,
+  "optimizedImages": 34,
+  "webpImages": 7,
+  "originalSize": 16218241,
+  "optimizedSize": 6998372,
+  "webpSize": 1700396,
+  "savings": 9219869,
+  "savingsPercent": "56.85"
 }

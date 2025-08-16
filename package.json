@@ -49,6 +49,8 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.7.2",
         "animate.css": "^4.1.1",
-        "bootstrap": "^5.3.3"
+        "bootstrap": "^5.3.3",
+        "imagemin": "^9.0.1",
+        "imagemin-webp": "^8.0.0"
     }
 }
