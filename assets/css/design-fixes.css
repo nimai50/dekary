@@ -1,0 +1,262 @@
+/* ===== CORRECCIONES DE DISEÑO PARA DEKARY ===== */
+
+/* CORRECCIÓN 1: Bloque amarillo mal posicionado en sección de suscripción */
+.subscribe-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--Purple__50) 0%, var(--Yellow__50) 100%);
+  padding: 4rem 0;
+  overflow: hidden; /* Contener elementos decorativos */
+}
+
+.subscribe-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.subscribe-form {
+  background: #fff;
+  border-radius: 25px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 20;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.subscribe-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--Purple__100);
+  border-radius: 25px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.subscribe-button {
+  background: var(--Yellow__500);
+  color: #000;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.subscribe-button:hover {
+  background: var(--Yellow__600);
+  transform: translateY(-2px);
+}
+
+/* CORRECCIÓN 2: Bloque blanco mal posicionado en sección de categorías */
+.categories-section {
+  position: relative;
+  background: var(--Pink__50);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.categories-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.category-card {
+  background: #fff;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.category-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--Purple__500);
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--Purple__600);
+  margin-bottom: 0.5rem;
+  font-family: 'Playwrite HU', cursive;
+}
+
+.category-link {
+  color: var(--Blue__500);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+.category-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--Blue__500);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.category-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* CORRECCIÓN 3: Transiciones onduladas correctas */
+.wave-transition {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: var(--Yellow__50);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 50%);
+  z-index: 5;
+}
+
+.wave-transition-alt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: var(--Pink__50);
+  clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+  z-index: 5;
+}
+
+/* CORRECCIÓN 4: Layout responsivo mejorado */
+@media (max-width: 768px) {
+  .subscribe-form {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .category-card {
+    width: 250px;
+    height: 250px;
+    margin: 0.5rem;
+  }
+  
+  .categories-container {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .subscribe-section,
+  .categories-section {
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .category-title {
+    font-size: 1.2rem;
+  }
+  
+  .category-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* CORRECCIÓN 5: Z-index y posicionamiento */
+.subscribe-section,
+.categories-section {
+  position: relative;
+  z-index: 1;
+}
+
+.subscribe-form,
+.category-card {
+  position: relative;
+  z-index: 20;
+}
+
+/* CORRECCIÓN 6: Prevenir overflow horizontal */
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* CORRECCIÓN 7: Sombras y efectos visuales mejorados */
+.subscribe-form,
+.category-card {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-form:hover,
+.category-card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+}
+
+/* CORRECCIÓN 8: Estados de focus mejorados */
+.subscribe-input:focus {
+  outline: none;
+  border-color: var(--Purple__300);
+  box-shadow: 0 0 0 3px rgba(124, 58, 197, 0.1);
+}
+
+.subscribe-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 232, 0, 0.3);
+}
+
+/* CORRECCIÓN 9: Animaciones suaves */
+.subscribe-section,
+.categories-section {
+  transition: all 0.3s ease;
+}
+
+/* CORRECCIÓN 10: Contraste y legibilidad */
+.subscribe-button {
+  color: #000;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.category-title {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}

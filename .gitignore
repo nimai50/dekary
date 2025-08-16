@@ -138,8 +138,9 @@ dist
 # ===== PROYECTO DEKARY - EXCLUSIONES ESPECÍFICAS =====
 
 # Archivos CSS compilados (se generan automáticamente desde SASS)
-assets/css/*.css
-assets/css/*.css.map
+# TEMPORALMENTE COMENTADO PARA RESOLVER ERRORES 404 EN PRODUCCIÓN
+# assets/css/*.css
+# assets/css/*.css.map
 
 # Archivos temporales del sistema operativo
 .DS_Store
