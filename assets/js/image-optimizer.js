@@ -8,14 +8,12 @@ class ImageOptimizer {
   init() {
     console.log('🔄 Optimizador de imágenes inicializado');
     
-    // TEMPORALMENTE DESHABILITADO: WebP está causando errores 404
-    // Hasta que confirmemos que las imágenes están disponibles en el servidor
-    if (false && this.webpSupported) {
+    // WebP reactivado - Las imágenes están ahora en el directorio principal
+    if (this.webpSupported) {
       console.log('✅ WebP soportado - Convirtiendo imágenes automáticamente');
       this.convertImagesToWebP();
     } else {
-      console.log('ℹ️  WebP deshabilitado temporalmente - Usando imágenes originales');
-      console.log('💡 Para reactivar: Verificar que las imágenes WebP estén disponibles en el servidor');
+      console.log('❌ WebP no soportado - Usando imágenes originales');
     }
   }
 
@@ -31,7 +29,7 @@ class ImageOptimizer {
     }
   }
 
-  // Convertir imágenes a WebP (deshabilitado temporalmente)
+  // Convertir imágenes a WebP
   convertImagesToWebP() {
     const images = document.querySelectorAll('img[src*=".png"], img[src*=".jpg"], img[src*=".jpeg"]');
     
@@ -165,60 +163,11 @@ class ImageOptimizer {
       return { original: file, error: error.message };
     }
   }
-
-  // Método para reactivar WebP manualmente
-  enableWebP() {
-    if (this.webpSupported) {
-      console.log('✅ WebP reactivado - Convirtiendo imágenes automáticamente');
-      this.convertImagesToWebP();
-    } else {
-      console.log('❌ WebP no soportado en este navegador');
-    }
-  }
-
-  // Método para verificar disponibilidad de WebP
-  async checkWebPAvailability() {
-    const testImages = [
-      'assets/images/webp/logo.webp',
-      'assets/images/webp/placeholder.webp',
-      'assets/images/webp/blog image.webp'
-    ];
-
-    let availableCount = 0;
-    
-    for (const webpPath of testImages) {
-      try {
-        const response = await fetch(webpPath, { method: 'HEAD' });
-        if (response.ok) {
-          availableCount++;
-          console.log(`✅ ${webpPath} disponible`);
-        } else {
-          console.log(`❌ ${webpPath} no disponible (${response.status})`);
-        }
-      } catch (error) {
-        console.log(`❌ ${webpPath} error: ${error.message}`);
-      }
-    }
-
-    if (availableCount === testImages.length) {
-      console.log('🎉 Todas las imágenes WebP están disponibles - Reactivando conversión automática');
-      this.enableWebP();
-    } else {
-      console.log(`⚠️  Solo ${availableCount}/${testImages.length} imágenes WebP disponibles`);
-    }
-  }
 }
 
 // Inicializar optimizador
 document.addEventListener('DOMContentLoaded', () => {
   window.imageOptimizer = new ImageOptimizer();
-  
-  // Verificar disponibilidad de WebP después de 5 segundos
-  setTimeout(() => {
-    if (window.imageOptimizer) {
-      window.imageOptimizer.checkWebPAvailability();
-    }
-  }, 5000);
 });
 
 // Exportar para uso global
