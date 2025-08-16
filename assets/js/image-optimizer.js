@@ -41,14 +41,25 @@ class ImageOptimizer {
         const testImg = new Image();
         testImg.onload = () => {
           img.src = webpSrc;
-          console.log(`🔄 Imagen convertida a WebP: ${originalSrc} → ${webpSrc}`);
+          console.log(`🔄 Imagen convertida a WebP: ${this.getImageName(originalSrc)}`);
         };
         testImg.onerror = () => {
-          console.log(`⚠️ WebP no disponible, usando original: ${originalSrc}`);
+          // Silenciar el error 404 - solo log interno
+          console.log(`ℹ️  WebP no disponible para: ${this.getImageName(originalSrc)} - usando original`);
         };
         testImg.src = webpSrc;
       }
     });
+  }
+
+  // Obtener nombre limpio de la imagen
+  getImageName(src) {
+    try {
+      const url = new URL(src);
+      return url.pathname.split('/').pop();
+    } catch (e) {
+      return src.split('/').pop();
+    }
   }
 
   // Obtener URL de WebP
