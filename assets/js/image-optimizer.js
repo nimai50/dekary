@@ -1,77 +1,85 @@
 // Optimización de Imágenes y Soporte WebP
 class ImageOptimizer {
   constructor() {
-    this.webpSupported = this.checkWebPSupport();
+    // TEMPORALMENTE DESHABILITADO: WebP está causando errores 404
+    this.webpSupported = false; // this.checkWebPSupport();
     this.init();
   }
 
-  // Verificar soporte de WebP
-  checkWebPSupport() {
-    const canvas = document.createElement('canvas');
-    canvas.width = 1;
-    canvas.height = 1;
-    return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-  }
-
   init() {
-    this.optimizeImages();
-    this.setupResponsiveImages();
-    this.setupProgressiveLoading();
+    // Deshabilitar conversión automática a WebP temporalmente
+    console.log('🔄 Optimizador de imágenes inicializado (WebP deshabilitado temporalmente)');
+    
+    // Comentar la conversión automática hasta que se resuelvan los errores 404
+    /*
+    if (this.webpSupported) {
+      this.convertImagesToWebP();
+    }
+    */
   }
 
-  // Optimizar imágenes existentes
-  optimizeImages() {
-    const images = document.querySelectorAll('img');
-    
-    images.forEach(img => {
-      // Agregar atributos de optimización
-      if (!img.loading) {
-        img.loading = 'lazy';
-      }
-      
-      if (!img.decoding) {
-        img.decoding = 'async';
-      }
+  // Verificar soporte de WebP (deshabilitado)
+  checkWebPSupport() {
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1;
+      canvas.height = 1;
+      return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    } catch (e) {
+      return false;
+    }
+  }
 
+  // Convertir imágenes a WebP (deshabilitado)
+  convertImagesToWebP() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
       // Convertir a WebP si es soportado
       if (this.webpSupported && img.src) {
-        this.convertToWebP(img);
+        // this.convertToWebP(img); // DESHABILITADO
       }
-
-      // Agregar fallback para imágenes que fallan
-      img.addEventListener('error', () => {
-        this.handleImageError(img);
-      });
     });
   }
 
-  // Convertir imagen a WebP
+  // Convertir imagen a WebP (deshabilitado)
   convertToWebP(img) {
-    const originalSrc = img.src;
-    const webpSrc = this.getWebPUrl(originalSrc);
-    
-    if (webpSrc && webpSrc !== originalSrc) {
-      const webpImg = new Image();
-      webpImg.onload = () => {
-        img.src = webpSrc;
-        img.classList.add('webp');
-      };
-      webpImg.src = webpSrc;
+    try {
+      const originalSrc = img.src;
+      const webpSrc = this.getWebPUrl(originalSrc);
+      
+      if (webpSrc && webpSrc !== originalSrc) {
+        const webpImg = new Image();
+        webpImg.onload = () => {
+          img.src = webpSrc;
+          img.classList.add('webp');
+        };
+        webpImg.onerror = () => {
+          // Si falla WebP, mantener imagen original
+          console.log('⚠️ WebP falló, usando imagen original');
+        };
+        webpImg.src = webpSrc;
+      }
+    } catch (e) {
+      console.error('❌ Error al convertir a WebP:', e);
     }
   }
 
-  // Obtener URL de WebP
+  // Obtener URL de WebP (deshabilitado)
   getWebPUrl(originalUrl) {
-    // Si ya es WebP, no hacer nada
-    if (originalUrl.includes('.webp')) {
+    try {
+      // Si ya es WebP, no hacer nada
+      if (originalUrl.includes('.webp')) {
+        return originalUrl;
+      }
+      
+      // Intentar encontrar versión WebP
+      const baseUrl = originalUrl.replace(/\.[^/.]+$/, '');
+      const webpUrl = `${baseUrl}.webp`;
+      
+      return webpUrl;
+    } catch (e) {
       return originalUrl;
     }
-
-    // Intentar encontrar versión WebP
-    const baseUrl = originalUrl.replace(/\.[^/.]+$/, '');
-    const webpUrl = `${baseUrl}.webp`;
-    
-    return webpUrl;
   }
 
   // Manejar errores de imagen
@@ -183,10 +191,8 @@ class ImageOptimizer {
   }
 }
 
-// Inicializar optimizador de imágenes
-document.addEventListener('DOMContentLoaded', () => {
-  window.imageOptimizer = new ImageOptimizer();
-});
+// Inicializar optimizador
+window.imageOptimizer = new ImageOptimizer();
 
 // Función global para comprimir imágenes
 window.compressImage = async (file, quality, maxWidth) => {
