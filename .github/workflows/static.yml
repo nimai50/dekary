@@ -22,6 +22,17 @@ jobs:
     - name: Setup Pages
       uses: actions/configure-pages@v4
       
+    - name: Build and prepare files
+      run: |
+        # Asegurar que todos los directorios estén presentes
+        mkdir -p assets/css assets/images assets/js assets/webfonts
+        
+        # Verificar que los archivos críticos existan
+        ls -la assets/
+        ls -la assets/css/
+        ls -la assets/images/
+        ls -la assets/js/
+      
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
