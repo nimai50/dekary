@@ -11,6 +11,7 @@ class ImageOptimizer {
     // WebP reactivado - Las imágenes están ahora en el directorio principal
     if (this.webpSupported) {
       console.log('✅ WebP soportado - Convirtiendo imágenes automáticamente');
+      console.log('🚀 Todas las funcionalidades de optimización están ACTIVAS');
       this.convertImagesToWebP();
     } else {
       console.log('❌ WebP no soportado - Usando imágenes originales');
