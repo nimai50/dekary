@@ -2,6 +2,24 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.2.0] - Diciembre 2024
+
+### 🔧 **Correcciones de SEO**
+- **Eliminación de marcado estructurado de productos** para resolver errores de Google Search Console
+- **Corrección de errores "Fragmentos de productos"** que indicaban propiedades faltantes
+- **Limpieza del Schema.org JSON-LD** para reflejar la funcionalidad actual del sitio
+- **Eliminación de `hasOfferCatalog`** que causaba conflictos con la funcionalidad real
+
+### 📊 **Cambios en Marcado Estructurado**
+- **Eliminado**: Sección `hasOfferCatalog` completa del marcado `LocalBusiness`
+- **Mantenido**: Información del negocio local (`LocalBusiness`) para SEO local
+- **Resultado**: Marcado estructurado limpio y honesto con los motores de búsqueda
+
+### 🎯 **Motivo de los Cambios**
+- **Sitio no vende productos directamente** - la sección "tienda" es solo un mockup de diseño
+- **Prevención de errores de GSC** relacionados con propiedades faltantes de productos
+- **SEO más honesto** que refleja la funcionalidad real del sitio
+
 ## [1.1.0] - Diciembre 2024
 
 ### ✨ **Nuevas Funcionalidades**

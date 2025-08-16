@@ -10,6 +10,8 @@ Sitio web oficial de La Pape de Kary, especialistas en suministros de oficina y 
 - **Página 404 personalizada** con ilustración temática de impresora
 - **Animaciones CSS** suaves y profesionales
 - **Optimizado para SEO** con metadatos apropiados
+- **Marcado estructurado limpio** sin errores de Google Search Console
+- **Schema.org optimizado** para negocio local sin datos de productos
 
 ## 📁 **Estructura del Proyecto**
 
@@ -71,6 +73,20 @@ El sitio está configurado para desplegarse automáticamente en GitHub Pages:
 1. **Push a la rama main** activa el despliegue automático
 2. **La página 404** se muestra automáticamente para URLs inexistentes
 3. **Actualizaciones** se reflejan en 5-10 minutos
+
+## 🔍 **SEO y Marcado Estructurado**
+
+### **Schema.org Implementado:**
+- **LocalBusiness** con información completa del negocio
+- **Marcado limpio** sin datos de productos (sección tienda es solo mockup)
+- **Sin errores de GSC** relacionados con "Fragmentos de productos"
+- **SEO honesto** que refleja la funcionalidad real del sitio
+
+### **Características SEO:**
+- Meta tags optimizados para motores de búsqueda
+- Estructura HTML5 semántica
+- Marcado estructurado válido y sin conflictos
+- Optimización para búsquedas locales
 
 ## 🎯 **URLs del Sitio**
 
