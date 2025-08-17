@@ -13,7 +13,7 @@
         "build:404": "sass scss/pages/_404.scss:assets/css/404.css --style=compressed",
         "build:shared": "sass scss/shared/_base.scss:assets/css/shared-base.css --style=compressed && sass scss/shared/_layout.scss:assets/css/shared-layout.css --style=compressed",
         "build:blog": "sass scss/blog/main.scss:assets/css/blog.css --style=compressed",
-        "postcss:all": "postcss assets/css/*.css --dir assets/css/optimized",
+        "postcss:all": "postcss assets/css/*.css --dir assets/css/optimized --config config/postcss.config.js",
         "build:all": "npm run build:css && npm run build:shared && npm run build:blog && npm run postcss:all",
         "extract:critical": "node scripts/extract-critical.js",
         "build:critical": "npm run build:all && npm run extract:critical",

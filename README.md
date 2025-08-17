@@ -1,140 +1,139 @@
-# La Pape de Kary - Sitio Web
+# 🎨 Dekary - Papelería Digital
 
-Sitio web oficial de La Pape de Kary, especialistas en suministros de oficina y papelería.
+**La papelería de Kary** - Sitio web optimizado para papelería y productos de oficina.
 
-## 🚀 **Características**
+## 🚀 Características Principales
 
-- **Diseño responsive** optimizado para todos los dispositivos
-- **Paleta de colores personalizada** con tonos púrpura, rosa y azul
-- **Tipografía Quicksand** para mejor legibilidad
-- **Página 404 personalizada** con ilustración temática de impresora
-- **Animaciones CSS** suaves y profesionales
-- **Optimizado para SEO** con metadatos apropiados
-- **Marcado estructurado limpio** sin errores de Google Search Console
-- **Schema.org optimizado** para negocio local sin datos de productos
+- **Sitio principal**: https://dekary.com
+- **Blog**: https://blog.dekary.com
+- **Diseño responsive** y optimizado para móviles
+- **CSS crítico** implementado para máximo rendimiento
+- **Optimización de imágenes** con soporte WebP
+- **Service Worker** para funcionalidad offline
+- **Sistema de build** automatizado con SASS y PostCSS
 
-## 📁 **Estructura del Proyecto**
+## 📁 Estructura del Proyecto
 
 ```
 dekary/
-├── index.html              # Página principal
-├── 404.html               # Página de error personalizada
-├── tienda.html            # Página de tienda
-├── proximamente.html      # Página de próximamente
-├── componentes.html       # Componentes de diseño
-├── assets/                # Recursos estáticos
-│   ├── css/              # Estilos CSS
-│   ├── images/           # Imágenes y logos
-│   ├── js/               # Scripts JavaScript
-│   └── webfonts/         # Fuentes web
-├── scss/                  # Archivos SCSS fuente
-└── README.md              # Este archivo
+├── 📁 assets/           # Recursos estáticos (CSS, JS, imágenes)
+├── 📁 config/           # Archivos de configuración
+├── 📁 docs/             # Documentación completa del proyecto
+├── 📁 scss/             # Archivos fuente SASS
+├── 📁 scripts/          # Scripts de automatización
+├── 📁 .github/          # GitHub Actions para despliegue
+└── 📄 index.html        # Página principal
 ```
 
-## 🎨 **Página 404 Personalizada**
+## 🛠️ Tecnologías Utilizadas
 
-### **Características:**
-- **Ilustración SVG** de impresora con tóner bajo
-- **Hoja de papel** con error "404" impreso
-- **Diseño coherente** con la identidad visual del sitio
-- **Mensaje amigable** que mantiene la temática de papelería
-- **Botón de navegación** para volver al inicio
-- **Formulario de contacto funcional** integrado en la misma página
+- **Frontend**: HTML5, CSS3, JavaScript ES6+
+- **Preprocesador**: SASS/SCSS
+- **Framework**: Bootstrap 3.3.1
+- **Build Tools**: PostCSS, Critical CSS, PurgeCSS
+- **Optimización**: WebP, Lazy Loading, Service Worker
+- **Despliegue**: GitHub Pages + GitHub Actions
 
-### **Elementos Visuales:**
-- Impresora moderna con LEDs animados
-- Hoja de papel realista con proporciones A4
-- Texto "404" y líneas simulando fallas de tóner
-- Borde superior con degradado multicolor (amarillo → rosa → azul)
-- Logo de La Pape de Kary prominente
-- Modal de contacto con formulario completo
+## 🚀 Inicio Rápido
 
-### **Funcionalidades de Contacto:**
-- **Modal integrado** que se abre desde la página 404
-- **Formulario completo** con campos: Nombre, Apellido, Email, Mensaje
-- **Validación HTML5** y envío funcional
-- **Diseño coherente** con la paleta de colores del sitio
-- **Sin redirección** - mantiene al usuario en la página 404
+### Prerrequisitos
+- Node.js 16+ 
+- npm o yarn
 
-## 🛠️ **Tecnologías Utilizadas**
+### Instalación
+```bash
+# Clonar el repositorio
+git clone https://github.com/nimai50/dekary.git
+cd dekary
 
-- **HTML5** semántico
-- **CSS3** con variables personalizadas
-- **SCSS** para organización de estilos
-- **SVG** para ilustraciones vectoriales
-- **Google Fonts** (Quicksand)
-- **Bootstrap** para componentes base
-- **GitHub Pages** para hosting
+# Instalar dependencias
+npm install
 
-## 🚀 **Despliegue**
+# Desarrollo local
+npm run dev
 
-El sitio está configurado para desplegarse automáticamente en GitHub Pages:
+# Build de producción
+npm run build:production
+```
 
-1. **Push a la rama main** activa el despliegue automático
-2. **La página 404** se muestra automáticamente para URLs inexistentes
-3. **Actualizaciones** se reflejan en 5-10 minutos
+## 📚 Documentación
 
-## 🔍 **SEO y Marcado Estructurado**
+Toda la documentación detallada se encuentra en la carpeta [`docs/`](./docs/):
 
-### **Schema.org Implementado:**
-- **LocalBusiness** con información completa del negocio
-- **Marcado limpio** sin datos de productos (sección tienda es solo mockup)
-- **Sin errores de GSC** relacionados con "Fragmentos de productos"
-- **SEO honesto** que refleja la funcionalidad real del sitio
+- **[README Principal](./docs/README.md)** - Documentación completa del proyecto
+- **[Changelog](./docs/CHANGELOG.md)** - Historial de cambios
+- **[Features](./docs/FEATURES.md)** - Características implementadas
+- **[Deployment](./docs/DEPLOYMENT.md)** - Guía de despliegue
+- **[CSS Optimization](./docs/CSS-OPTIMIZATION-README.md)** - Optimizaciones CSS
+- **[Blog Migration](./docs/README-FASE-2-BLOG-MIGRATION.md)** - Migración del blog
+- **[Fase 3 Completada](./docs/README-FASE-3-COMPLETADA.md)** - Estado actual del proyecto
+- **[Optimizaciones Avanzadas](./docs/README-FASE-3-OPTIMIZACIONES-AVANZADAS.md)** - Optimizaciones implementadas
 
-### **Características SEO:**
-- Meta tags optimizados para motores de búsqueda
-- Estructura HTML5 semántica
-- Marcado estructurado válido y sin conflictos
-- Optimización para búsquedas locales
+## ⚙️ Configuración
 
-## 🎯 **URLs del Sitio**
+Los archivos de configuración se encuentran en la carpeta [`config/`](./config/):
 
-- **Principal**: `https://[usuario].github.io/dekary/`
-- **404**: Se muestra automáticamente para páginas no encontradas
-- **Tienda**: `https://[usuario].github.io/dekary/tienda.html`
+- **PostCSS**: `postcss.config.js`
+- **Critical CSS**: `critical.config.js`
+- **PurgeCSS**: `purgecss.config.js`
+- **Git**: `.gitignore`
 
-## 📱 **Responsive Design**
+## 🔧 Scripts Disponibles
 
-- **Mobile First** approach
-- **Breakpoints** optimizados para tablets y desktop
-- **Grid system** flexible y adaptable
-- **Imágenes** optimizadas para diferentes resoluciones
+```bash
+# Desarrollo
+npm run dev                    # Watch SASS
+npm run compile:sass          # Compilar SASS una vez
 
-## 🔧 **Desarrollo Local**
+# Build
+npm run build:css             # Build CSS de todas las páginas
+npm run build:shared          # Build CSS compartido
+npm run build:blog            # Build CSS del blog
+npm run build:all             # Build completo
+npm run build:production      # Build de producción con optimizaciones
 
-Para trabajar en el proyecto localmente:
+# Optimización
+npm run extract:critical      # Extraer CSS crítico
+npm run purge:css             # Purgar CSS no utilizado
+npm run optimize:images       # Optimizar imágenes
+npm run performance:test      # Pruebas de rendimiento
 
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/[usuario]/dekary.git
-   cd dekary
-   ```
+# Blog
+npm run update:blog           # Actualizar plantillas del blog
+npm run build:blog:complete  # Build completo del blog
+```
 
-2. **Abre en tu editor** preferido (VS Code, Sublime, etc.)
+## 📊 Métricas de Rendimiento
 
-3. **Visualiza** abriendo `index.html` en tu navegador
+- **Core Web Vitals** optimizados
+- **PageSpeed Insights** mejorado significativamente
+- **Lighthouse** score optimizado
+- **CSS crítico** implementado
+- **Imágenes optimizadas** con WebP
 
-## 📝 **Contribuciones**
+## 🌐 Despliegue
 
-Para contribuir al proyecto:
+El sitio se despliega automáticamente en GitHub Pages cada vez que se hace push a la rama `main`.
 
-1. **Fork** el repositorio
-2. **Crea una rama** para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. **Commit** tus cambios (`git commit -am 'Agregar nueva funcionalidad'`)
-4. **Push** a la rama (`git push origin feature/nueva-funcionalidad`)
-5. **Crea un Pull Request**
+- **Sitio principal**: https://dekary.com
+- **Blog**: https://blog.dekary.com
 
-## 📄 **Licencia**
+## 🤝 Contribución
 
-Este proyecto está bajo la licencia [especificar licencia].
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
-## 📞 **Contacto**
+## 📄 Licencia
 
-- **Sitio Web**: [URL del sitio]
-- **Email**: [email de contacto]
-- **GitHub**: [usuario de GitHub]
+Este proyecto está bajo la Licencia ISC. Ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 👤 Autor
+
+**Liz Martinez** - [@nimai50](https://github.com/nimai50)
 
 ---
 
-**La Pape de Kary** - Suministros de oficina y papelería de calidad ✨
+⭐ **Si este proyecto te ayuda, ¡dale una estrella!**

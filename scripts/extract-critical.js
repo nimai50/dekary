@@ -2,19 +2,8 @@ const critical = require('critical');
 const fs = require('fs');
 const path = require('path');
 
-// Configuración para extraer CSS crítico
-const criticalConfig = {
-  inline: false,
-  dimensions: [
-    { width: 320, height: 568 },   // Mobile
-    { width: 768, height: 1024 },  // Tablet
-    { width: 1200, height: 800 }   // Desktop
-  ],
-  penthouse: {
-    timeout: 30000,
-    maxEmbeddedBase64Length: 1000
-  }
-};
+// Cargar configuración desde archivo externo
+const criticalConfig = require('../config/critical.config.js');
 
 // Páginas a procesar
 const pages = [
