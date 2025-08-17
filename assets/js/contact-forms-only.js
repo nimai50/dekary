@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const modal = form.closest('.modal');
                 if (modal) {
                     setTimeout(() => {
-                        const closeButton = modal.querySelector('[data-bs-dismiss="modal"]');
+                        const closeButton = modal.querySelector('[data-dismiss="modal"]');
                         if (closeButton) {
                             closeButton.click();
                         }
