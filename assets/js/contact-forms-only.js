@@ -71,13 +71,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Crear enlace mailto con parámetros más específicos
         const mailtoLink = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
-        // Log para debug
-        console.log('Enlace mailto creado:', mailtoLink);
-        console.log('Email destino:', toEmail);
-        console.log('Asunto:', subject);
-        console.log('Cuerpo:', body);
+        // Enlace mailto creado
+        // Email destino
+        // Asunto
+        // Cuerpo
         
-        return mailtoLink;
+        // Intentar abrir email
+        try {
+            window.location.href = mailtoLink;
+            // Intentando abrir email con window.location.href...
+        } catch (error1) {
+            try {
+                window.open(mailtoLink);
+                // Intentando método alternativo con window.open...
+            } catch (error2) {
+                // Error con window.open
+                // ... existing code ...
+            }
+        }
     }
     
     // Función para abrir el cliente de email de manera más robusta

@@ -1,6 +1,6 @@
 // Solución para el conflicto de jQuery y modal
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Modal fix script cargado');
+    // Modal fix script cargado
     
     // Preservar jQuery original antes de que MailerLite lo sobrescriba
     const originalJQuery = window.jQuery;
@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function restoreJQuery() {
         if (window.jQuery !== originalJQuery) {
             window.jQuery = originalJQuery;
-            console.log('jQuery restaurado');
+            // jQuery restaurado
         }
         if (window.$ !== original$) {
             window.$ = original$;
-            console.log('$ restaurado');
+            // $ restaurado
         }
     }
     
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para abrir modal usando jQuery si está disponible
     function openModalWithJQuery() {
         if (window.jQuery && window.jQuery.fn && window.jQuery.fn.modal) {
-            console.log('Abriendo modal con jQuery');
+            // Abriendo modal con jQuery
             window.jQuery('#exampleModal').modal('show');
             return true;
         }
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Función para abrir modal manualmente si jQuery no funciona
     function openModalManually() {
-        console.log('Abriendo modal manualmente');
+        // Abriendo modal manualmente
         const modal = document.getElementById('exampleModal');
         if (modal) {
             modal.style.display = 'block';
@@ -101,11 +101,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Buscar el botón del modal y agregar event listener
     const modalTrigger = document.querySelector('[data-toggle="modal"]');
     if (modalTrigger) {
-        console.log('Botón del modal encontrado:', modalTrigger);
+        // Botón del modal encontrado
         
         modalTrigger.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Botón del modal clickeado');
+            // Botón del modal clickeado
             
             // Intentar usar jQuery primero, si no funciona usar método manual
             if (!openModalWithJQuery()) {
@@ -113,15 +113,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } else {
-        console.error('Botón del modal no encontrado');
+        // Botón del modal no encontrado
     }
     
     // Verificar que Bootstrap esté funcionando
     setTimeout(function() {
         if (window.jQuery && window.jQuery.fn && window.jQuery.fn.modal) {
-            console.log('Bootstrap modal disponible');
+            // Bootstrap modal disponible
         } else {
-            console.warn('Bootstrap modal no disponible, usando método manual');
+            // Bootstrap modal no disponible, usando método manual
         }
     }, 1000);
 });

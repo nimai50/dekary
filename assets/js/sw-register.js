@@ -3,7 +3,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
       .then(registration => {
-        console.log('Service Worker registrado exitosamente:', registration.scope);
+        // Service Worker registrado exitosamente
         
         // Verificar actualizaciones
         registration.addEventListener('updatefound', () => {
@@ -17,7 +17,7 @@ if ('serviceWorker' in navigator) {
         });
       })
       .catch(error => {
-        console.log('Error al registrar Service Worker:', error);
+        // Error al registrar Service Worker
       });
   });
 }
@@ -46,7 +46,7 @@ function clearCache() {
       cacheNames.forEach(cacheName => {
         caches.delete(cacheName);
       });
-      console.log('Caché limpiado');
+      // Caché limpiado
     });
   }
 }
@@ -55,11 +55,16 @@ function clearCache() {
 function checkSWStatus() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(registrations => {
-      console.log('Service Workers registrados:', registrations.length);
       registrations.forEach(registration => {
-        console.log('SW activo:', registration.active);
-        console.log('SW esperando:', registration.waiting);
-        console.log('SW instalando:', registration.installing);
+        if (registration.active) {
+          // SW activo
+        }
+        if (registration.waiting) {
+          // SW esperando
+        }
+        if (registration.installing) {
+          // SW instalando
+        }
       });
     });
   }

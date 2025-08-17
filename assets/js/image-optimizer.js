@@ -6,15 +6,15 @@ class ImageOptimizer {
   }
 
   init() {
-    console.log('🔄 Optimizador de imágenes inicializado');
+    // Optimizador de imágenes inicializado
     
     // WebP reactivado - Las imágenes están ahora en el directorio principal
     if (this.webpSupported) {
-      console.log('✅ WebP soportado - Convirtiendo imágenes automáticamente');
-      console.log('🚀 Todas las funcionalidades de optimización están ACTIVAS');
+      // WebP soportado - Convirtiendo imágenes automáticamente
+      // Todas las funcionalidades de optimización están ACTIVAS
       this.convertImagesToWebP();
     } else {
-      console.log('❌ WebP no soportado - Usando imágenes originales');
+      // WebP no soportado - Usando imágenes originales
     }
   }
 
@@ -43,11 +43,9 @@ class ImageOptimizer {
         const testImg = new Image();
         testImg.onload = () => {
           img.src = webpSrc;
-          console.log(`🔄 Imagen convertida a WebP: ${this.getImageName(originalSrc)}`);
         };
         testImg.onerror = () => {
           // Silenciar el error 404 - solo log interno
-          console.log(`ℹ️  WebP no disponible para: ${this.getImageName(originalSrc)} - usando original`);
         };
         testImg.src = webpSrc;
       }
@@ -160,7 +158,7 @@ class ImageOptimizer {
         savings: ((file.size - compressed.size) / file.size * 100).toFixed(1)
       };
     } catch (error) {
-      console.error('❌ Error optimizando imagen:', error);
+      // Error optimizando imagen
       return { original: file, error: error.message };
     }
   }

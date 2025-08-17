@@ -51,7 +51,6 @@ class LazyLoader {
     };
 
     tempImage.onerror = () => {
-      console.warn('Error al cargar imagen:', src);
       img.classList.add('error');
     };
 
