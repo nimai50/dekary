@@ -1,37 +1,103 @@
 module.exports = {
   content: [
-    '**/*.html',
-    '**/*.js'
+    './*.html',
+    './**/*.html',
+    './assets/js/**/*.js',
+    './assets/css/**/*.css'
   ],
   css: [
-    'assets/css/*.css',
-    'assets/css/optimized/*.css'
+    './assets/css/home.css',
+    './assets/css/tienda.css',
+    './assets/css/componentes.css',
+    './assets/css/404.css',
+    './assets/css/blog.css',
+    './assets/css/shared-base.css',
+    './assets/css/shared-layout.css',
+    './assets/css/styles.css',
+    './assets/css/fontawesome.css',
+    './assets/css/contact-forms.css',
+    './assets/css/design-fixes.css',
+    './assets/css/animate.css'
   ],
-  output: 'assets/css/purged/',
+  output: './assets/css/purged/',
   safelist: [
-    // Clases que deben mantenerse siempre
+    // Elementos dinámicos que no se pueden detectar estáticamente
     'fade-in',
-    'slide-up',
-    'bounce',
-    'pulse',
-    'shake',
-    'fadeIn',
-    'fadeInUp',
-    'fadeInDown',
-    'slideInUp',
-    'slideInDown',
-    // Clases de animación
-    'animated',
-    'infinite',
-    // Clases de estado
+    'fade-out',
+    'show',
+    'hide',
     'active',
-    'hover',
-    'focus',
-    'disabled',
+    'inactive',
     'loading',
-    // Clases de JavaScript
-    'js-*',
-    'data-*'
+    'loaded',
+    'error',
+    'success',
+    'warning',
+    'info',
+    
+    // Clases de Bootstrap que se generan dinámicamente
+    'col-*',
+    'row-*',
+    'd-*',
+    'text-*',
+    'bg-*',
+    'border-*',
+    'shadow-*',
+    'rounded-*',
+    'p-*',
+    'm-*',
+    'w-*',
+    'h-*',
+    
+    // Clases de animación
+    'animate__*',
+    'bounceIn',
+    'fadeIn',
+    'slideIn',
+    'zoomIn',
+    
+    // Clases de FontAwesome
+    'fa-*',
+    'fas',
+    'far',
+    'fab',
+    
+    // Clases específicas de Dekary
+    'hero-*',
+    'flor-*',
+    'sol-*',
+    'nav-*',
+    'btn-*',
+    'modal-*',
+    'category-*',
+    'subscribe-*',
+    'wave-*',
+    'divider-*',
+    'social-*',
+    
+    // Estados de formularios
+    'form-control',
+    'form-group',
+    'input-group',
+    'input-group-*',
+    'is-valid',
+    'is-invalid',
+    'was-validated',
+    
+    // Clases de accesibilidad
+    'sr-only',
+    'visually-hidden',
+    'focus-visible',
+    'skip-link'
   ],
-  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-}
+  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+  fontFace: true,
+  keyframes: true,
+  variables: true,
+  rejected: true,
+  rejectedCss: true,
+  sourceMap: false,
+  stdin: false,
+  stdout: false,
+  verbose: true
+};

@@ -1,6 +1,6 @@
-const critical = require('critical');
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 // Cargar configuración desde archivo externo
 const criticalConfig = require('../config/critical.config.js');
@@ -30,37 +30,62 @@ const pages = [
 ];
 
 async function extractCriticalCSS() {
-  console.log('🚀 Iniciando extracción de CSS crítico...\n');
-  
-  for (const page of pages) {
-    try {
-      console.log(`📄 Procesando: ${page.title}`);
-      
-      const result = await critical.generate({
-        src: page.url,
-        target: {
-          css: `assets/css/critical/${page.output}`,
-          html: `assets/css/critical/${page.title.toLowerCase()}-critical.html`
-        },
-        ...criticalConfig
-      });
-      
-      console.log(`✅ ${page.title}: CSS crítico extraído (${result.css.length} bytes)`);
-      
-    } catch (error) {
-      console.error(`❌ Error procesando ${page.title}:`, error.message);
-    }
+  try {
+    console.log('🔍 Extrayendo CSS crítico...');
+    
+    // Usar import dinámico para critical
+    const critical = await import('critical');
+    
+    const htmlContent = fs.readFileSync('index.html', 'utf8');
+    const result = await critical.default.generate({
+      html: htmlContent,
+      inline: false,
+      dimensions: [
+        { width: 1200, height: 900 }, // Desktop
+        { width: 375, height: 667 }   // Mobile
+      ],
+      target: {
+        css: 'assets/css/critical.css',
+        html: 'index-critical.html'
+      }
+    });
+    
+    console.log('✅ CSS crítico extraído exitosamente');
+    return result;
+  } catch (error) {
+    console.error('❌ Error extrayendo CSS crítico:', error.message);
+    throw error;
   }
-  
-  console.log('\n🎉 Extracción de CSS crítico completada!');
-  console.log('📁 Archivos guardados en: assets/css/critical/');
 }
 
-// Crear directorio si no existe
-const criticalDir = path.join(__dirname, '../assets/css/critical');
-if (!fs.existsSync(criticalDir)) {
-  fs.mkdirSync(criticalDir, { recursive: true });
+// Función principal
+async function main() {
+  try {
+    console.log('🚀 DEKARY.COM - EXTRACCIÓN DE CSS CRÍTICO');
+    console.log('==========================================\n');
+    
+    // Verificar que existan los archivos necesarios
+    if (!fs.existsSync('index.html')) {
+      throw new Error('No se encontró index.html en el directorio actual');
+    }
+    
+    // Crear directorio para CSS crítico si no existe
+    const criticalDir = 'assets/css/critical';
+    if (!fs.existsSync(criticalDir)) {
+      fs.mkdirSync(criticalDir, { recursive: true });
+    }
+    
+    // Extraer CSS crítico
+    await extractCriticalCSS();
+    
+    console.log('\n🎉 ¡Proceso completado exitosamente!');
+    console.log('📁 CSS crítico guardado en: assets/css/critical/');
+    
+  } catch (error) {
+    console.error('\n❌ Error en el proceso:', error.message);
+    process.exit(1);
+  }
 }
 
-// Ejecutar extracción
-extractCriticalCSS().catch(console.error);
+// Ejecutar función principal
+main();

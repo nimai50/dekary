@@ -17,9 +17,12 @@
         "build:all": "npm run build:css && npm run build:shared && npm run build:blog && npm run postcss:all",
         "extract:critical": "node scripts/extract-critical.js",
         "build:critical": "npm run build:all && npm run extract:critical",
-        "purge:css": "npx purgecss --css assets/css/home.css --content index.html --output assets/css/purged/home-purged.css && npx purgecss --css assets/css/tienda.css --content tienda.html --output assets/css/purged/tienda-purged.css && npx purgecss --css assets/css/componentes.css --content componentes.html --output assets/css/purged/componentes-purged.css && npx purgecss --css assets/css/404.css --content 404.html --output assets/css/purged/404-purged.css && npx purgecss --css assets/css/blog.css --content ../blog-dekary-com/plantilla-nueva.html ../blog-dekary-com/post1.html ../blog-dekary-com/post2.html ../blog-dekary-com/post3.html --output assets/css/purged/blog-purged.css",
+        "purge:css": "npx purgecss --config config/purgecss.config.js",
+        "purge:css:advanced": "node scripts/optimize-css-advanced.js",
         "build:purged": "npm run build:all && npm run purge:css",
+        "build:purged:advanced": "npm run build:all && npm run purge:css:advanced",
         "optimize:images": "node scripts/optimize-images.js",
+        "optimize:images:advanced": "node scripts/optimize-images-advanced.js",
         "build:production": "npm run build:purged && npm run optimize:images",
         "watch:all": "npm run build:all && npm run dev",
         "watch:blog": "npx sass --watch scss/blog:assets/css",
@@ -27,7 +30,10 @@
         "performance:test": "npm run build:production && npm run lighthouse",
         "update:blog": "node scripts/update-blog-css.js",
         "build:blog:complete": "npm run build:blog && npm run update:blog",
-        "test:performance": "node scripts/performance-test.js"
+        "test:performance": "node scripts/performance-test.js",
+        "test:performance:advanced": "node scripts/performance-test-advanced.js",
+        "minify:all": "npm run postcss:all && echo '✅ Minificación CSS completada'",
+        "optimize:all": "node scripts/optimize-all.js"
     },
     "keywords": [
         "Papeleria",

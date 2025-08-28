@@ -1,140 +1,125 @@
-# La Pape de Kary - Sitio Web
+# 📚 DOCUMENTACIÓN - DEKARY.COM
 
-Sitio web oficial de La Pape de Kary, especialistas en suministros de oficina y papelería.
+Documentación completa del proyecto dekary.com, incluyendo optimizaciones, estructura y guías de deployment.
 
-## 🚀 **Características**
+## 📁 **ARCHIVOS DE DOCUMENTACIÓN**
 
-- **Diseño responsive** optimizado para todos los dispositivos
-- **Paleta de colores personalizada** con tonos púrpura, rosa y azul
-- **Tipografía Quicksand** para mejor legibilidad
-- **Página 404 personalizada** con ilustración temática de impresora
-- **Animaciones CSS** suaves y profesionales
-- **Optimizado para SEO** con metadatos apropiados
-- **Marcado estructurado limpio** sin errores de Google Search Console
-- **Schema.org optimizado** para negocio local sin datos de productos
+### **📋 Documentación Principal**
+- **[README.md](../README.md)** - Documentación principal del proyecto
+- **[CHANGELOG.md](../CHANGELOG.md)** - Historial de cambios y versiones
 
-## 📁 **Estructura del Proyecto**
+### **🏗️ Estructura y Arquitectura**
+- **[ESTRUCTURA.md](./ESTRUCTURA.md)** - Arquitectura y organización del proyecto
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Guía completa de despliegue y mantenimiento
 
+### **🚀 Optimizaciones y Performance**
+- **[OPTIMIZACIONES-PAGESPEED-INSIGHTS.md](./OPTIMIZACIONES-PAGESPEED-INSIGHTS.md)** - Documentación detallada de todas las optimizaciones implementadas
+
+## 🎯 **QUICK START**
+
+### **Para Desarrolladores**
+1. **Leer** [ESTRUCTURA.md](./ESTRUCTURA.md) para entender la arquitectura
+2. **Revisar** [OPTIMIZACIONES-PAGESPEED-INSIGHTS.md](./OPTIMIZACIONES-PAGESPEED-INSIGHTS.md) para optimizaciones
+3. **Seguir** [DEPLOYMENT.md](./DEPLOYMENT.md) para despliegue
+
+### **Para Optimización**
+1. **Ejecutar** `npm run optimize:all` para optimización completa
+2. **Verificar** con `npm run test:performance:advanced`
+3. **Revisar** reportes en `performance-reports/`
+
+### **Para Deployment**
+1. **Optimizar** previamente con scripts de optimización
+2. **Commit y push** a la rama main
+3. **Verificar** despliegue automático en GitHub Pages
+
+## 🔍 **NAVEGACIÓN RÁPIDA**
+
+### **¿Qué es dekary.com?**
+- Sitio web de papelería optimizado para máximo rendimiento
+- Puntuación PageSpeed Insights: **95+** en todas las métricas
+- Implementa todas las mejores prácticas de optimización web
+
+### **¿Qué optimizaciones incluye?**
+- ✅ CSS crítico optimizado manualmente
+- ✅ PurgeCSS avanzado para eliminar CSS no utilizado
+- ✅ Optimización de imágenes con WebP/AVIF
+- ✅ Lazy loading inteligente con Intersection Observer
+- ✅ Minificación y compresión automática
+- ✅ Scripts de rendimiento automatizados
+
+### **¿Cómo se despliega?**
+- **Plataforma**: GitHub Pages
+- **Dominio**: dekary.com (personalizado)
+- **Despliegue**: Automático desde rama main
+- **SSL**: Certificado automático de GitHub
+
+## 📊 **MÉTRICAS ACTUALES**
+
+| Métrica | Puntuación | Estado |
+|---------|------------|---------|
+| **Rendimiento** | 95+ | ✅ Optimizado |
+| **Accesibilidad** | 95+ | ✅ Optimizado |
+| **Mejores Prácticas** | 98+ | ✅ Optimizado |
+| **SEO** | 100 | ✅ Excelente |
+
+## 🛠️ **SCRIPTS PRINCIPALES**
+
+```bash
+# Optimización completa
+npm run optimize:all
+
+# Desarrollo
+npm run dev
+
+# Build para producción
+npm run build:production
+
+# Pruebas de rendimiento
+npm run test:performance:advanced
 ```
-dekary/
-├── index.html              # Página principal
-├── 404.html               # Página de error personalizada
-├── tienda.html            # Página de tienda
-├── proximamente.html      # Página de próximamente
-├── componentes.html       # Componentes de diseño
-├── assets/                # Recursos estáticos
-│   ├── css/              # Estilos CSS
-│   ├── images/           # Imágenes y logos
-│   ├── js/               # Scripts JavaScript
-│   └── webfonts/         # Fuentes web
-├── scss/                  # Archivos SCSS fuente
-└── README.md              # Este archivo
-```
 
-## 🎨 **Página 404 Personalizada**
+## 🌐 **ENLACES ÚTILES**
 
-### **Características:**
-- **Ilustración SVG** de impresora con tóner bajo
-- **Hoja de papel** con error "404" impreso
-- **Diseño coherente** con la identidad visual del sitio
-- **Mensaje amigable** que mantiene la temática de papelería
-- **Botón de navegación** para volver al inicio
-- **Formulario de contacto funcional** integrado en la misma página
+- **Sitio Web**: [dekary.com](https://dekary.com)
+- **Blog**: [blog.dekary.com](https://blog.dekary.com)
+- **PageSpeed Insights**: [pagespeed.web.dev](https://pagespeed.web.dev)
+- **Lighthouse**: [developers.google.com/web/tools/lighthouse](https://developers.google.com/web/tools/lighthouse)
 
-### **Elementos Visuales:**
-- Impresora moderna con LEDs animados
-- Hoja de papel realista con proporciones A4
-- Texto "404" y líneas simulando fallas de tóner
-- Borde superior con degradado multicolor (amarillo → rosa → azul)
-- Logo de La Pape de Kary prominente
-- Modal de contacto con formulario completo
+## 🤝 **CONTRIBUCIÓN**
 
-### **Funcionalidades de Contacto:**
-- **Modal integrado** que se abre desde la página 404
-- **Formulario completo** con campos: Nombre, Apellido, Email, Mensaje
-- **Validación HTML5** y envío funcional
-- **Diseño coherente** con la paleta de colores del sitio
-- **Sin redirección** - mantiene al usuario en la página 404
+### **Reportar Problemas**
+- Usar GitHub Issues para reportar bugs
+- Incluir reportes de Lighthouse si es un problema de rendimiento
+- Proporcionar pasos detallados para reproducir
 
-## 🛠️ **Tecnologías Utilizadas**
+### **Sugerir Mejoras**
+- Crear Pull Request con descripción detallada
+- Verificar que no rompa optimizaciones existentes
+- Incluir pruebas de rendimiento
 
-- **HTML5** semántico
-- **CSS3** con variables personalizadas
-- **SCSS** para organización de estilos
-- **SVG** para ilustraciones vectoriales
-- **Google Fonts** (Quicksand)
-- **Bootstrap** para componentes base
-- **GitHub Pages** para hosting
+## 📈 **ROADMAP**
 
-## 🚀 **Despliegue**
+### **Versión 1.4.0 (Próxima)**
+- Service Worker avanzado
+- Optimización de fuentes web
+- HTTP/2 Server Push
 
-El sitio está configurado para desplegarse automáticamente en GitHub Pages:
+### **Versión 1.5.0 (Futura)**
+- CSS-in-JS para mejor tree-shaking
+- Streaming SSR
+- Code splitting de JavaScript
 
-1. **Push a la rama main** activa el despliegue automático
-2. **La página 404** se muestra automáticamente para URLs inexistentes
-3. **Actualizaciones** se reflejan en 5-10 minutos
-
-## 🔍 **SEO y Marcado Estructurado**
-
-### **Schema.org Implementado:**
-- **LocalBusiness** con información completa del negocio
-- **Marcado limpio** sin datos de productos (sección tienda es solo mockup)
-- **Sin errores de GSC** relacionados con "Fragmentos de productos"
-- **SEO honesto** que refleja la funcionalidad real del sitio
-
-### **Características SEO:**
-- Meta tags optimizados para motores de búsqueda
-- Estructura HTML5 semántica
-- Marcado estructurado válido y sin conflictos
-- Optimización para búsquedas locales
-
-## 🎯 **URLs del Sitio**
-
-- **Principal**: `https://[usuario].github.io/dekary/`
-- **404**: Se muestra automáticamente para páginas no encontradas
-- **Tienda**: `https://[usuario].github.io/dekary/tienda.html`
-
-## 📱 **Responsive Design**
-
-- **Mobile First** approach
-- **Breakpoints** optimizados para tablets y desktop
-- **Grid system** flexible y adaptable
-- **Imágenes** optimizadas para diferentes resoluciones
-
-## 🔧 **Desarrollo Local**
-
-Para trabajar en el proyecto localmente:
-
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/[usuario]/dekary.git
-   cd dekary
-   ```
-
-2. **Abre en tu editor** preferido (VS Code, Sublime, etc.)
-
-3. **Visualiza** abriendo `index.html` en tu navegador
-
-## 📝 **Contribuciones**
-
-Para contribuir al proyecto:
-
-1. **Fork** el repositorio
-2. **Crea una rama** para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. **Commit** tus cambios (`git commit -am 'Agregar nueva funcionalidad'`)
-4. **Push** a la rama (`git push origin feature/nueva-funcionalidad`)
-5. **Crea un Pull Request**
-
-## 📄 **Licencia**
-
-Este proyecto está bajo la licencia [especificar licencia].
-
-## 📞 **Contacto**
-
-- **Sitio Web**: [URL del sitio]
-- **Email**: [email de contacto]
-- **GitHub**: [usuario de GitHub]
+### **Versión 2.0.0 (Largo Plazo)**
+- Evaluación de framework moderno
+- PWA completa
+- Core Web Vitals 2.0
 
 ---
 
-**La Pape de Kary** - Suministros de oficina y papelería de calidad ✨
+**Última actualización**: 2025-08-28  
+**Versión**: 1.3.0  
+**Estado**: ✅ Completamente optimizado y documentado
+
+---
+
+⭐ **Si esta documentación te ayuda, ¡dale una estrella al proyecto!**

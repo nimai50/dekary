@@ -2,6 +2,19 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.3.0] - Diciembre 2024
+
+### 🧹 **Limpieza y Organización del Proyecto**
+- **Eliminación de plantillas duplicadas** y archivos innecesarios
+- **Consolidación** de solo la plantilla original necesaria
+- **Importación de plantilla actual** desde Blogger para referencia
+- **Preparación** para implementación final del blog
+
+### 📋 **Nuevas Tareas del Backlog**
+- **Tarea pendiente**: Renombrar `PlantillaActual.html` a `plantilla.html` para mantener consistencia
+- **Objetivo**: Tener una plantilla base limpia y organizada para futuras implementaciones
+- **Estado**: Pendiente de implementación
+
 ## [1.2.0] - Diciembre 2024
 
 ### 🔧 **Correcciones de SEO**
