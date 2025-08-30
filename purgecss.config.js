@@ -1,27 +1,25 @@
-const path = require('path');
-
 module.exports = {
   content: [
-    path.join(__dirname, '../*.html'),
-    path.join(__dirname, '../**/*.html'),
-    path.join(__dirname, '../assets/js/**/*.js'),
-    path.join(__dirname, '../assets/css/**/*.css')
+    '*.html',
+    '**/*.html',
+    'assets/js/**/*.js',
+    'assets/css/**/*.css'
   ],
   css: [
-    path.join(__dirname, '../assets/css/home.css'),
-    path.join(__dirname, '../assets/css/tienda.css'),
-    path.join(__dirname, '../assets/css/componentes.css'),
-    path.join(__dirname, '../assets/css/404.css'),
-    path.join(__dirname, '../assets/css/blog.css'),
-    path.join(__dirname, '../assets/css/shared-base.css'),
-    path.join(__dirname, '../assets/css/shared-layout.css'),
-    path.join(__dirname, '../assets/css/styles.css'),
-    path.join(__dirname, '../assets/css/fontawesome.css'),
-    path.join(__dirname, '../assets/css/contact-forms.css'),
-    path.join(__dirname, '../assets/css/design-fixes.css'),
-    path.join(__dirname, '../assets/css/animate.css')
+    'assets/css/home.css',
+    'assets/css/tienda.css',
+    'assets/css/componentes.css',
+    'assets/css/404.css',
+    'assets/css/blog.css',
+    'assets/css/shared-base.css',
+    'assets/css/shared-layout.css',
+    'assets/css/styles.css',
+    'assets/css/fontawesome.css',
+    'assets/css/contact-forms.css',
+    'assets/css/design-fixes.css',
+    'assets/css/animate.css'
   ],
-  output: path.join(__dirname, '../assets/css/purged/'),
+  output: 'assets/css/purged/',
   safelist: [
     // Elementos dinámicos que no se pueden detectar estáticamente
     'fade-in',
