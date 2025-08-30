@@ -99,6 +99,95 @@ body {
   height: auto;
 }
 
+/* ===== RESERVAR ESPACIO PARA IMÁGENES DECORATIVAS ===== */
+/* Esto evita el CLS (Cumulative Layout Shift) */
+
+/* Sol decorativo */
+.sol {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  top: 35%;
+  right: 20%;
+  z-index: 10;
+  /* Reservar espacio para evitar CLS */
+  min-height: 270px;
+  min-width: 270px;
+}
+
+/* Flores decorativas */
+.flor-azul {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: -100px;
+  left: 35%;
+  z-index: 1;
+  /* Reservar espacio para evitar CLS */
+  min-height: 420px;
+  min-width: 420px;
+}
+
+.flor-amarilla {
+  position: absolute;
+  width: 530px;
+  height: 530px;
+  top: -100px;
+  left: -5%;
+  z-index: 1;
+  /* Reservar espacio para evitar CLS */
+  min-height: 530px;
+  min-width: 530px;
+}
+
+.flor-aqua {
+  position: absolute;
+  width: 510px;
+  height: 510px;
+  bottom: -150px;
+  left: -5%;
+  z-index: 1;
+  /* Reservar espacio para evitar CLS */
+  min-height: 510px;
+  min-width: 510px;
+}
+
+.flor-morada {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  bottom: -150px;
+  right: -5%;
+  z-index: 1;
+  /* Reservar espacio para evitar CLS */
+  min-height: 550px;
+  min-width: 550px;
+}
+
+.flor-naranja {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 70%;
+  right: -5%;
+  z-index: 1;
+  /* Reservar espacio para evitar CLS */
+  min-height: 300px;
+  min-width: 300px;
+}
+
+.flor-rosa {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  top: 20%;
+  right: 15%;
+  z-index: 1;
+  /* Reservar espacio para evitar CLS */
+  min-height: 380px;
+  min-width: 380px;
+}
+
 /* Navegación crítica mínima */
 .My-Nav {
   padding: 20px;
@@ -191,6 +280,17 @@ body {
   
   .container {
     padding: 0 15px;
+  }
+  
+  /* Ocultar imágenes decorativas en móvil para evitar CLS */
+  .sol,
+  .flor-azul,
+  .flor-amarilla,
+  .flor-aqua,
+  .flor-morada,
+  .flor-naranja,
+  .flor-rosa {
+    display: none;
   }
 }
 

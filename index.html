@@ -100,6 +100,9 @@
     <!-- ===== CSS CRÍTICO OPTIMIZADO ===== -->
   <link rel="stylesheet" href="assets/css/critical.css">
   
+  <!-- ===== OPTIMIZADOR DE FUENTES ===== -->
+  <link rel="stylesheet" href="assets/css/font-optimizer.css">
+  
   <!-- ===== CSS NO CRÍTICO CARGADO DE FORMA ASÍNCRONA ===== -->
   <link rel="preload" href="assets/css/purged/home-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="assets/css/purged/home-purged.css"></noscript>
@@ -142,6 +145,12 @@
 
     gtag('config', 'G-GW70VHJQ07');
   </script>
+  
+  <!-- LCP Optimizer para mejorar rendimiento -->
+  <script src="assets/js/lcp-optimizer.js"></script>
+  
+  <!-- Font Loader para evitar FOUT -->
+  <script src="assets/js/font-loader.js"></script>
 </head>
 
 <body>
@@ -227,26 +236,26 @@
   <main class="hero-home" role="main">
     <div class="hero-text container d-flex flex-column justify-content-center col-md-8 col-12 text-center">
       <div class="p-4">
-        <img class="hero-logo" src="assets/images/logo.svg" alt="La Pape de Kary - Logo de papelería en Cancún"> <br>
-        <img style=" width: 170px; margin-bottom: 30px;" src="assets/images/Hola.svg" alt="Saludo La Pape de Kary"> <br>
+        <img class="hero-logo" src="assets/images/logo.svg" alt="La Pape de Kary - Logo de papelería en Cancún" width="250" height="auto"> <br>
+        <img style=" width: 170px; margin-bottom: 30px;" src="assets/images/Hola.svg" alt="Saludo La Pape de Kary" width="170" height="auto"> <br>
         <h1 class="bodyXLarge">Encuentra todo lo que necesitas para la escuela, la oficina y el arte en un solo lugar.</h1><br>
         <button class="btn btn-secondary btn-rounded btn-lg mt-3" aria-label="Explorar productos de papelería">Explorar Nuestos Productos</button>
       </div>
     </div>
     <!-- sol -->
-    <img class="sol sol-animation" src="assets/images/sol.svg" alt="Ilustración de sol decorativo" loading="lazy">
+    <img class="sol sol-animation" src="assets/images/sol.svg" alt="Ilustración de sol decorativo" loading="lazy" width="270" height="270">
     <!-- flor azul -->
-     <img class="flor-azul" src="assets/images/flor-azul.svg" alt="Ilustración de flor azul decorativa" loading="lazy">
+     <img class="flor-azul" src="assets/images/flor-azul.svg" alt="Ilustración de flor azul decorativa" loading="lazy" width="420" height="420">
      <!-- flor amarilla -->
-     <img class="flor-amarilla " src="assets/images/flor-amarilla.svg" alt="Ilustración de flor amarilla decorativa" loading="lazy">
+     <img class="flor-amarilla " src="assets/images/flor-amarilla.svg" alt="Ilustración de flor amarilla decorativa" loading="lazy" width="530" height="530">
      <!-- flor aqua -->
-     <img class="flor-aqua" src="assets/images/flor-aqua.svg" alt="Ilustración de flor aqua decorativa" loading="lazy">
+     <img class="flor-aqua" src="assets/images/flor-aqua.svg" alt="Ilustración de flor aqua decorativa" loading="lazy" width="510" height="510">
      <!-- flor morada -->
-     <img class="flor-morada" src="assets/images/flor-morada.svg" alt="Ilustración de flor morada decorativa" loading="lazy">
+     <img class="flor-morada" src="assets/images/flor-morada.svg" alt="Ilustración de flor morada decorativa" loading="lazy" width="550" height="550">
      <!-- flor naranja -->
-     <img class="flor-naranja" src="assets/images/flor-naranja.svg" alt="Ilustración de flor naranja decorativa" loading="lazy">
+     <img class="flor-naranja" src="assets/images/flor-naranja.svg" alt="Ilustración de flor naranja decorativa" loading="lazy" width="300" height="300">
      <!-- flor rosa -->
-     <img class="flor-rosa" src="assets/images/flor-rosa.svg" alt="Ilustración de flor rosa decorativa" loading="lazy">
+     <img class="flor-rosa" src="assets/images/flor-rosa.svg" alt="Ilustración de flor rosa decorativa" loading="lazy" width="380" height="380">
     
 
   </main>
@@ -260,25 +269,25 @@
       </div>
       <div class="d-flex flex-wrap justify-content-around">
         <div class="product-highlight c-1">
-          <img src="./assets/images/imgRegalos.svg" alt="Icono de regalos - Productos de papelería para regalo" loading="lazy"><br>
+          <img src="./assets/images/imgRegalos.svg" alt="Icono de regalos - Productos de papelería para regalo" loading="lazy" width="80" height="80"><br>
           <div class="h4 mb-2">Regalos</div>
           <a href="" class="link">Ver Productos</a>
 
         </div>
         <div class="product-highlight c-2">
-          <img src="./assets/images/imgNuevo.svg" alt="Icono de productos nuevos - Últimas novedades en papelería" loading="lazy"><br>
+          <img src="./assets/images/imgNuevo.svg" alt="Icono de productos nuevos - Últimas novedades en papelería" loading="lazy" width="80" height="80"><br>
           <div class="h4 mb-2">Nuevos</div>
           <a href="" class="link">Ver Productos</a>
 
         </div>
         <div class="product-highlight c-3">
-          <img src="./assets/images/imgOficina.svg" alt="Icono de oficina - Artículos de papelería para oficina" loading="lazy"><br>
+          <img src="./assets/images/imgOficina.svg" alt="Icono de oficina - Artículos de papelería para oficina" loading="lazy" width="80" height="80"><br>
           <div class="h4 mb-2">Oficina</div>
           <a href="" class="link">Ver Productos</a>
 
         </div>
         <div class="product-highlight c-4">
-          <img src="./assets/images/imgEscuela.svg" alt="Icono de escuela - Útiles escolares y material educativo" loading="lazy"><br>
+          <img src="./assets/images/imgEscuela.svg" alt="Icono de escuela - Útiles escolares y material educativo" loading="lazy" width="80" height="80"><br>
           <div class="h4 mb-2">Escolares</div>
           <a href="" class="link">Ver Productos</a>
 
@@ -306,7 +315,7 @@
     <div class="container col-md-8 col-12  text-center">
       <div class="p-4">
         <h2 id="newsletter-titulo" class="sr-only">Newsletter</h2>
-        <img style=" width: 400px;" src="./assets/images/suscribete.svg" alt="Suscríbete a nuestro newsletter - Recibe ofertas especiales" loading="lazy"><br>
+        <img style=" width: 400px;" src="./assets/images/suscribete.svg" alt="Suscríbete a nuestro newsletter - Recibe ofertas especiales" loading="lazy" width="400" height="auto"><br>
         <p class="bodyXLarge">Recibe promociones y ofertas especiales en tu correo.</p><br>
       </div>
 
