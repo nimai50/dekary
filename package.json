@@ -32,6 +32,7 @@
         "build:blog:complete": "npm run build:blog && npm run update:blog",
         "test:performance": "node scripts/performance-test.js",
         "test:performance:advanced": "node scripts/performance-test-advanced.js",
+        "test:performance:simple": "node scripts/performance-test-simple.js",
         "minify:all": "npm run postcss:all && echo '✅ Minificación CSS completada'",
         "optimize:all": "node scripts/optimize-all.js"
     },
@@ -48,6 +49,7 @@
         "postcss": "^8.4.38",
         "postcss-cli": "^11.0.1",
         "postcss-import": "^16.1.0",
+        "puppeteer": "^24.17.1",
         "purgecss": "^7.0.2",
         "sass": "^1.82.0",
         "sharp": "^0.34.3"
