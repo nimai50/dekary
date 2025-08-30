@@ -305,36 +305,30 @@
     }
   </style>
   
-  <!-- ===== OPTIMIZADOR DE FUENTES ===== -->
-  <link rel="stylesheet" href="assets/css/font-optimizer.css">
+  <!-- ===== CSS CONSOLIDADO OPTIMIZADO ===== -->
+  <!-- Solo cargar CSS esencial para evitar render-blocking -->
+  <link rel="preload" href="assets/css/home-consolidated.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/home-consolidated.min.css"></noscript>
   
-  <!-- ===== CSS NO CRÍTICO CARGADO DE FORMA ASÍNCRONA ===== -->
-  <link rel="preload" href="assets/css/purged/home-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/purged/home-purged.css"></noscript>
-  
-  <link rel="preload" href="assets/css/shared-base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/shared-base.css"></noscript>
-  
-  <link rel="preload" href="assets/css/shared-layout.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/shared-layout.css"></noscript>
-  
-  <!-- CSS existente cargado de forma asíncrona -->
-  <link rel="preload" href="assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/styles.css"></noscript>
-  
-  <link rel="preload" href="assets/css/fontawesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/fontawesome.css"></noscript>
-  
-  <link rel="preload" href="assets/css/contact-forms.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/contact-forms.css"></noscript>
-  
-  <!-- Animate.css cargado localmente para evitar CDN externo -->
-  <link rel="preload" href="assets/css/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/animate.css"></noscript>
-  
-  <!-- Correcciones de diseño críticas -->
-  <link rel="preload" href="assets/css/design-fixes.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/design-fixes.css"></noscript>
+  <!-- CSS adicional cargado de forma diferida -->
+  <script>
+    // Cargar CSS no crítico después de que la página se haya renderizado
+    window.addEventListener('load', function() {
+      const deferredCSS = [
+        'assets/css/fontawesome.css',
+        'assets/css/animate.css',
+        'assets/css/design-fixes.css',
+        'assets/css/contact-forms.css'
+      ];
+      
+      deferredCSS.forEach(cssFile => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = cssFile;
+        document.head.appendChild(link);
+      });
+    });
+  </script>
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
