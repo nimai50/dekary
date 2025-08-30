@@ -1595,17 +1595,26 @@
 
 
 
-  <!-- jQuery (requerido para Bootstrap 3) -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS local (versión optimizada sin jQuery) -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
   
-  <!-- Bootstrap JS (versión 3.3.1 que requiere jQuery) -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  
-  <!-- Contact Forms JS -->
-  <script src="assets/js/contact-forms-only.js"></script>
-  
-  <!-- Modal Fix JS (solución para conflicto jQuery) -->
-  <script src="assets/js/modal-fix.js"></script>
+  <!-- Scripts de funcionalidad cargados de forma diferida -->
+  <script>
+    // Cargar scripts no críticos después de la carga inicial
+    window.addEventListener('load', function() {
+      const deferredScripts = [
+        'assets/js/contact-forms-only.js',
+        'assets/js/modal-fix.js'
+      ];
+      
+      deferredScripts.forEach(scriptSrc => {
+        const script = document.createElement('script');
+        script.src = scriptSrc;
+        script.async = true;
+        document.body.appendChild(script);
+      });
+    });
+  </script>
   
   <!-- ===== DATOS ESTRUCTURADOS SCHEMA.ORG ===== -->
   <script type="application/ld+json">
@@ -1705,33 +1714,18 @@
     });
   </script>
   
-  <!-- ===== SCRIPTS DE OPTIMIZACIÓN AVANZADA ===== -->
-  <script src="assets/js/mobile-optimizer.js"></script>
-  <script src="assets/js/sw-register.js"></script>
-  <script src="assets/js/lazy-loading-advanced.js"></script>
-  <script src="assets/js/image-optimizer.js"></script>
+  <!-- ===== SCRIPT DE OPTIMIZACIÓN CONSOLIDADO ===== -->
+  <script src="assets/js/optimization-consolidated.js"></script>
   
   <script>
-    // Inicializar optimizaciones avanzadas
+    // Inicializar optimizaciones consolidadas
     document.addEventListener('DOMContentLoaded', () => {
-      // Solicitar permisos de notificación
-      if ('Notification' in window) {
-        Notification.requestPermission();
-      }
-      
-      // Verificar estado del Service Worker
-      if (window.DekarySW) {
-        window.DekarySW.checkSWStatus();
-      }
-      
-      // Inicializar lazy loading
-      if (window.lazyImageLoader) {
-        // Lazy loading inicializado
-      }
-      
-      // Inicializar optimizador de imágenes
-      if (window.imageOptimizer) {
-        // Optimizador de imágenes inicializado
+      // Solicitar permisos de notificación (solo si es necesario)
+      if ('Notification' in window && window.DekaryOptimizer) {
+        // Solo solicitar permisos si el usuario interactúa
+        document.addEventListener('click', () => {
+          Notification.requestPermission();
+        }, { once: true });
       }
     });
   </script>
