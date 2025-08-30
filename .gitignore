@@ -4,7 +4,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build outputs
+# Build outputs (temporales)
 assets/css/optimized/
 assets/css/purged/
 assets/images/optimized/
@@ -98,3 +98,6 @@ out/
 # Cache directories
 .cache/
 .parcel-cache/
+
+# IMPORTANTE: NO ignorar archivos CSS compilados para GitHub Pages
+# Los archivos CSS compilados deben estar disponibles para el despliegue
