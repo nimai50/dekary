@@ -38,6 +38,11 @@ jobs:
         # Optimizar imágenes
         npm run optimize:images
         
+    - name: Optimize JavaScript
+      run: |
+        # Optimizar JavaScript con tree-shaking
+        npm run optimize:js
+        
     - name: Verify PurgeCSS output
       run: |
         # Verificar que PurgeCSS haya funcionado

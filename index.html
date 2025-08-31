@@ -65,6 +65,13 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"></noscript>
   
+  <!-- Preload de fuentes críticas para LCP -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- Preload de imagen hero crítica para LCP -->
+  <link rel="preload" href="assets/images/logo.svg" as="image" type="image/svg+xml">
+  
   <!-- DNS Prefetch para recursos externos -->
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -310,71 +317,55 @@
   <link rel="preload" href="assets/css/purged/home-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="assets/css/purged/home-purged.css"></noscript>
   
-  <!-- CSS adicional cargado de forma diferida -->
+  <!-- CSS adicional cargado de forma diferida optimizada -->
   <script>
-    // Cargar CSS no crítico después de que la página se haya renderizado
-    window.addEventListener('load', function() {
-      const deferredCSS = [
-        'assets/css/purged/styles-purged.css',  // CSS principal purgado
-        'assets/css/purged/fontawesome-purged.css',  // FontAwesome purgado (1 KB)
-        'assets/css/purged/animate-purged.css',      // Animate.css purgado (1 KB)
-        'assets/css/contact-forms.css'               // Formularios (mantener por funcionalidad)
-      ];
-      
+    // Cargar CSS no crítico de forma más agresiva para reducir render-blocking
+    const deferredCSS = [
+      'assets/css/purged/styles-purged.css',  // CSS principal purgado
+      'assets/css/purged/fontawesome-purged.css',  // FontAwesome purgado (1 KB)
+      'assets/css/purged/animate-purged.css',      // Animate.css purgado (1 KB)
+      'assets/css/contact-forms.css'               // Formularios (mantener por funcionalidad)
+    ];
+    
+    // Cargar CSS inmediatamente después de DOMContentLoaded (más rápido que 'load')
+    document.addEventListener('DOMContentLoaded', function() {
       deferredCSS.forEach(cssFile => {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = cssFile;
+        link.media = 'print'; // Evitar render-blocking
+        link.onload = function() {
+          this.media = 'all'; // Aplicar estilos cuando se cargue
+        };
         document.head.appendChild(link);
       });
     });
   </script>
-  <!-- Google fonts -->
+  
+  <!-- Google fonts optimizados -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&family=Quicksand:wght@300..700&display=swap"
-    rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"></noscript>
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GW70VHJQ07"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-GW70VHJQ07');
   </script>
   
   <!-- Script de optimización simplificado -->
   <script>
-    // Script de optimización básico para evitar FOUC
+    // Script de optimización básico para evitar FOUC y optimizar LCP
     document.addEventListener('DOMContentLoaded', function() {
       // Asegurar que el contenido sea visible
       document.body.style.visibility = 'visible';
       
-      // Optimizar imágenes críticas
-      const criticalImages = document.querySelectorAll('img[src*="logo"], img[src*="Hola"]');
-      criticalImages.forEach(img => {
-        if (img.complete) {
-          img.style.opacity = '1';
-        } else {
-          img.addEventListener('load', function() {
-            this.style.opacity = '1';
-          });
-          img.style.opacity = '0';
-          img.style.transition = 'opacity 0.3s ease-in';
-        }
-      });
-    });
-  <!-- Script de optimización simplificado -->
-  <script>
-    // Script de optimización básico para evitar FOUC
-    document.addEventListener('DOMContentLoaded', function() {
-      // Asegurar que el contenido sea visible
-      document.body.style.visibility = 'visible';
-      
-      // Optimizar imágenes críticas
-      const criticalImages = document.querySelectorAll('img[src*="logo"], img[src*="Hola"]');
+      // Optimizar imágenes críticas para LCP
+      const criticalImages = document.querySelectorAll('img[src*="logo"], img[src*="hero"]');
       criticalImages.forEach(img => {
         if (img.complete) {
           img.style.opacity = '1';
@@ -1596,7 +1587,7 @@
 
 
   <!-- Bootstrap JS local (versión optimizada sin jQuery) -->
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/optimized/bootstrap.bundle.min.optimized.js"></script>
   
   <!-- Scripts de funcionalidad cargados de forma diferida -->
   <script>
@@ -1676,7 +1667,7 @@
 
   
   <!-- ===== SCRIPT DE OPTIMIZACIÓN CONSOLIDADO ===== -->
-  <script src="assets/js/optimization-consolidated.js"></script>
+  <script src="assets/js/optimized/optimization-consolidated.optimized.js"></script>
   
   <script>
     // Inicializar optimizaciones consolidadas

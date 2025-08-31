@@ -34,6 +34,7 @@
         "test:performance:advanced": "node scripts/performance-test-advanced.js",
         "test:performance:simple": "node scripts/performance-test-simple.js",
         "minify:all": "npm run postcss:all && echo '✅ Minificación CSS completada'",
+        "optimize:js": "node scripts/optimize-js-tree-shaking.js",
         "optimize:all": "node scripts/optimize-all.js"
     },
     "keywords": [
