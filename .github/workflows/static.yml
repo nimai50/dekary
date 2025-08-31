@@ -50,6 +50,18 @@ jobs:
         echo "=== Verificando tamaños de archivos CSS purgados ==="
         du -h assets/css/purged/*.css | sort -h || echo "No hay archivos purgados"
         
+    - name: Copy purged CSS files to deployment directory
+      run: |
+        # Asegurar que el directorio purged esté en el directorio de despliegue
+        echo "=== Copiando archivos CSS purgados ==="
+        mkdir -p assets/css/purged
+        cp -r assets/css/purged/* assets/css/purged/ 2>/dev/null || echo "No se pudieron copiar archivos purgados"
+        
+        # Verificar que los archivos estén disponibles
+        echo "=== Verificando archivos disponibles para despliegue ==="
+        ls -la assets/css/purged/ || echo "Directorio purged no existe en despliegue"
+        ls -la assets/css/purged/*.css || echo "No hay archivos CSS purgados en despliegue"
+        
     - name: Build and prepare files
       run: |
         # Asegurar que todos los directorios estén presentes
