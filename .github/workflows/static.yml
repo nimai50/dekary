@@ -52,18 +52,21 @@ jobs:
         
     - name: Copy purged CSS files to deployment directory
       run: |
-        # Asegurar que el directorio purged esté en el directorio de despliegue
-        echo "=== Copiando archivos CSS purgados ==="
-        mkdir -p assets/css/purged
+        echo "=== ELIMINANDO archivos CSS originales pesados ==="
+        # Eliminar archivos CSS originales pesados para evitar duplicación
+        rm -f assets/css/fontawesome.css
+        rm -f assets/css/animate.css
+        rm -f assets/css/styles.css
         
-        # Verificar que los archivos estén disponibles
-        echo "=== Verificando archivos disponibles para despliegue ==="
-        ls -la assets/css/purged/ || echo "Directorio purged no existe en despliegue"
-        ls -la assets/css/purged/*.css || echo "No hay archivos CSS purgados en despliegue"
+        echo "=== COPIANDO archivos CSS purgados ==="
+        # Copiar archivos purgados al directorio principal
+        cp assets/css/purged/*.css assets/css/
         
-        # Verificar que los archivos estén en el directorio raíz para el despliegue
-        echo "=== Verificando archivos en directorio raíz ==="
-        find . -name "*.css" -type f | head -10
+        echo "=== Verificando archivos CSS finales ==="
+        ls -la assets/css/*.css | head -10
+        
+        echo "=== Verificando que no haya duplicados ==="
+        find assets/css/ -name "*.css" -type f | sort
         
     - name: Build and prepare files
       run: |
