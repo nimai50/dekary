@@ -1673,45 +1673,7 @@
   }
   </script>
   
-  <!-- ===== SCRIPT PARA CARGAR CSS NO CRÍTICO DE FORMA ASÍNCRONA ===== -->
-  <script>
-    // Función para cargar CSS no crítico de forma asíncrona
-    function loadCSS(href) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = href;
-      document.head.appendChild(link);
-    }
-    
-    // Función para cargar CSS cuando la página esté lista
-    function loadNonCriticalCSS() {
-      // Cargar CSS específico de la página (ya está cargado en el head)
-      // loadCSS('assets/css/purged/home-purged.css');
-      
-      // Cargar CSS compartido purgado
-      loadCSS('assets/css/purged/styles-purged.css');
-      
-      // Cargar CSS adicional cuando sea necesario
-      setTimeout(() => {
-        loadCSS('assets/css/styles.css');
-        loadCSS('assets/css/fontawesome.css');
-        loadCSS('assets/css/contact-forms.css');
-      }, 100);
-    }
-    
-    // Cargar CSS no crítico cuando la página esté lista
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadNonCriticalCSS);
-    } else {
-      loadNonCriticalCSS();
-    }
-    
-    // Cargar CSS adicional después de que la página esté completamente cargada
-    window.addEventListener('load', function() {
-      // Aquí se pueden cargar estilos adicionales si es necesario
-      console.log('CSS crítico implementado y CSS no crítico cargado de forma asíncrona');
-    });
-  </script>
+
   
   <!-- ===== SCRIPT DE OPTIMIZACIÓN CONSOLIDADO ===== -->
   <script src="assets/js/optimization-consolidated.js"></script>
