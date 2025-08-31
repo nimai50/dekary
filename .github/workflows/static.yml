@@ -30,13 +30,25 @@ jobs:
       
     - name: Build CSS from SCSS
       run: |
-        # Compilar SCSS a CSS
-        npm run build:all
+        # Compilar SCSS a CSS Y aplicar PurgeCSS
+        npm run build:production
         
     - name: Optimize images
       run: |
         # Optimizar imágenes
         npm run optimize:images
+        
+    - name: Verify PurgeCSS output
+      run: |
+        # Verificar que PurgeCSS haya funcionado
+        echo "=== Verificando archivos CSS purgados ==="
+        ls -la assets/css/purged/ || echo "Directorio purged no existe"
+        ls -la assets/css/purged/*.css || echo "No hay archivos CSS purgados"
+        
+        echo "=== Verificando tamaños de archivos CSS ==="
+        du -h assets/css/*.css | sort -h
+        echo "=== Verificando tamaños de archivos CSS purgados ==="
+        du -h assets/css/purged/*.css | sort -h || echo "No hay archivos purgados"
         
     - name: Build and prepare files
       run: |
@@ -52,6 +64,9 @@ jobs:
         
         echo "=== Verificando archivos CSS compilados ==="
         ls -la assets/css/*.css
+        
+        echo "=== Verificando archivos CSS purgados ==="
+        ls -la assets/css/purged/*.css || echo "No hay archivos CSS purgados"
         
         echo "=== Verificando imágenes optimizadas ==="
         ls -la assets/images/*.webp || echo "No hay archivos WebP"
