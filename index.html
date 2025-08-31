@@ -316,9 +316,9 @@
     window.addEventListener('load', function() {
       const deferredCSS = [
         'assets/css/purged/styles-purged.css',  // CSS principal purgado
-        'assets/css/fontawesome.css',           // FontAwesome (mantener por iconos)
-        'assets/css/animate.css',               // Animate.css (mantener por animaciones)
-        'assets/css/contact-forms.css'          // Formularios (mantener por funcionalidad)
+        'assets/css/purged/fontawesome-purged.css',  // FontAwesome purgado (1 KB)
+        'assets/css/purged/animate-purged.css',      // Animate.css purgado (1 KB)
+        'assets/css/contact-forms.css'               // Formularios (mantener por funcionalidad)
       ];
       
       deferredCSS.forEach(cssFile => {
