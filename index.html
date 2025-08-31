@@ -305,20 +305,20 @@
     }
   </style>
   
-  <!-- ===== CSS CONSOLIDADO OPTIMIZADO ===== -->
-  <!-- Solo cargar CSS esencial para evitar render-blocking -->
-  <link rel="preload" href="assets/css/home-consolidated.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/home-consolidated.min.css"></noscript>
+  <!-- ===== CSS PURGADO OPTIMIZADO ===== -->
+  <!-- Solo cargar CSS esencial purgado para evitar render-blocking -->
+  <link rel="preload" href="assets/css/purged/home-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/purged/home-purged.css"></noscript>
   
   <!-- CSS adicional cargado de forma diferida -->
   <script>
     // Cargar CSS no crítico después de que la página se haya renderizado
     window.addEventListener('load', function() {
       const deferredCSS = [
-        'assets/css/fontawesome.css',
-        'assets/css/animate.css',
-        'assets/css/design-fixes.css',
-        'assets/css/contact-forms.css'
+        'assets/css/purged/styles-purged.css',  // CSS principal purgado
+        'assets/css/fontawesome.css',           // FontAwesome (mantener por iconos)
+        'assets/css/animate.css',               // Animate.css (mantener por animaciones)
+        'assets/css/contact-forms.css'          // Formularios (mantener por funcionalidad)
       ];
       
       deferredCSS.forEach(cssFile => {
@@ -1685,12 +1685,11 @@
     
     // Función para cargar CSS cuando la página esté lista
     function loadNonCriticalCSS() {
-      // Cargar CSS específico de la página
-      loadCSS('assets/css/purged/home-purged.css');
+      // Cargar CSS específico de la página (ya está cargado en el head)
+      // loadCSS('assets/css/purged/home-purged.css');
       
-      // Cargar CSS compartido
-      loadCSS('assets/css/shared-base.css');
-      loadCSS('assets/css/shared-layout.css');
+      // Cargar CSS compartido purgado
+      loadCSS('assets/css/purged/styles-purged.css');
       
       // Cargar CSS adicional cuando sea necesario
       setTimeout(() => {
