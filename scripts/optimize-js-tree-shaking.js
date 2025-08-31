@@ -22,7 +22,9 @@ if (!fs.existsSync(outputDir)) {
 // Archivos JavaScript a optimizar
 const jsFiles = [
     'bootstrap.bundle.min.js',
-    'optimization-consolidated.js'
+    'optimization-consolidated.js',
+    'contact-forms-only.js',
+    'modal-fix.js'
 ];
 
 // Función para analizar y optimizar JavaScript

@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-08-31T22:48:42.606Z",
-  "totalImages": 34,
-  "optimizedImages": 34,
+  "timestamp": "2025-08-31T23:24:03.620Z",
+  "totalImages": 35,
+  "optimizedImages": 35,
   "webpImages": 7,
-  "originalSize": 16218241,
-  "optimizedSize": 6998372,
+  "originalSize": 16325056,
+  "optimizedSize": 7105187,
   "webpSize": 1700396,
   "savings": 9219869,
-  "savingsPercent": "56.85"
+  "savingsPercent": "56.48"
 }

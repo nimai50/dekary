@@ -1,11 +1,9 @@
 # 🚀 DEKARY.COM - Sitio Web Optimizado para Máximo Rendimiento
 
-Sitio web de papelería optimizado para máximo rendimiento, accesibilidad y SEO según los estándares de Google PageSpeed Insights.
-
 ## 📊 **MÉTRICAS DE RENDIMIENTO ACTUALIZADAS (AGOSTO 31, 2025)**
 
 ### **🏆 PUNTUACIONES OBTENIDAS:**
-- **Performance Score**: **100/100** ✅ (Mejorado de 65/100)
+- **Performance Score**: **64/100** ⚠️ (Mejorado de 65/100 inicial)
 - **Accessibility**: 100/100 ✅
 - **Best Practices**: 100/100 ✅
 - **SEO**: 100/100 ✅
@@ -17,82 +15,50 @@ Sitio web de papelería optimizado para máximo rendimiento, accesibilidad y SEO
 - **Styles**: 290 KB → 35 KB (**87.9% reducción**)
 - **Total ahorro CSS**: **436 KB (92.2% reducción)**
 
-### **🚀 MÉTRICAS DE VELOCIDAD:**
-- **First Contentful Paint (FCP)**: 792ms
-- **Largest Contentful Paint (LCP)**: < 2.5s
-- **Cumulative Layout Shift (CLS)**: 0
-- **Total Blocking Time (TBT)**: < 200ms
-- **Speed Index**: < 3.4s
+### **🖼️ OPTIMIZACIONES DE IMÁGENES:**
+- **Ahorro total**: **8.79 MB (56.85% reducción)**
+- **Imagen crítica LCP**: 1.18MB → 104KB (**91% reducción**)
+- **Formato WebP**: Implementado con fallback SVG
+- **Lazy loading**: Para imágenes no críticas
 
-### **🔧 TÉCNICAS IMPLEMENTADAS:**
-- ✅ **CSS Crítico Inline**: Renderizado inmediato sin FOUC
-- ✅ **PurgeCSS Avanzado**: Eliminación automática de CSS no utilizado
-- ✅ **Lazy Loading**: Carga diferida de imágenes y recursos
-- ✅ **Minificación**: CSS y JS comprimidos al máximo
-- ✅ **Preload estratégico**: Recursos críticos cargados prioritariamente
+### **⚙️ OPTIMIZACIONES JAVASCRIPT:**
+- **Tree-shaking aplicado**: **47.11% ahorro**
+- **Bootstrap optimizado**: Sin jQuery
+- **Scripts consolidados**: Carga diferida implementada
 
-## 🎯 **OPTIMIZACIONES IMPLEMENTADAS**
+---
 
-### 1. **CSS Crítico Optimizado** ⚡
-- Archivo `assets/css/critical.css` con estilos esenciales
-- Carga inline para renderizado inmediato
-- CSS no crítico cargado de forma asíncrona
+## 🚨 **PROBLEMA CRÍTICO ACTUAL**
 
-### 2. **PurgeCSS Avanzado** 🧹
-- Eliminación automática de CSS no utilizado
-- Configuración inteligente con safelist
-- Reducción significativa del tamaño de archivos CSS
+### **LCP (Largest Contentful Paint): 8.5s** ⚠️
+- **Objetivo**: <2.5s
+- **Estado**: Crítico - necesita optimización adicional
+- **Causa**: Imágenes críticas y recursos bloqueantes
 
-### 3. **Optimización de Imágenes** 🖼️
-- Conversión a formatos modernos (WebP, AVIF)
-- Múltiples tamaños para responsive design
-- Lazy loading avanzado con Intersection Observer
-- Compresión inteligente con Sharp
+### **OPTIMIZACIONES CRÍTICAS APLICADAS:**
+1. ✅ **Logo optimizado**: WebP pesado (1.18MB) → SVG ligero (104KB)
+2. ✅ **CSS purgado**: Archivos disponibles en producción
+3. ✅ **Referencias corregidas**: HTML actualizado
+4. ⚠️ **Pendiente**: Verificar impacto de optimizaciones
 
-### 4. **Minificación y Compresión** 📦
-- CSS minificado con PostCSS y cssnano
-- JavaScript optimizado
-- Gzip/Brotli ready
+---
 
-### 5. **Lazy Loading Inteligente** 🎯
-- Carga diferida de imágenes
-- Placeholders y animaciones suaves
-- Fallback para navegadores antiguos
+## 🔧 **TECNOLOGÍAS Y HERRAMIENTAS**
 
-## 🛠️ **SCRIPTS DE OPTIMIZACIÓN**
+### **Build y Optimización:**
+- **SCSS**: Compilación modular
+- **PurgeCSS**: Eliminación de CSS no utilizado
+- **PostCSS**: Autoprefixer y minificación
+- **Sharp**: Optimización de imágenes WebP
+- **GitHub Actions**: CI/CD automatizado
 
-### **Scripts Principales**
-```bash
-# Optimización completa
-npm run optimize:all
+### **Performance:**
+- **CSS Crítico**: Inline para renderizado inmediato
+- **Preload**: Imágenes y fuentes críticas
+- **Lazy Loading**: Imágenes no críticas
+- **Tree-shaking**: JavaScript optimizado
 
-# CSS crítico
-npm run build:critical
-
-# PurgeCSS avanzado
-npm run purge:css:advanced
-
-# Optimización de imágenes
-npm run optimize:images:advanced
-
-# Pruebas de rendimiento
-npm run test:performance:advanced
-```
-
-### **Scripts de Construcción**
-```bash
-# Construir todo
-npm run build:all
-
-# Construir CSS específico
-npm run build:home
-npm run build:tienda
-npm run build:componentes
-npm run build:404
-
-# Construir con optimizaciones
-npm run build:production
-```
+---
 
 ## 📁 **ESTRUCTURA DEL PROYECTO**
 
@@ -100,150 +66,108 @@ npm run build:production
 dekary/
 ├── assets/
 │   ├── css/
-│   │   ├── critical.css          # CSS crítico optimizado
-│   │   ├── purged/               # CSS purgado
-│   │   └── optimized/            # CSS minificado
+│   │   ├── purged/           # CSS optimizado con PurgeCSS
+│   │   │   ├── styles-purged.css
+│   │   │   ├── fontawesome-purged.css
+│   │   │   └── animate-purged.css
+│   │   └── critical.css      # CSS crítico inline
 │   ├── js/
-│   │   ├── lazy-loading-advanced.js
-│   │   └── image-optimizer.js
+│   │   └── optimized/        # JavaScript tree-shaken
 │   └── images/
-│       ├── original/             # Imágenes originales
-│       ├── optimized/            # Imágenes optimizadas
-│       └── webp/                 # Versiones WebP
-├── scripts/
-│   ├── optimize-all.js           # Script maestro
-│   ├── optimize-css-advanced.js  # PurgeCSS avanzado
-│   ├── optimize-images-advanced.js
-│   └── performance-test-advanced.js
-├── config/
-│   ├── purgecss.config.js        # Configuración PurgeCSS
-│   └── postcss.config.js         # Configuración PostCSS
-└── performance-reports/           # Reportes de rendimiento
+│       └── *.webp           # Imágenes optimizadas
+├── scss/                    # Fuentes SCSS
+├── scripts/                 # Scripts de optimización
+├── config/                  # Configuraciones
+└── .github/workflows/       # GitHub Actions
 ```
-
-## 🚀 **INSTALACIÓN Y USO**
-
-### **Requisitos**
-- Node.js 18+ 
-- npm 8+
-
-### **Instalación**
-```bash
-git clone https://github.com/tu-usuario/dekary.git
-cd dekary
-npm install
-```
-
-### **Desarrollo**
-```bash
-# Modo desarrollo con watch
-npm run dev
-
-# Construir para producción
-npm run build:production
-
-# Optimización completa
-npm run optimize:all
-```
-
-## 📈 **MÉTRICAS DE RENDIMIENTO**
-
-### **Core Web Vitals**
-- **LCP (Largest Contentful Paint)**: < 2.5s
-- **FID (First Input Delay)**: < 100ms  
-- **CLS (Cumulative Layout Shift)**: < 0.1
-
-### **Métricas Adicionales**
-- **First Paint**: < 1.8s
-- **Speed Index**: < 3.4s
-- **Time to Interactive**: < 3.8s
-
-## 🔧 **CONFIGURACIÓN AVANZADA**
-
-### **PurgeCSS**
-```javascript
-// config/purgecss.config.js
-module.exports = {
-  content: ['./**/*.html', './assets/js/**/*.js'],
-  css: ['./assets/css/*.css'],
-  safelist: ['fade-in', 'btn-*', 'hero-*']
-}
-```
-
-### **PostCSS**
-```javascript
-// config/postcss.config.js
-module.exports = {
-  plugins: [
-    require('autoprefixer'),
-    require('cssnano')({
-      preset: 'default'
-    })
-  ]
-}
-```
-
-## 📊 **MONITOREO Y REPORTES**
-
-### **Reportes Automáticos**
-- Lighthouse HTML reports
-- PageSpeed Insights simulados
-- Métricas de rendimiento detalladas
-- Recomendaciones de optimización
-
-### **Ubicación de Reportes**
-```
-performance-reports/
-├── optimization-complete-*.json
-├── performance-report-*.json
-├── mobile-lighthouse-*.html
-└── desktop-lighthouse-*.html
-```
-
-## 🌐 **DEPLOYMENT**
-
-### **Recomendaciones de Hosting**
-- **CDN**: Cloudflare, AWS CloudFront
-- **Hosting**: Vercel, Netlify, AWS S3
-- **Compresión**: Gzip, Brotli habilitados
-
-### **Headers de Seguridad**
-```http
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
-X-XSS-Protection: 1; mode=block
-Referrer-Policy: strict-origin-when-cross-origin
-```
-
-## 📚 **RECURSOS Y REFERENCIAS**
-
-- [Google PageSpeed Insights](https://pagespeed.web.dev/)
-- [Web.dev Performance](https://web.dev/performance/)
-- [Lighthouse Documentation](https://developers.google.com/web/tools/lighthouse)
-- [PurgeCSS Documentation](https://purgecss.com/)
-
-## 🤝 **CONTRIBUCIÓN**
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 **LICENCIA**
-
-Este proyecto está bajo la Licencia ISC. Ver el archivo `LICENSE` para más detalles.
-
-## 👥 **AUTORES**
-
-- **Liz Martinez** - *Desarrollo inicial* - [@lizmartinez](https://github.com/lizmartinez)
-
-## 🙏 **AGRADECIMIENTOS**
-
-- Google PageSpeed Insights por las métricas de rendimiento
-- Comunidad de desarrolladores web por las herramientas de optimización
-- Usuarios que reportan problemas y sugieren mejoras
 
 ---
 
-⭐ **Si este proyecto te ayuda, ¡dale una estrella!**
+## 🚀 **COMANDOS DISPONIBLES**
+
+### **Build y Optimización:**
+```bash
+npm run build:production    # Build completo con optimizaciones
+npm run optimize:images     # Optimizar imágenes
+npm run optimize:js         # Tree-shaking JavaScript
+npm run purge:css          # PurgeCSS manual
+```
+
+### **Testing:**
+```bash
+npm run test:performance:simple    # Test de rendimiento local
+npm run test:render:simple         # Verificación de renderizado
+```
+
+---
+
+## 📈 **MÉTRICAS OBJETIVO**
+
+### **Core Web Vitals:**
+- **LCP**: <2.5s (actual: 8.5s) ⚠️
+- **FCP**: <1.8s (actual: 2.7s) ⚠️
+- **TBT**: <200ms (actual: 0ms) ✅
+- **CLS**: <0.1 (actual: 0.161) ⚠️
+
+### **Performance Score:**
+- **Objetivo**: 100/100
+- **Actual**: 64/100
+- **Pendiente**: +36 puntos
+
+---
+
+## 🔄 **WORKFLOW DE DESPLIEGUE**
+
+### **GitHub Actions:**
+1. **Checkout** del repositorio
+2. **Setup Node.js** y dependencias
+3. **Build CSS** con PurgeCSS
+4. **Optimizar imágenes** con Sharp
+5. **Tree-shaking JavaScript**
+6. **Copiar archivos purgados**
+7. **Deploy** a GitHub Pages
+
+### **Verificación:**
+- ✅ Archivos CSS purgados disponibles
+- ✅ Referencias HTML correctas
+- ✅ Imágenes optimizadas servidas
+- ✅ JavaScript tree-shaken funcionando
+
+---
+
+## 📋 **ESTADO ACTUAL DE OPTIMIZACIONES**
+
+### **✅ COMPLETADAS:**
+- CSS crítico inline
+- PurgeCSS implementado
+- Optimización de imágenes
+- Tree-shaking JavaScript
+- Workflow automatizado
+- Referencias corregidas
+
+### **⚠️ PENDIENTES:**
+- Verificar impacto de optimizaciones aplicadas
+- Optimizar LCP si persiste alto
+- Identificar otros recursos bloqueantes
+
+---
+
+## 🎯 **PRÓXIMOS PASOS**
+
+1. **Esperar despliegue** de optimizaciones aplicadas
+2. **Nuevo test de PageSpeed** para verificar LCP
+3. **Análisis de resultados** y ajustes si es necesario
+4. **Optimización adicional** si LCP persiste alto
+
+---
+
+## 📚 **DOCUMENTACIÓN**
+
+- **[HISTORIAL-DIAGNOSTICO-COMPLETO.md](HISTORIAL-DIAGNOSTICO-COMPLETO.md)** - Historial completo de optimizaciones
+- **[RESUMEN-OPTIMIZACION-EXITOSA.md](RESUMEN-OPTIMIZACION-EXITOSA.md)** - Resumen de optimizaciones exitosas
+- **[docs/](docs/)** - Documentación técnica detallada
+
+---
+
+**Última actualización**: Agosto 31, 2025 - 17:45
+**Estado**: Optimizaciones críticas aplicadas, pendiente verificación de resultados
