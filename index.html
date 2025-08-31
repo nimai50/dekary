@@ -317,20 +317,20 @@
   
   <!-- ===== CSS PURGADO OPTIMIZADO ===== -->
   <!-- Solo cargar CSS esencial purgado para evitar render-blocking -->
-  <link rel="preload" href="assets/css/purged/home-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/css/purged/home-purged.css"></noscript>
+  <link rel="preload" href="assets/css/home-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/home-purged.css"></noscript>
   
   <!-- Preload de CSS crítico adicional -->
-  <link rel="preload" href="assets/css/purged/styles-purged.css" as="style">
-  <link rel="preload" href="assets/css/purged/fontawesome-purged.css" as="style">
+  <link rel="preload" href="assets/css/styles-purged.css" as="style">
+  <link rel="preload" href="assets/css/fontawesome-purged.css" as="style">
   
   <!-- CSS adicional cargado de forma diferida optimizada -->
   <script>
     // Cargar CSS no crítico de forma más agresiva para reducir render-blocking
     const deferredCSS = [
-      'assets/css/purged/styles-purged.css',  // CSS principal purgado
-      'assets/css/purged/fontawesome-purged.css',  // FontAwesome purgado (1 KB)
-      'assets/css/purged/animate-purged.css',      // Animate.css purgado (1 KB)
+      'assets/css/styles-purged.css',  // CSS principal purgado
+      'assets/css/fontawesome-purged.css',  // FontAwesome purgado (1 KB)
+      'assets/css/animate-purged.css',      // Animate.css purgado (1 KB)
       'assets/css/contact-forms.css'               // Formularios (mantener por funcionalidad)
     ];
     
