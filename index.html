@@ -32,7 +32,7 @@
   <!-- Open Graph tags para WhatsApp, Facebook, etc. -->
   <meta property="og:title" content="La Pape de Kary - Papelería en Cancún">
   <meta property="og:description" content="Tu papelería de confianza en Cancún. Productos escolares, de oficina y regalos personalizados.">
-  <meta property="og:image" content="https://dekary.com/assets/images/logo.svg">
+  <meta property="og:image" content="https://dekary.com/assets/images/logo.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="La Pape de Kary - Logo de papelería en Cancún">
@@ -46,14 +46,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="La Pape de Kary - Papelería en Cancún">
   <meta name="twitter:description" content="Tu papelería de confianza en Cancún. Productos escolares, de oficina y regalos personalizados.">
-  <meta name="twitter:image" content="https://dekary.com/assets/images/logo.svg">
+  <meta name="twitter:image" content="https://dekary.com/assets/images/logo.webp">
   <meta name="twitter:image:alt" content="La Pape de Kary - Logo de papelería en Cancún">
   <meta name="twitter:site" content="@dekary">
   <meta name="twitter:creator" content="@dekary">
   
   <!-- Favicon y iconos -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   
   <!-- Preconnect para rendimiento -->
@@ -68,9 +68,12 @@
   <!-- Preload de fuentes críticas para LCP -->
   <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
   
   <!-- Preload de imagen hero crítica para LCP -->
-  <link rel="preload" href="assets/images/logo.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="assets/images/logo.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/images/Hola.svg" as="image" type="image/svg+xml">
   
   <!-- DNS Prefetch para recursos externos -->
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
@@ -317,6 +320,10 @@
   <link rel="preload" href="assets/css/purged/home-purged.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="assets/css/purged/home-purged.css"></noscript>
   
+  <!-- Preload de CSS crítico adicional -->
+  <link rel="preload" href="assets/css/purged/styles-purged.css" as="style">
+  <link rel="preload" href="assets/css/purged/fontawesome-purged.css" as="style">
+  
   <!-- CSS adicional cargado de forma diferida optimizada -->
   <script>
     // Cargar CSS no crítico de forma más agresiva para reducir render-blocking
@@ -327,8 +334,8 @@
       'assets/css/contact-forms.css'               // Formularios (mantener por funcionalidad)
     ];
     
-    // Cargar CSS inmediatamente después de DOMContentLoaded (más rápido que 'load')
-    document.addEventListener('DOMContentLoaded', function() {
+    // Cargar CSS de forma más agresiva para reducir render-blocking
+    function loadDeferredCSS() {
       deferredCSS.forEach(cssFile => {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
@@ -337,9 +344,23 @@
         link.onload = function() {
           this.media = 'all'; // Aplicar estilos cuando se cargue
         };
+        link.onerror = function() {
+          console.warn('Error cargando CSS:', cssFile);
+          this.media = 'all'; // Aplicar estilos incluso si hay error
+        };
         document.head.appendChild(link);
       });
-    });
+    }
+    
+    // Cargar CSS lo antes posible
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadDeferredCSS);
+    } else {
+      loadDeferredCSS(); // Ya está cargado
+    }
+    
+    // Fallback: cargar CSS después de un timeout si no se ha cargado
+    setTimeout(loadDeferredCSS, 100);
   </script>
   
   <!-- Google fonts optimizados -->
@@ -357,27 +378,46 @@
     gtag('config', 'G-GW70VHJQ07');
   </script>
   
-  <!-- Script de optimización simplificado -->
+  <!-- Script de optimización avanzado para LCP -->
   <script>
-    // Script de optimización básico para evitar FOUC y optimizar LCP
-    document.addEventListener('DOMContentLoaded', function() {
-      // Asegurar que el contenido sea visible
+    // Script de optimización avanzado para evitar FOUC y optimizar LCP
+    (function() {
+      // Asegurar que el contenido sea visible inmediatamente
       document.body.style.visibility = 'visible';
+      document.body.style.opacity = '1';
       
-      // Optimizar imágenes críticas para LCP
-      const criticalImages = document.querySelectorAll('img[src*="logo"], img[src*="hero"]');
-      criticalImages.forEach(img => {
-        if (img.complete) {
+      // Función para optimizar imágenes críticas
+      function optimizeCriticalImages() {
+        const criticalImages = document.querySelectorAll('img[src*="logo"], img[src*="hero"], img[src*="Hola"]');
+        criticalImages.forEach(img => {
+          // Aplicar estilos críticos inmediatamente
           img.style.opacity = '1';
-        } else {
-          img.addEventListener('load', function() {
-            this.style.opacity = '1';
-          });
-          img.style.opacity = '0';
-          img.style.transition = 'opacity 0.3s ease-in';
-        }
-      });
-    });
+          img.style.visibility = 'visible';
+          
+          if (!img.complete) {
+            img.addEventListener('load', function() {
+              this.style.opacity = '1';
+              this.style.visibility = 'visible';
+            });
+            img.addEventListener('error', function() {
+              console.warn('Error cargando imagen crítica:', this.src);
+              this.style.opacity = '1';
+              this.style.visibility = 'visible';
+            });
+          }
+        });
+      }
+      
+      // Ejecutar optimizaciones lo antes posible
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', optimizeCriticalImages);
+      } else {
+        optimizeCriticalImages();
+      }
+      
+      // Fallback: ejecutar después de un timeout muy corto
+      setTimeout(optimizeCriticalImages, 50);
+    })();
   </script>
 </head>
 
@@ -464,8 +504,11 @@
   <main class="hero-home" role="main">
     <div class="hero-text container d-flex flex-column justify-content-center col-md-8 col-12 text-center">
       <div class="p-4">
-        <img class="hero-logo" src="assets/images/logo.svg" alt="La Pape de Kary - Logo de papelería en Cancún" width="250" height="auto"> <br>
-        <img style=" width: 170px; margin-bottom: 30px;" src="assets/images/Hola.svg" alt="Saludo La Pape de Kary" width="170" height="auto"> <br>
+        <picture>
+      <source srcset="assets/images/logo.webp" type="image/webp">
+      <img class="hero-logo" src="assets/images/logo.svg" alt="La Pape de Kary - Logo de papelería en Cancún" width="250" height="auto" loading="eager" fetchpriority="high">
+    </picture> <br>
+          <img style=" width: 170px; margin-bottom: 30px;" src="assets/images/Hola.svg" alt="Saludo La Pape de Kary" width="170" height="auto" loading="eager" fetchpriority="high"> <br>
         <h1 class="bodyXLarge">Encuentra todo lo que necesitas para la escuela, la oficina y el arte en un solo lugar.</h1><br>
         <button class="btn btn-secondary btn-rounded btn-lg mt-3" aria-label="Explorar productos de papelería">Explorar Nuestos Productos</button>
       </div>
@@ -1615,8 +1658,8 @@
     "name": "La Pape de Kary",
     "description": "Papelería de confianza en Cancún. Útiles escolares, forrado y etiquetas personalizadas.",
     "url": "https://dekary.com",
-    "logo": "https://dekary.com/assets/images/logo.svg",
-    "image": "https://dekary.com/assets/images/logo.svg",
+    "logo": "https://dekary.com/assets/images/logo.webp",
+    "image": "https://dekary.com/assets/images/logo.webp",
     "telephone": "+52-998-713-7236",
     "address": {
       "@type": "PostalAddress",
@@ -1646,7 +1689,7 @@
     "@type": "Organization",
     "name": "La Pape de Kary",
     "url": "https://dekary.com",
-    "logo": "https://dekary.com/assets/images/logo.svg",
+    "logo": "https://dekary.com/assets/images/logo.webp",
     "description": "Papelería de confianza en Cancún, México",
     "address": {
       "@type": "PostalAddress",
