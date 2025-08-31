@@ -1,0 +1,68 @@
+/* FontAwesome Purged - Solo iconos utilizados en Dekary.com */
+
+/* Iconos sólidos utilizados */
+.fa-solid {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa-solid::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.fa-cart-shopping::before {
+  content: "\f07a";
+}
+
+.fa-star::before {
+  content: "\f005";
+}
+
+/* Iconos de marcas utilizados */
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fab::before {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+.fa-instagram::before {
+  content: "\f16d";
+}
+
+.fa-facebook::before {
+  content: "\f39e";
+}
+
+.fa-pinterest::before {
+  content: "\f0d2";
+}
+
+.fa-whatsapp::before {
+  content: "\f232";
+}
+
+/* Estilos básicos para iconos sociales */
+.social-icon {
+  font-size: 1.5em;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #fab7e1;
+}

@@ -1,0 +1,62 @@
+/* Animate.css Purged - Solo animaciones básicas para Dekary.com */
+
+/* Animaciones de entrada básicas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Clases de animación */
+.fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.slideIn {
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Transiciones básicas */
+.transition {
+  transition: all 0.3s ease;
+}
+
+.transition-slow {
+  transition: all 0.6s ease;
+}
+
+/* Hover effects */
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
