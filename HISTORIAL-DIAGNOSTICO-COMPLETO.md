@@ -480,6 +480,27 @@ PENDIENTE - Necesita verificación manual de archivos purgados
 
 **Impacto Total:** **963 KB de CSS no purgado** (3 páginas × 321 KB)
 
+## 🚨 PROBLEMA CRÍTICO DE WORKFLOW IDENTIFICADO (AGOSTO 31, 2025 - 20:30)
+
+### **🔍 PROBLEMA CRÍTICO IDENTIFICADO:**
+
+**Diagnóstico:** A pesar de que GitHub Pages está configurado correctamente como "GitHub Actions" y el workflow está bien escrito, **NO SE ESTÁN EJECUTANDO LOS PASOS DE BUILD Y OPTIMIZACIÓN**.
+
+**Síntomas Observados:**
+- ✅ Workflow se ejecuta correctamente
+- ✅ Solo se ejecuta el paso final "Deploy to GitHub Pages"
+- ❌ **NO se ejecutan:** Setup Node.js, Install dependencies, Build CSS, Optimize images, Optimize JavaScript, Verify PurgeCSS, Copy purged CSS, Build and prepare files, Upload artifact
+
+**Causa Raíz:** El workflow está configurado correctamente pero **GitHub Actions no está ejecutando los pasos de build**, solo el deploy final.
+
+**Impacto:** Se despliegan archivos **SIN OPTIMIZAR** desde el repositorio, causando:
+- CSS no purgado (206 KB)
+- JavaScript no optimizado (205 KB)
+- Imágenes no optimizadas
+- Performance score bajo (67/100)
+
+**Estado:** 🚨 **CRÍTICO - WORKFLOW NO FUNCIONA COMPLETAMENTE**
+
 ### **✅ SOLUCIÓN IMPLEMENTADA:**
 
 1. **Actualización de `tienda.html`:**
