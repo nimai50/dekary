@@ -55,12 +55,15 @@ jobs:
         # Asegurar que el directorio purged esté en el directorio de despliegue
         echo "=== Copiando archivos CSS purgados ==="
         mkdir -p assets/css/purged
-        cp -r assets/css/purged/* assets/css/purged/ 2>/dev/null || echo "No se pudieron copiar archivos purgados"
         
         # Verificar que los archivos estén disponibles
         echo "=== Verificando archivos disponibles para despliegue ==="
         ls -la assets/css/purged/ || echo "Directorio purged no existe en despliegue"
         ls -la assets/css/purged/*.css || echo "No hay archivos CSS purgados en despliegue"
+        
+        # Verificar que los archivos estén en el directorio raíz para el despliegue
+        echo "=== Verificando archivos en directorio raíz ==="
+        find . -name "*.css" -type f | head -10
         
     - name: Build and prepare files
       run: |
