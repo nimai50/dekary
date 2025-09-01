@@ -66,10 +66,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"></noscript>
   
   <!-- Preload de fuentes críticas para LCP -->
-  <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KwpRA_LJ3cXHl5aA.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="https://fonts.gstatic.com/s/quicksand/v30/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-xw.woff2" as="font" type="font/woff2" crossorigin>
   
      <!-- Preload de imagen hero crítica para LCP -->
    <link rel="preload" href="assets/images/logo.svg" as="image" type="image/svg+xml">
@@ -383,27 +380,35 @@
     // Script de optimización avanzado para evitar FOUC y optimizar LCP
     (function() {
       // Asegurar que el contenido sea visible inmediatamente
-      document.body.style.visibility = 'visible';
-      document.body.style.opacity = '1';
+      if (document.body) {
+        document.body.style.visibility = 'visible';
+        document.body.style.opacity = '1';
+      }
       
       // Función para optimizar imágenes críticas
       function optimizeCriticalImages() {
         const criticalImages = document.querySelectorAll('img[src*="logo"], img[src*="hero"], img[src*="Hola"]');
         criticalImages.forEach(img => {
-          // Aplicar estilos críticos inmediatamente
-          img.style.opacity = '1';
-          img.style.visibility = 'visible';
-          
-          if (!img.complete) {
-            img.addEventListener('load', function() {
-              this.style.opacity = '1';
-              this.style.visibility = 'visible';
-            });
-            img.addEventListener('error', function() {
-              console.warn('Error cargando imagen crítica:', this.src);
-              this.style.opacity = '1';
-              this.style.visibility = 'visible';
-            });
+          if (img && img.style) {
+            // Aplicar estilos críticos inmediatamente
+            img.style.opacity = '1';
+            img.style.visibility = 'visible';
+            
+            if (!img.complete) {
+              img.addEventListener('load', function() {
+                if (this && this.style) {
+                  this.style.opacity = '1';
+                  this.style.visibility = 'visible';
+                }
+              });
+              img.addEventListener('error', function() {
+                console.warn('Error cargando imagen crítica:', this.src);
+                if (this && this.style) {
+                  this.style.opacity = '1';
+                  this.style.visibility = 'visible';
+                }
+              });
+            }
           }
         });
       }
