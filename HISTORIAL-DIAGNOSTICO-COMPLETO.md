@@ -110,6 +110,39 @@ Optimizar el rendimiento de dekary.com para alcanzar **100/100 en PageSpeed Insi
 - `message-field` - Campo de mensaje
 - `submit-button` - Botón de envío
 
+### **PROBLEMA 5: OPTIMIZACIONES INCONSISTENTES ENTRE PÁGINAS**
+**Diagnóstico**: Solo `index.html` tenía optimizaciones avanzadas (CSS crítico, CSS purgado, JavaScript optimizado), mientras que otras páginas usaban CSS completo y scripts no optimizados
+
+**Solución aplicada**:
+1. ✅ **Optimización completa de `tienda.html`**:
+   - CSS crítico inline implementado
+   - Referencias a CSS purgado (`tienda-purged.css`, `fontawesome-purged.css`)
+   - JavaScript optimizado con carga diferida
+   - Meta tags SEO completos y específicos
+   - Preload de recursos críticos
+
+2. ✅ **Optimización completa de `componentes.html`**:
+   - CSS crítico inline implementado
+   - Referencias a CSS purgado (`styles-purged.css`, `fontawesome-purged.css`)
+   - JavaScript optimizado con carga diferida
+   - Meta tags SEO completos y específicos
+   - Preload de recursos críticos
+
+3. ✅ **Optimización completa de `proximamente.html`**:
+   - CSS crítico inline implementado
+   - Referencias a CSS purgado (`styles-purged.css`, `fontawesome-purged.css`)
+   - JavaScript optimizado con carga diferida
+   - Meta tags SEO completos y específicos
+   - Preload de recursos críticos
+
+4. ✅ **Consistencia total del sitio**:
+   - Todas las páginas ahora tienen las mismas optimizaciones avanzadas
+   - Performance esperado consistente en todo el sitio
+   - SEO optimizado en todas las páginas
+   - Experiencia de usuario uniforme
+
+**Resultado**: Sitio web completamente optimizado con rendimiento consistente en todas las páginas
+
 ---
 
 ## 📈 **RESULTADOS DE OPTIMIZACIÓN**
@@ -165,6 +198,13 @@ Optimizar el rendimiento de dekary.com para alcanzar **100/100 en PageSpeed Insi
 - ✅ **Revisar logs del workflow** completamente
 - ✅ **Probar cambios incrementalmente**
 
+### **5. CONSISTENCIA ENTRE PÁGINAS (LECCIÓN CRÍTICA)**
+- ✅ **TODAS las optimizaciones deben aplicarse a TODAS las páginas**
+- ✅ **Nunca optimizar solo una página** - el sitio debe ser consistente
+- ✅ **Validar que cada mejora funcione en todas las páginas** antes de considerar completa
+- ✅ **El rendimiento del sitio es tan bueno como su página más lenta**
+- ✅ **Crear checklist de optimizaciones** para aplicar sistemáticamente a cada página nueva
+
 ---
 
 ## 🔄 **PRÓXIMOS PASOS**
@@ -206,6 +246,48 @@ npm run build:production
 
 ---
 
+## 📋 **CHECKLIST DE OPTIMIZACIONES PARA NUEVAS PÁGINAS**
+
+### **OBLIGATORIO APLICAR A CADA PÁGINA NUEVA:**
+
+#### **1. CSS CRÍTICO INLINE:**
+- [ ] Variables CSS críticas (colores, tipografía)
+- [ ] Reset y estilos base críticos
+- [ ] Navegación crítica optimizada
+- [ ] Hero section crítica
+- [ ] Responsive crítico
+
+#### **2. CSS PURGADO:**
+- [ ] Referencias a `styles-purged.css` (35 KB)
+- [ ] Referencias a `fontawesome-purged.css` (1 KB)
+- [ ] Referencias específicas de la página si existen
+- [ ] Preload optimizado de CSS
+
+#### **3. JAVASCRIPT OPTIMIZADO:**
+- [ ] Bootstrap optimizado (`bootstrap.bundle.min.optimized.js`)
+- [ ] Scripts de carga diferida de CSS
+- [ ] Optimización de LCP y FOUC
+- [ ] Scripts con atributo `defer`
+
+#### **4. META TAGS SEO COMPLETOS:**
+- [ ] Meta description y keywords específicos por página
+- [ ] Open Graph tags para redes sociales
+- [ ] Twitter Card tags
+- [ ] Canonical URL específica
+- [ ] Meta tags de seguridad y móviles
+
+#### **5. PRELOAD DE RECURSOS CRÍTICOS:**
+- [ ] Fuentes Quicksand optimizadas
+- [ ] Imágenes hero críticas
+- [ ] DNS prefetch para recursos externos
+
+#### **6. VALIDACIÓN FINAL:**
+- [ ] **VERIFICAR que funcione en TODAS las páginas existentes**
+- [ ] **NO considerar la optimización completa hasta que funcione en todo el sitio**
+- [ ] **El sitio es tan rápido como su página más lenta**
+
+---
+
 ## 🎯 **MÉTRICAS OBJETIVO**
 
 ### **TARGETS A ALCANZAR:**
@@ -224,5 +306,5 @@ npm run build:production
 
 ---
 
-**Última actualización**: Agosto 31, 2025 - 18:15
-**Estado**: Optimizaciones críticas aplicadas + funcionalidad de anclas preservada, pendiente verificación de resultados
+**Última actualización**: Agosto 31, 2025 - 19:30
+**Estado**: ✅ **SITIO COMPLETAMENTE OPTIMIZADO** - Todas las páginas optimizadas con CSS crítico, CSS purgado y JavaScript optimizado. Rendimiento consistente en todo el sitio. Pendiente verificación de resultados con PageSpeed Insights.
