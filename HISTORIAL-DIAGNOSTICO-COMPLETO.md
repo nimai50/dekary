@@ -94,6 +94,22 @@ Optimizar el rendimiento de dekary.com para alcanzar **100/100 en PageSpeed Insi
 2. ✅ **Actualización de preload** para usar SVG
 3. ✅ **Eliminación de `<picture>` innecesario**
 
+### **PROBLEMA 4: FUNCIONALIDAD DE ANCLA DEL FORMULARIO DE CONTACTO**
+**Diagnóstico**: Los IDs del formulario de contacto se perdían durante las optimizaciones, impidiendo la navegación directa a secciones específicas
+
+**Solución aplicada**:
+1. ✅ **Preservación de IDs críticos** en el formulario de contacto
+2. ✅ **Habilitación de navegación por anclas** a secciones específicas del formulario
+3. ✅ **Documentación de IDs importantes** para evitar pérdidas en futuras optimizaciones
+4. ✅ **Commit y push** de cambios para mantener funcionalidad en producción
+
+**IDs críticos preservados**:
+- `contact-form` - Formulario principal
+- `name-field` - Campo de nombre
+- `email-field` - Campo de email
+- `message-field` - Campo de mensaje
+- `submit-button` - Botón de envío
+
 ---
 
 ## 📈 **RESULTADOS DE OPTIMIZACIÓN**
@@ -208,5 +224,5 @@ npm run build:production
 
 ---
 
-**Última actualización**: Agosto 31, 2025 - 17:45
-**Estado**: Optimizaciones críticas aplicadas, pendiente verificación de resultados
+**Última actualización**: Agosto 31, 2025 - 18:15
+**Estado**: Optimizaciones críticas aplicadas + funcionalidad de anclas preservada, pendiente verificación de resultados
